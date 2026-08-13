@@ -1,40 +1,40 @@
-name: Neues Gerät hinzufügen
-description: Schlage ein Gerät vor, das in die Datenbank aufgenommen werden soll
+name: Add new item
+description: Suggest a device to be added to the database
 labels: ["new-item"]
 body:
   - type: input
     id: manufacturer
     attributes:
-      label: Hersteller
+      label: Manufacturer
     validations:
       required: true
   - type: input
     id: model
     attributes:
-      label: Modell
+      label: Model
     validations:
       required: true
   - type: dropdown
     id: category
     attributes:
-      label: Kategorie
+      label: Category
       options:
         - Digital Cameras
         - Film Cameras
         - LED
         - HMI
         - Tungsten
-        - Andere (bitte im Feld unten angeben)
+        - Other (please specify below)
     validations:
       required: true
   - type: textarea
     id: specs
     attributes:
-      label: Technische Daten
-      description: Alles was du weißt (Sensor, Mount, Gewicht, Leistung, etc.)
+      label: Technical specs
+      description: Anything you know (sensor, mount, weight, power, etc.)
   - type: input
     id: source
     attributes:
-      label: Link zum Datenblatt / Herstellerseite
+      label: Link to datasheet / manufacturer page
     validations:
       required: true
