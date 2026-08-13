@@ -1,0 +1,12 @@
+id: sony-fx6
+category: Digital Cameras
+manufacturer: Sony
+model: FX6
+type: digital
+mount: E
+sensor:
+  type: Full Frame
+  resolution: 4096x2160
+weight_kg: 0.89
+release_year: 2020
+source_url: https://www.sony.de/interchangeable-lens-cameras/products/ilme-fx6
