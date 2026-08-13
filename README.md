@@ -7,14 +7,14 @@ prep apps, etc.).
 
 ## How it works
 
-- Raw data lives under `/data/<root-category>/*.yaml`, one file per device,
-  where `<root-category>` is `camera`, `grip`, `lighting`, `sound`, or
-  `miscellaneous`
-- The full category tree (root down to leaf) lives in `/data/categories.json`;
-  each entry's `category` field is a `" > "`-joined breadcrumb path through it
+- Raw data lives under `/data/<root>/.../<leaf-category>/*.yaml`, one file
+  per device — the nested folder path mirrors the category's exact position
+  in `/data/categories.json`, so the folder *is* the category (there's no
+  `category` field in the file itself)
 - Every file is validated against the common base schema
   (`/data/schemas/base.schema.json`) plus any category-specific fields from
-  `/data/schemas/fields/<category_id>.json` (CI, on every PR)
+  `/data/schemas/fields/<category_id>.json`, inherited down from parent
+  categories (CI, on every PR)
 - On every merge to `main`, GitHub Actions builds static JSON bundles from it
   and deploys them to GitHub Pages — with no server of your own
 
@@ -63,6 +63,11 @@ where contributors can create/edit entries via forms, without needing to know
 Git or YAML syntax. Behind the scenes it does exactly what a manual PR does:
 new branch, YAML file matching the schema, automatic pull request. CI
 validates and a maintainer reviews as usual.
+
+There's one collection per leaf category (generated from `data/categories.json`
+by `scripts/import_categories.py`) — use the sidebar search to find the right
+one. Each collection's form only shows the fields that actually apply to that
+category (its own fields plus everything inherited from parent categories).
 
 ### Setup (one-time)
 

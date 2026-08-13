@@ -10,17 +10,17 @@ and fill in whatever data you know. A maintainer will turn it into a pull reques
 ## Route 2: Via pull request
 
 1. Fork the repo, create a branch
-2. Add a new file under `data/<root-category>/<id>.yaml`, where
-   `<root-category>` is one of `camera`, `grip`, `lighting`, `sound`,
-   `miscellaneous`
+2. Find the exact category folder under `data/`, matching the leaf
+   category's position in `data/categories.json` (root to leaf), e.g. an
+   entry for a digital camera goes in
+   `data/camera/cameras/digital-cameras/<id>.yaml` — there is no `category`
+   field in the file, the folder location *is* the category
    - `<id>` = `manufacturer-model-slug`, lowercase letters, numbers, hyphens only
    - The filename must exactly match the `id` in the document
-   - `category` in the document is the full breadcrumb path from
-     `data/categories.json`, root to leaf, joined by `" > "`, e.g.
-     `Camera > Cameras > Digital Cameras`
-   - Depending on the category, extra fields may be defined in
-     `data/schemas/fields/<category_id>.json` (and inherited from any parent
-     category's field schema) — see that folder for what's available
+   - Extra fields may be available for that category, defined in
+     `data/schemas/fields/<category_id>.json` and inherited from any parent
+     category's field schema — see that folder, or the matching form in
+     `/admin/`, for what's available
 3. Validate locally before opening the PR:
    ```bash
    pip install pyyaml jsonschema

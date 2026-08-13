@@ -1,10 +1,13 @@
 #!/usr/bin/env python3
 """
-Builds static JSON bundles for the API from /data/<root-category>/*.yaml,
+Builds static JSON bundles for the API from /data/<root-category>/**/*.yaml,
 and assembles the full GitHub Pages deploy folder.
 
 Root categories (and their data folders) are read from data/categories.json
 rather than hardcoded, so adding a new root category is just a data change.
+A file's category is implied by its folder path (mirroring
+data/categories.json), not stored in the YAML - the built JSON output adds a
+resolved `category` breadcrumb string to each item.
 
 Output:
   site/v1/<root-slug>.json  (e.g. camera.json, grip.json, lighting.json, ...)
@@ -33,24 +36,54 @@ MANAGE_DEST = SITE_DIR / "manage" # gets deployed to Pages as well
 CATEGORIES_PATH = DATA_DIR / "categories.json"
 
 
-def load_root_slugs() -> list[str]:
+def load_categories() -> tuple[list[dict], dict]:
     with open(CATEGORIES_PATH, "r", encoding="utf-8") as f:
         nodes = json.load(f)
+    by_id = {n["id"]: n for n in nodes}
+    return nodes, by_id
+
+
+def load_root_slugs(nodes: list[dict]) -> list[str]:
     roots = [n for n in nodes if n["parent_id"] is None]
     roots.sort(key=lambda n: n["sort_order"])
-    return [n["name"].lower().replace(" ", "-") for n in roots]
+    return [n["slug"] for n in roots]
 
 
-def load_category(folder: str) -> list[dict]:
+def slug_path_to_breadcrumb(slug_parts: tuple, nodes: list[dict], by_id: dict) -> str | None:
+    children_by_parent: dict = {}
+    for n in nodes:
+        children_by_parent.setdefault(n["parent_id"], []).append(n)
+
+    parent_id = None
+    category_id = None
+    for slug in slug_parts:
+        candidates = [n for n in children_by_parent.get(parent_id, []) if n["slug"] == slug]
+        if not candidates:
+            return None
+        category_id = candidates[0]["id"]
+        parent_id = category_id
+
+    names = []
+    current = category_id
+    while current:
+        names.append(by_id[current]["name"])
+        current = by_id[current]["parent_id"]
+    return " > ".join(reversed(names))
+
+
+def load_category(folder: str, nodes: list[dict], by_id: dict) -> list[dict]:
     items = []
     folder_path = DATA_DIR / folder
     if not folder_path.exists():
         return items
-    for yaml_path in sorted(folder_path.glob("*.yaml")):
+    for yaml_path in sorted(folder_path.rglob("*.yaml")):
         with open(yaml_path, "r", encoding="utf-8") as f:
             doc = yaml.safe_load(f)
-            if doc:
-                items.append(doc)
+        if not doc:
+            continue
+        slug_parts = yaml_path.relative_to(DATA_DIR).parent.parts
+        doc = {"category": slug_path_to_breadcrumb(slug_parts, nodes, by_id), **doc}
+        items.append(doc)
     return items
 
 
@@ -70,10 +103,11 @@ def main() -> int:
     shutil.copyfile(CATEGORIES_PATH, OUT_DIR / "categories.json")
     print(f"→ {(OUT_DIR / 'categories.json').relative_to(ROOT)}: category tree copied")
 
-    categories = load_root_slugs()
+    nodes, by_id = load_categories()
+    categories = load_root_slugs(nodes)
     all_items = []
     for category in categories:
-        items = load_category(category)
+        items = load_category(category, nodes, by_id)
         out_path = OUT_DIR / f"{category}.json"
         with open(out_path, "w", encoding="utf-8") as f:
             json.dump(items, f, ensure_ascii=False, indent=2)
@@ -86,7 +120,7 @@ def main() -> int:
     version_info = {
         "built_at": datetime.now(timezone.utc).isoformat(),
         "total_items": len(all_items),
-        "categories": {c: len(load_category(c)) for c in categories},
+        "categories": {c: len(load_category(c, nodes, by_id)) for c in categories},
     }
     with open(OUT_DIR / "version.json", "w", encoding="utf-8") as f:
         json.dump(version_info, f, ensure_ascii=False, indent=2)
