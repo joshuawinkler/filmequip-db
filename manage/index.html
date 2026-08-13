@@ -1,0 +1,650 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="robots" content="noindex" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Filmequip DB – Structure Manager</title>
+<script src="https://unpkg.com/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+<style>
+  :root {
+    --bg: #0f1115;
+    --panel: #171a21;
+    --panel-2: #1e222b;
+    --border: #2a2f3a;
+    --text: #e7e9ee;
+    --text-dim: #9aa1b0;
+    --accent: #5b8cff;
+    --accent-dim: #2e3b5c;
+    --danger: #e5636b;
+    --ok: #4fbf7a;
+    --radius: 10px;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  header {
+    padding: 20px 28px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  header h1 { font-size: 16px; margin: 0; font-weight: 600; }
+  header .sub { color: var(--text-dim); font-size: 12px; margin-top: 2px; }
+  main { max-width: 880px; margin: 0 auto; padding: 28px; }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  .card h2 { font-size: 14px; margin: 0 0 4px; }
+  .card .desc { color: var(--text-dim); font-size: 12px; margin-bottom: 14px; }
+  button {
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: 7px;
+    padding: 8px 14px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  button.secondary {
+    background: var(--panel-2);
+    color: var(--text);
+    border: 1px solid var(--border);
+  }
+  button.ghost {
+    background: transparent;
+    color: var(--accent);
+    padding: 4px 6px;
+  }
+  button:disabled { opacity: 0.5; cursor: not-allowed; }
+  input, select, textarea {
+    background: var(--panel-2);
+    border: 1px solid var(--border);
+    color: var(--text);
+    border-radius: 6px;
+    padding: 7px 9px;
+    font-size: 13px;
+    width: 100%;
+    font-family: inherit;
+  }
+  label { display: block; font-size: 12px; color: var(--text-dim); margin-bottom: 4px; margin-top: 12px; }
+  label:first-child { margin-top: 0; }
+  .row { display: flex; gap: 12px; }
+  .row > * { flex: 1; }
+  .field-row {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .field-row:last-child { border-bottom: none; }
+  .field-row .name { font-weight: 500; }
+  .field-row .type { color: var(--text-dim); font-size: 12px; }
+  .tag {
+    display: inline-block;
+    background: var(--panel-2);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    padding: 2px 8px;
+    font-size: 11px;
+    margin: 2px 4px 2px 0;
+  }
+  .collection-block {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px;
+    margin-bottom: 14px;
+  }
+  .collection-block h3 { margin: 0 0 2px; font-size: 14px; }
+  .collection-block .meta { color: var(--text-dim); font-size: 12px; margin-bottom: 10px; }
+  .status { font-size: 12px; padding: 10px 12px; border-radius: 7px; margin-bottom: 16px; }
+  .status.ok { background: rgba(79,191,122,0.12); color: var(--ok); }
+  .status.err { background: rgba(229,99,107,0.12); color: var(--danger); }
+  .status.info { background: rgba(91,140,255,0.12); color: var(--accent); }
+  .add-field-form {
+    background: var(--panel-2);
+    border: 1px dashed var(--border);
+    border-radius: 8px;
+    padding: 12px;
+    margin-top: 10px;
+  }
+  .hidden { display: none; }
+  .center { text-align: center; padding: 60px 20px; }
+  .field-actions { margin-left: auto; display: flex; gap: 4px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <h1>Filmequip DB — Structure Manager</h1>
+    <div class="sub">Manage categories &amp; fields (separate from content editing at /admin/)</div>
+  </div>
+  <div id="authArea"></div>
+</header>
+
+<main>
+  <div id="loginScreen" class="center">
+    <p style="color:var(--text-dim); max-width:440px; margin:0 auto 18px;">
+      Sign in with GitHub to add or edit categories and fields.
+      Changes are committed directly to <code>main</code> — the API and
+      content editor rebuild automatically within about a minute.
+    </p>
+    <button onclick="login()">Login with GitHub</button>
+  </div>
+
+  <div id="app" class="hidden">
+    <div id="statusBox"></div>
+
+    <div class="card">
+      <h2>Existing categories</h2>
+      <div class="desc">Each category maps to a data folder, a JSON schema, and a form in /admin/.</div>
+      <div id="collectionsList"></div>
+    </div>
+
+    <div class="card">
+      <h2>Add a new category</h2>
+      <div class="desc">e.g. "Sound", "Grip" — creates the schema, data folder, and admin form together.</div>
+
+      <label>Category name (used internally, e.g. "sound")</label>
+      <input id="newCatSlug" placeholder="sound" />
+
+      <label>Display label (shown in the admin UI, e.g. "Sound")</label>
+      <input id="newCatLabel" placeholder="Sound" />
+
+      <label>Sub-category options (comma-separated, e.g. "Microphones, Recorders, Mixers")</label>
+      <input id="newCatOptions" placeholder="Microphones, Recorders, Mixers" />
+
+      <label>Extra fields</label>
+      <div id="newCatFields"></div>
+      <div class="add-field-form">
+        <div class="row">
+          <div>
+            <label>Field name</label>
+            <input id="ncf_name" placeholder="channel_count" />
+          </div>
+          <div>
+            <label>Label</label>
+            <input id="ncf_label" placeholder="Channel Count" />
+          </div>
+          <div>
+            <label>Type</label>
+            <select id="ncf_type">
+              <option value="string">Text (short)</option>
+              <option value="text">Text (long)</option>
+              <option value="number">Number</option>
+              <option value="boolean">Yes / No</option>
+              <option value="select">Choice (single)</option>
+              <option value="select_multi">Choice (multiple)</option>
+            </select>
+          </div>
+        </div>
+        <div id="ncf_optionsWrap" class="hidden">
+          <label>Choices (comma-separated)</label>
+          <input id="ncf_options" placeholder="XLR, TRS, TA3" />
+        </div>
+        <label style="display:flex; align-items:center; gap:6px; margin-top:10px;">
+          <input type="checkbox" id="ncf_required" style="width:auto;" /> Required field
+        </label>
+        <button class="secondary" style="margin-top:10px;" onclick="addFieldToBuilder()">+ Add field to list</button>
+      </div>
+
+      <button style="margin-top:16px;" onclick="createCollection()">Create category</button>
+    </div>
+  </div>
+</main>
+
+<script>
+const OWNER = "joshuawinkler";
+const REPO = "filmequip-db";
+const BRANCH = "main";
+const AUTH_BASE = "https://decap-proxy.joshuawinkler.workers.dev";
+const API = "https://api.github.com";
+
+let token = null;
+let state = { config: null, configSha: null, validatePy: null, buildPy: null };
+let builderFields = [];
+
+// ---------- Auth (Decap-compatible OAuth handshake) ----------
+function login() {
+  const popup = window.open(`${AUTH_BASE}/auth`, "gh-auth", "width=600,height=700");
+  function handleMessage(e) {
+    if (typeof e.data !== "string") return;
+    if (e.data === "authorizing:github") {
+      popup.postMessage("authorizing:github", "*");
+      return;
+    }
+    if (e.data.startsWith("authorization:github:success:")) {
+      const payload = JSON.parse(e.data.replace("authorization:github:success:", ""));
+      token = payload.token;
+      window.removeEventListener("message", handleMessage);
+      onLoggedIn();
+    } else if (e.data.startsWith("authorization:github:error:")) {
+      window.removeEventListener("message", handleMessage);
+      showStatus("err", "Login failed: " + e.data);
+    }
+  }
+  window.addEventListener("message", handleMessage);
+}
+
+async function onLoggedIn() {
+  document.getElementById("loginScreen").classList.add("hidden");
+  document.getElementById("app").classList.remove("hidden");
+  document.getElementById("authArea").innerHTML = '<span style="color:var(--ok); font-size:12px;">● Connected</span>';
+  await loadState();
+}
+
+function gh(path, opts = {}) {
+  return fetch(API + path, {
+    ...opts,
+    headers: {
+      "Authorization": "token " + token,
+      "Accept": "application/vnd.github+json",
+      ...(opts.headers || {}),
+    },
+  });
+}
+
+function utf8ToB64(str) {
+  return btoa(unescape(encodeURIComponent(str)));
+}
+function b64ToUtf8(str) {
+  return decodeURIComponent(escape(atob(str)));
+}
+
+// ---------- Load current project state ----------
+async function loadState() {
+  showStatus("info", "Loading current structure…");
+  try {
+    const configRes = await gh(`/repos/${OWNER}/${REPO}/contents/admin/config.yml?ref=${BRANCH}`);
+    const configJson = await configRes.json();
+    state.configSha = configJson.sha;
+    state.config = jsyaml.load(b64ToUtf8(configJson.content));
+
+    const validateRes = await gh(`/repos/${OWNER}/${REPO}/contents/scripts/validate.py?ref=${BRANCH}`);
+    const validateJson = await validateRes.json();
+    state.validatePy = b64ToUtf8(validateJson.content);
+    state.validatePySha = validateJson.sha;
+
+    const buildRes = await gh(`/repos/${OWNER}/${REPO}/contents/scripts/build.py?ref=${BRANCH}`);
+    const buildJson = await buildRes.json();
+    state.buildPy = b64ToUtf8(buildJson.content);
+    state.buildPySha = buildJson.sha;
+
+    renderCollections();
+    clearStatus();
+  } catch (err) {
+    showStatus("err", "Could not load repo contents: " + err.message);
+  }
+}
+
+function renderCollections() {
+  const el = document.getElementById("collectionsList");
+  el.innerHTML = "";
+  (state.config.collections || []).forEach((col) => {
+    const catField = (col.fields || []).find((f) => f.name === "category");
+    const extraFields = (col.fields || []).filter(
+      (f) => !["id", "category", "manufacturer", "model"].includes(f.name)
+    );
+
+    const block = document.createElement("div");
+    block.className = "collection-block";
+    block.innerHTML = `
+      <h3>${col.label}</h3>
+      <div class="meta">folder: ${col.folder}</div>
+      <div><strong>Sub-categories:</strong></div>
+      <div>${(catField?.options || []).map((o) => `<span class="tag">${o}</span>`).join("")}</div>
+      <div style="margin-top:10px;"><strong>Fields:</strong></div>
+      ${extraFields
+        .map(
+          (f) => `<div class="field-row"><span class="name">${f.label}</span><span class="type">${f.widget}${f.required ? "" : " · optional"}</span></div>`
+        )
+        .join("") || '<div class="field-row"><span class="type">No extra fields yet</span></div>'}
+      <div class="add-field-form">
+        <div class="row">
+          <div><label>New field name</label><input id="af_name_${col.name}" placeholder="e.g. channel_count" /></div>
+          <div><label>Label</label><input id="af_label_${col.name}" placeholder="e.g. Channel Count" /></div>
+          <div><label>Type</label>
+            <select id="af_type_${col.name}">
+              <option value="string">Text (short)</option>
+              <option value="text">Text (long)</option>
+              <option value="number">Number</option>
+              <option value="boolean">Yes / No</option>
+              <option value="select">Choice (single)</option>
+              <option value="select_multi">Choice (multiple)</option>
+            </select>
+          </div>
+        </div>
+        <label>Choices (only for Choice types, comma-separated)</label>
+        <input id="af_options_${col.name}" placeholder="XLR, TRS, TA3" />
+        <label style="display:flex; align-items:center; gap:6px;">
+          <input type="checkbox" id="af_required_${col.name}" style="width:auto;" /> Required field
+        </label>
+        <button class="secondary" style="margin-top:8px;" onclick="addFieldToExisting('${col.name}')">+ Add field to ${col.label}</button>
+      </div>
+      <div class="add-field-form">
+        <label>Add a new sub-category option</label>
+        <div class="row">
+          <input id="ao_${col.name}" placeholder="e.g. Wireless Systems" />
+          <button class="secondary" onclick="addSubcategory('${col.name}')" style="flex:0 0 auto;">+ Add</button>
+        </div>
+      </div>
+    `;
+    el.appendChild(block);
+  });
+}
+
+function showStatus(kind, msg) {
+  document.getElementById("statusBox").innerHTML = `<div class="status ${kind}">${msg}</div>`;
+}
+function clearStatus() {
+  document.getElementById("statusBox").innerHTML = "";
+}
+
+// ---------- Field builder for "new category" form ----------
+document.getElementById("ncf_type").addEventListener("change", (e) => {
+  const wrap = document.getElementById("ncf_optionsWrap");
+  wrap.classList.toggle("hidden", !["select", "select_multi"].includes(e.target.value));
+});
+
+function addFieldToBuilder() {
+  const name = document.getElementById("ncf_name").value.trim();
+  const label = document.getElementById("ncf_label").value.trim();
+  const type = document.getElementById("ncf_type").value;
+  const required = document.getElementById("ncf_required").checked;
+  const options = document.getElementById("ncf_options").value
+    .split(",").map((s) => s.trim()).filter(Boolean);
+
+  if (!name || !label) { showStatus("err", "Field name and label are required."); return; }
+
+  builderFields.push({ name, label, type, required, options });
+  document.getElementById("ncf_name").value = "";
+  document.getElementById("ncf_label").value = "";
+  document.getElementById("ncf_options").value = "";
+  document.getElementById("ncf_required").checked = false;
+  renderBuilderFields();
+}
+
+function renderBuilderFields() {
+  const el = document.getElementById("newCatFields");
+  el.innerHTML = builderFields
+    .map(
+      (f, i) =>
+        `<div class="field-row"><span class="name">${f.label}</span><span class="type">${f.type}${f.required ? " · required" : ""}</span><span class="field-actions"><button class="ghost" onclick="removeBuilderField(${i})">remove</button></span></div>`
+    )
+    .join("") || '<div style="color:var(--text-dim); font-size:12px;">No extra fields added yet.</div>';
+}
+function removeBuilderField(i) {
+  builderFields.splice(i, 1);
+  renderBuilderFields();
+}
+
+// ---------- Widget/schema field helpers ----------
+function fieldToConfigWidget(f) {
+  const base = { label: f.label, name: f.name, required: !!f.required };
+  if (f.type === "select") return { ...base, widget: "select", options: f.options };
+  if (f.type === "select_multi") return { ...base, widget: "select", options: f.options, multiple: true };
+  if (f.type === "number") return { ...base, widget: "number", value_type: "float" };
+  if (f.type === "boolean") return { ...base, widget: "boolean" };
+  if (f.type === "text") return { ...base, widget: "text" };
+  return { ...base, widget: "string" };
+}
+function fieldToSchemaProp(f) {
+  if (f.type === "select") return { type: "string", enum: f.options };
+  if (f.type === "select_multi") return { type: "array", items: { type: "string", enum: f.options } };
+  if (f.type === "number") return { type: "number" };
+  if (f.type === "boolean") return { type: "boolean" };
+  return { type: "string" };
+}
+
+// ---------- Python source patchers ----------
+function addToValidatePy(source, slug, schemaFile) {
+  if (source.includes(`"${slug}":`)) return source; // already present
+  return source.replace(
+    /(CATEGORY_SCHEMAS = \{\n)([\s\S]*?)(\n\})/,
+    (m, open, body, close) => `${open}${body}\n    "${slug}": "${schemaFile}",${close}`
+  );
+}
+function addToBuildPy(source, slug) {
+  const match = source.match(/CATEGORIES = \[([^\]]*)\]/);
+  if (!match) return source;
+  if (match[1].includes(`"${slug}"`)) return source; // already present
+  const items = match[1].split(",").map((s) => s.trim()).filter(Boolean);
+  items.push(`"${slug}"`);
+  return source.replace(/CATEGORIES = \[[^\]]*\]/, `CATEGORIES = [${items.join(", ")}]`);
+}
+
+// ---------- Atomic multi-file commit via Git Data API ----------
+async function commitFiles(filesMap, message) {
+  const refRes = await gh(`/repos/${OWNER}/${REPO}/git/ref/heads/${BRANCH}`);
+  const refJson = await refRes.json();
+  const baseSha = refJson.object.sha;
+
+  const commitRes = await gh(`/repos/${OWNER}/${REPO}/git/commits/${baseSha}`);
+  const commitJson = await commitRes.json();
+  const baseTreeSha = commitJson.tree.sha;
+
+  const treeEntries = [];
+  for (const [path, content] of Object.entries(filesMap)) {
+    const blobRes = await gh(`/repos/${OWNER}/${REPO}/git/blobs`, {
+      method: "POST",
+      body: JSON.stringify({ content: utf8ToB64(content), encoding: "base64" }),
+    });
+    const blobJson = await blobRes.json();
+    treeEntries.push({ path, mode: "100644", type: "blob", sha: blobJson.sha });
+  }
+
+  const treeRes = await gh(`/repos/${OWNER}/${REPO}/git/trees`, {
+    method: "POST",
+    body: JSON.stringify({ base_tree: baseTreeSha, tree: treeEntries }),
+  });
+  const treeJson = await treeRes.json();
+
+  const newCommitRes = await gh(`/repos/${OWNER}/${REPO}/git/commits`, {
+    method: "POST",
+    body: JSON.stringify({ message, tree: treeJson.sha, parents: [baseSha] }),
+  });
+  const newCommitJson = await newCommitRes.json();
+
+  await gh(`/repos/${OWNER}/${REPO}/git/refs/heads/${BRANCH}`, {
+    method: "PATCH",
+    body: JSON.stringify({ sha: newCommitJson.sha }),
+  });
+}
+
+// ---------- Actions ----------
+async function createCollection() {
+  const slug = document.getElementById("newCatSlug").value.trim().toLowerCase();
+  const label = document.getElementById("newCatLabel").value.trim();
+  const subOptions = document.getElementById("newCatOptions").value
+    .split(",").map((s) => s.trim()).filter(Boolean);
+
+  if (!slug || !label || subOptions.length === 0) {
+    showStatus("err", "Please fill in name, label, and at least one sub-category option.");
+    return;
+  }
+  if ((state.config.collections || []).some((c) => c.name === slug)) {
+    showStatus("err", `A category named "${slug}" already exists.`);
+    return;
+  }
+
+  showStatus("info", "Creating category — this can take a few seconds…");
+
+  const schemaFile = `${slug}.schema.json`;
+  const schema = {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": schemaFile,
+    "title": label,
+    "type": "object",
+    "required": ["id", "category", "manufacturer", "model", ...builderFields.filter((f) => f.required).map((f) => f.name)],
+    "properties": {
+      "id": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+      "category": { "type": "string", "enum": subOptions },
+      "manufacturer": { "type": "string" },
+      "model": { "type": "string" },
+      ...Object.fromEntries(builderFields.map((f) => [f.name, fieldToSchemaProp(f)])),
+      "notes": { "type": "string" },
+      "image_url": { "type": "string", "format": "uri" },
+      "source_url": { "type": "string", "format": "uri" },
+    },
+    "additionalProperties": false,
+  };
+
+  const newCollection = {
+    name: slug,
+    label: label,
+    folder: `data/${slug}`,
+    create: true,
+    slug: "{{id}}",
+    identifier_field: "id",
+    extension: "yaml",
+    format: "yaml",
+    fields: [
+      { label: "ID", name: "id", widget: "string", hint: `Format: manufacturer-model-slug, e.g. example-${slug}-1` },
+      { label: "Category", name: "category", widget: "select", options: subOptions },
+      { label: "Manufacturer", name: "manufacturer", widget: "string" },
+      { label: "Model", name: "model", widget: "string" },
+      ...builderFields.map(fieldToConfigWidget),
+      { label: "Notes", name: "notes", widget: "text", required: false },
+      { label: "Image URL", name: "image_url", widget: "string", required: false, hint: "Only freely licensed sources, e.g. Wikimedia Commons" },
+      { label: "Source / datasheet", name: "source_url", widget: "string" },
+    ],
+  };
+
+  const newConfig = { ...state.config, collections: [...state.config.collections, newCollection] };
+  const newConfigYaml = jsyaml.dump(newConfig, { lineWidth: -1 });
+
+  const newValidatePy = addToValidatePy(state.validatePy, slug, schemaFile);
+  const newBuildPy = addToBuildPy(state.buildPy, slug);
+
+  try {
+    await commitFiles(
+      {
+        [`data/schemas/${schemaFile}`]: JSON.stringify(schema, null, 2) + "\n",
+        "admin/config.yml": newConfigYaml,
+        "scripts/validate.py": newValidatePy,
+        "scripts/build.py": newBuildPy,
+      },
+      `Add category: ${label}`
+    );
+    showStatus("ok", `"${label}" created. The site rebuilds automatically in about a minute.`);
+    builderFields = [];
+    renderBuilderFields();
+    document.getElementById("newCatSlug").value = "";
+    document.getElementById("newCatLabel").value = "";
+    document.getElementById("newCatOptions").value = "";
+    await loadState();
+  } catch (err) {
+    showStatus("err", "Failed to create category: " + err.message);
+  }
+}
+
+async function addFieldToExisting(colName) {
+  const name = document.getElementById(`af_name_${colName}`).value.trim();
+  const label = document.getElementById(`af_label_${colName}`).value.trim();
+  const type = document.getElementById(`af_type_${colName}`).value;
+  const required = document.getElementById(`af_required_${colName}`).checked;
+  const options = document.getElementById(`af_options_${colName}`).value
+    .split(",").map((s) => s.trim()).filter(Boolean);
+
+  if (!name || !label) { showStatus("err", "Field name and label are required."); return; }
+
+  const field = { name, label, type, required, options };
+  const col = state.config.collections.find((c) => c.name === colName);
+  if (col.fields.some((f) => f.name === name)) {
+    showStatus("err", `Field "${name}" already exists on ${col.label}.`);
+    return;
+  }
+  col.fields.push(fieldToConfigWidget(field));
+
+  const newConfigYaml = jsyaml.dump(state.config, { lineWidth: -1 });
+
+  // Update matching schema file too
+  const schemaPath = `data/schemas/${colName === "cameras" ? "camera" : colName}.schema.json`;
+  let schemaContent, schemaSha;
+  try {
+    const res = await gh(`/repos/${OWNER}/${REPO}/contents/${schemaPath}?ref=${BRANCH}`);
+    const json = await res.json();
+    schemaContent = JSON.parse(b64ToUtf8(json.content));
+    schemaSha = json.sha;
+  } catch (err) {
+    showStatus("err", "Could not load schema file for this category: " + err.message);
+    return;
+  }
+  schemaContent.properties[name] = fieldToSchemaProp(field);
+  if (required) {
+    schemaContent.required = [...new Set([...(schemaContent.required || []), name])];
+  }
+
+  showStatus("info", "Adding field…");
+  try {
+    await commitFiles(
+      {
+        "admin/config.yml": newConfigYaml,
+        [schemaPath]: JSON.stringify(schemaContent, null, 2) + "\n",
+      },
+      `Add field "${label}" to ${col.label}`
+    );
+    showStatus("ok", `Field "${label}" added to ${col.label}.`);
+    await loadState();
+  } catch (err) {
+    showStatus("err", "Failed to add field: " + err.message);
+  }
+}
+
+async function addSubcategory(colName) {
+  const value = document.getElementById(`ao_${colName}`).value.trim();
+  if (!value) return;
+
+  const col = state.config.collections.find((c) => c.name === colName);
+  const catField = col.fields.find((f) => f.name === "category");
+  if (catField.options.includes(value)) {
+    showStatus("err", `"${value}" already exists.`);
+    return;
+  }
+  catField.options.push(value);
+  const newConfigYaml = jsyaml.dump(state.config, { lineWidth: -1 });
+
+  const schemaPath = `data/schemas/${colName === "cameras" ? "camera" : colName}.schema.json`;
+  let schemaContent;
+  try {
+    const res = await gh(`/repos/${OWNER}/${REPO}/contents/${schemaPath}?ref=${BRANCH}`);
+    const json = await res.json();
+    schemaContent = JSON.parse(b64ToUtf8(json.content));
+  } catch (err) {
+    showStatus("err", "Could not load schema file: " + err.message);
+    return;
+  }
+  schemaContent.properties.category.enum.push(value);
+
+  showStatus("info", "Adding sub-category…");
+  try {
+    await commitFiles(
+      {
+        "admin/config.yml": newConfigYaml,
+        [schemaPath]: JSON.stringify(schemaContent, null, 2) + "\n",
+      },
+      `Add sub-category "${value}" to ${col.label}`
+    );
+    showStatus("ok", `Sub-category "${value}" added.`);
+    await loadState();
+  } catch (err) {
+    showStatus("err", "Failed to add sub-category: " + err.message);
+  }
+}
+</script>
+</body>
+</html>

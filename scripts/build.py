@@ -25,6 +25,8 @@ SITE_DIR = ROOT / "site"          # full Pages deploy folder
 OUT_DIR = SITE_DIR / "v1"         # JSON API lives under /v1/...
 ADMIN_SRC = ROOT / "admin"        # Decap CMS source folder
 ADMIN_DEST = SITE_DIR / "admin"   # gets deployed to Pages as well
+MANAGE_SRC = ROOT / "manage"      # structure manager tool source folder
+MANAGE_DEST = SITE_DIR / "manage" # gets deployed to Pages as well
 
 CATEGORIES = ["cameras", "lighting"]
 
@@ -50,6 +52,10 @@ def main() -> int:
     if ADMIN_SRC.exists():
         shutil.copytree(ADMIN_SRC, ADMIN_DEST)
         print(f"→ {ADMIN_DEST.relative_to(ROOT)}: admin/ copied")
+
+    if MANAGE_SRC.exists():
+        shutil.copytree(MANAGE_SRC, MANAGE_DEST)
+        print(f"→ {MANAGE_DEST.relative_to(ROOT)}: manage/ copied")
 
     all_items = []
     for category in CATEGORIES:
