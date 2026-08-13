@@ -220,7 +220,7 @@ let builderFields = [];
 
 // ---------- Auth (Decap-compatible OAuth handshake) ----------
 function login() {
-  const popup = window.open(`${AUTH_BASE}/auth`, "gh-auth", "width=600,height=700");
+  const popup = window.open(`${AUTH_BASE}/auth?provider=github`, "gh-auth", "width=600,height=700");
   function handleMessage(e) {
     if (typeof e.data !== "string") return;
     if (e.data === "authorizing:github") {
