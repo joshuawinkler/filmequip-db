@@ -64,10 +64,15 @@ Git or YAML syntax. Behind the scenes it does exactly what a manual PR does:
 new branch, YAML file matching the schema, automatic pull request. CI
 validates and a maintainer reviews as usual.
 
-There's one collection per leaf category (generated from `data/categories.json`
-by `scripts/import_categories.py`) — use the sidebar search to find the right
-one. Each collection's form only shows the fields that actually apply to that
-category (its own fields plus everything inherited from parent categories).
+There's a separate Decap site per top-level root category — `/admin/camera/`,
+`/admin/grip/`, `/admin/lighting/`, `/admin/sound/`, `/admin/miscellaneous/`
+— linked from `/admin/index.html`. Within each site there's one collection
+per category node (both leaf categories and parent categories, so entries can
+be filed directly under a parent too, not just its leaves), all generated
+from `data/categories.json` by `scripts/import_categories.py` — use the
+sidebar search to find the right one. Each collection's form only shows the
+fields that actually apply to that category (its own fields plus everything
+inherited from parent categories).
 
 ### Setup (one-time)
 
@@ -81,8 +86,10 @@ category (its own fields plus everything inherited from parent categories).
 
    Both run as a Cloudflare Worker (free tier is enough); you just store
    `CLIENT_ID`/`CLIENT_SECRET` from step 1 as secrets there.
-3. In `admin/config.yml`, set `repo` to `your-name/your-repo` and `base_url`
-   to your deployed worker's URL.
+3. In each `admin/<root>/config.yml`, set `repo` to `your-name/your-repo` and
+   `base_url` to your deployed worker's URL (or re-run
+   `scripts/import_categories.py`, which templates these from constants at
+   the top of the script).
 4. Done — `/admin` is reachable at `https://<your-name>.github.io/<repo>/admin/`
 
 Contributors still need GitHub collaborator access to your repo for login to
