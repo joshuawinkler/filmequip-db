@@ -6,6 +6,7 @@ on:
     paths:
       - "data/**"
       - "admin/**"
+      - "manage/**"
       - "scripts/build.py"
   workflow_dispatch: {}
 
