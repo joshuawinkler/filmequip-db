@@ -215,7 +215,9 @@ def write_admin_config(
         ]
 
         name = "-".join(slug_by_id[cid] for cid in chain)
-        label = " › ".join(by_id[cid]["name"] for cid in chain)
+        label_parts = [by_id[cid]["name"] for cid in chain]
+        label_parts[0] = label_parts[0].upper()
+        label = " › ".join(label_parts)
         folder = folder_path_of(leaf["id"], by_id, slug_by_id)
         collections.append({
             "name": name,
