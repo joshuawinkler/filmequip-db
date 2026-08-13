@@ -231,9 +231,11 @@ function login() {
       const payload = JSON.parse(e.data.replace("authorization:github:success:", ""));
       token = payload.token;
       window.removeEventListener("message", handleMessage);
+      try { popup.close(); } catch (err) { /* ignore */ }
       onLoggedIn();
     } else if (e.data.startsWith("authorization:github:error:")) {
       window.removeEventListener("message", handleMessage);
+      try { popup.close(); } catch (err) { /* ignore */ }
       showStatus("err", "Login failed: " + e.data);
     }
   }
