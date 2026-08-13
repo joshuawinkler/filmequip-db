@@ -1,20 +1,25 @@
 #!/usr/bin/env python3
 """
-Validates all YAML records in /data/<root-category>/*.yaml.
+Validates all YAML records in /data/<root-category>/**/*.yaml.
 
-Each entry is checked against:
+A file's category is not a field in the document - it's implied by which
+folder it lives in, mirroring data/categories.json exactly (e.g. a file at
+data/camera/cameras/digital-cameras/sony-fx6.yaml belongs to the "Digital
+Cameras" category). Each entry is checked against:
+
 - the common base schema (data/schemas/base.schema.json)
 - the dynamic field schema(s) for its category, from
   data/schemas/fields/<category_id>.json - resolved by walking the entry's
-  `category` breadcrumb path against data/categories.json, then merging the
-  field schema of that leaf category with all of its ancestors' field
-  schemas (fields defined higher up the tree, e.g. on "Cameras", apply to
-  every category under it, e.g. "Digital Cameras")
+  folder path against data/categories.json, then merging the field schema of
+  that category with all of its ancestors' field schemas (fields defined
+  higher up the tree, e.g. on "Cameras", apply to every category under it,
+  e.g. "Digital Cameras")
 
 Also checks:
 - unique IDs across the whole database
 - that the ID in the filename matches the ID in the document
-- that `category` resolves to an actual leaf in data/categories.json
+- that the file's folder path resolves to an actual category in
+  data/categories.json
 """
 
 import json
@@ -42,17 +47,17 @@ def load_categories() -> tuple[dict, dict]:
     return by_id, children_by_parent
 
 
-def resolve_category_path(path: list[str], children_by_parent: dict) -> str | None:
-    """Walks a root->leaf breadcrumb of category names, returns the leaf id or None."""
+def resolve_folder_path(slugs: list[str], children_by_parent: dict) -> str | None:
+    """Walks a root->leaf breadcrumb of folder slugs, returns the matching category id or None."""
     parent_id = None
-    leaf_id = None
-    for name in path:
-        candidates = [n for n in children_by_parent.get(parent_id, []) if n["name"] == name]
+    category_id = None
+    for slug in slugs:
+        candidates = [n for n in children_by_parent.get(parent_id, []) if n["slug"] == slug]
         if not candidates:
             return None
-        leaf_id = candidates[0]["id"]
-        parent_id = leaf_id
-    return leaf_id
+        category_id = candidates[0]["id"]
+        parent_id = category_id
+    return category_id
 
 
 def ancestor_chain(category_id: str, by_id: dict) -> list[str]:
@@ -114,6 +119,10 @@ def build_schema_for_category(category_id: str | None, base_schema: dict, by_id:
     return schema
 
 
+def breadcrumb(category_id: str, by_id: dict) -> str:
+    return " > ".join(by_id[cid]["name"] for cid in reversed(ancestor_chain(category_id, by_id)))
+
+
 def main() -> int:
     errors = []
     seen_ids = {}
@@ -122,9 +131,22 @@ def main() -> int:
         base_schema = json.load(f)
 
     by_id, children_by_parent = load_categories()
+    root_slugs = {n["slug"] for n in by_id.values() if n["parent_id"] is None}
 
     for folder_path in sorted(p for p in DATA_DIR.iterdir() if p.is_dir() and p.name != "schemas"):
-        for yaml_path in sorted(folder_path.glob("*.yaml")):
+        if folder_path.name not in root_slugs:
+            errors.append(f"{folder_path}: not a known root category folder")
+            continue
+
+        for yaml_path in sorted(folder_path.rglob("*.yaml")):
+            folder_slugs = yaml_path.relative_to(DATA_DIR).parent.parts
+            category_id = resolve_folder_path(list(folder_slugs), children_by_parent)
+            if category_id is None:
+                errors.append(
+                    f"{yaml_path}: folder path {'/'.join(folder_slugs)} does not resolve to a "
+                    f"known category in data/categories.json"
+                )
+
             with open(yaml_path, "r", encoding="utf-8") as f:
                 try:
                     doc = yaml.safe_load(f)
@@ -135,22 +157,6 @@ def main() -> int:
             if doc is None:
                 errors.append(f"{yaml_path}: file is empty")
                 continue
-
-            category_str = doc.get("category")
-            category_id = None
-            if isinstance(category_str, str) and category_str:
-                category_path = [part.strip() for part in category_str.split(" > ")]
-                category_id = resolve_category_path(category_path, children_by_parent)
-                if category_id is None:
-                    errors.append(
-                        f"{yaml_path}: category path '{category_str}' does not resolve to a "
-                        f"known category in data/categories.json"
-                    )
-                elif category_path[0].lower().replace(" ", "-") != folder_path.name:
-                    errors.append(
-                        f"{yaml_path}: entry is in folder '{folder_path.name}' but its category "
-                        f"root is '{category_path[0]}'"
-                    )
 
             schema = build_schema_for_category(category_id, base_schema, by_id)
             try:

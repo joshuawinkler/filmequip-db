@@ -113,20 +113,31 @@ def load_field_schemas(csv_path: Path) -> dict[str, list[dict]]:
     return by_category
 
 
-def leaf_paths_under(root_id: str, children_by_parent: dict, by_id: dict) -> list[str]:
-    """All root->leaf breadcrumb paths (as ' > '-joined strings) under root_id, root included."""
-    paths = []
+def assign_slugs(nodes: list[dict]) -> dict[str, str]:
+    """Slug per node, unique among siblings (same parent_id) - not globally unique,
+    since folder nesting already disambiguates same-named categories under different parents."""
+    by_parent: dict = {}
+    for n in nodes:
+        by_parent.setdefault(n["parent_id"], []).append(n)
 
-    def walk(node_id: str, path: list[str]) -> None:
-        kids = sorted(children_by_parent.get(node_id, []), key=lambda n: n["sort_order"])
-        if not kids:
-            paths.append(" > ".join(path))
-            return
-        for k in kids:
-            walk(k["id"], path + [k["name"]])
+    slug_by_id: dict[str, str] = {}
+    for siblings in by_parent.values():
+        used: dict[str, int] = {}
+        for n in sorted(siblings, key=lambda n: n["sort_order"]):
+            base = slugify(n["name"])
+            count = used.get(base, 0) + 1
+            used[base] = count
+            slug_by_id[n["id"]] = base if count == 1 else f"{base}-{count}"
+    return slug_by_id
 
-    walk(root_id, [by_id[root_id]["name"]])
-    return paths
+
+def folder_path_of(category_id: str, by_id: dict, slug_by_id: dict) -> Path:
+    chain = []
+    current = category_id
+    while current:
+        chain.append(slug_by_id[current])
+        current = by_id[current]["parent_id"]
+    return Path(*reversed(chain))
 
 
 def ancestors_of(category_id: str, by_id: dict) -> list[str]:
@@ -163,32 +174,38 @@ def field_to_decap_widget(field: dict) -> dict:
     raise ValueError(f"Unknown field type: {t}")
 
 
-def write_admin_config(nodes: list[dict], field_schemas: dict[str, list[dict]], by_id: dict) -> None:
-    children_by_parent: dict = {}
-    for n in nodes:
-        children_by_parent.setdefault(n["parent_id"], []).append(n)
+def write_admin_config(
+    nodes: list[dict], field_schemas: dict[str, list[dict]], by_id: dict, slug_by_id: dict
+) -> None:
+    # Decap CMS's "nested collections" feature requires an index file at every
+    # folder level (each folder is itself an entry, sharing the collection's
+    # field schema) - that doesn't fit a pure category-taxonomy-of-folders
+    # model where folders hold nothing but equipment files. Instead: one plain
+    # folder collection per LEAF category, each scoped to its own folder with
+    # its own exact inherited+own field schema. No visual tree in the sidebar
+    # (Decap has no collection-grouping feature), but the sidebar's search box
+    # makes 100+ collections navigable, and forms only ever show fields that
+    # are actually relevant to that category - a strict improvement over one
+    # shared, all-fields-optional form per root.
+    has_children = {n["parent_id"] for n in nodes if n["parent_id"]}
+    leaves = [n for n in nodes if n["id"] not in has_children]
 
     collections = []
-    for root in sorted((n for n in nodes if n["parent_id"] is None), key=lambda n: n["sort_order"]):
-        leaf_paths = leaf_paths_under(root["id"], children_by_parent, by_id)
+    for leaf in sorted(leaves, key=lambda n: [by_id[a]["sort_order"] for a in reversed(ancestors_of(n["id"], by_id))]):
+        chain = list(reversed(ancestors_of(leaf["id"], by_id)))  # root -> leaf
 
-        # Union of fields defined anywhere in this root's subtree (Decap CMS has no
-        # conditional/per-category fields, so every entry form shows all of them,
-        # optionally, and contributors fill in what's relevant to their category).
-        extra_fields: dict[str, dict] = {}
-        for category_id, fields in field_schemas.items():
-            if root["id"] in ancestors_of(category_id, by_id):
-                for f in fields:
-                    extra_fields.setdefault(f["key"], f)
+        own_fields: dict[str, dict] = {}
+        for ancestor_id in chain:
+            for f in field_schemas.get(ancestor_id, []):
+                own_fields.setdefault(f["key"], f)
 
         fields = [
             {"label": "ID", "name": "id", "widget": "string",
              "hint": "Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf"},
-            {"label": "Category", "name": "category", "widget": "select", "options": leaf_paths},
             {"label": "Manufacturer", "name": "manufacturer", "widget": "string"},
             {"label": "Model", "name": "model", "widget": "string"},
         ]
-        for f in sorted(extra_fields.values(), key=lambda f: f["sort_order"]):
+        for f in sorted(own_fields.values(), key=lambda f: f["sort_order"]):
             fields.append(field_to_decap_widget(f))
         fields += [
             {"label": "Notes", "name": "notes", "widget": "text", "required": False},
@@ -197,11 +214,13 @@ def write_admin_config(nodes: list[dict], field_schemas: dict[str, list[dict]], 
             {"label": "Source / datasheet", "name": "source_url", "widget": "string", "required": False},
         ]
 
-        slug = slugify(root["name"])
+        name = "-".join(slug_by_id[cid] for cid in chain)
+        label = " › ".join(by_id[cid]["name"] for cid in chain)
+        folder = folder_path_of(leaf["id"], by_id, slug_by_id)
         collections.append({
-            "name": slug,
-            "label": root["name"],
-            "folder": f"data/{slug}",
+            "name": name,
+            "label": label,
+            "folder": f"data/{folder.as_posix()}",
             "create": True,
             "slug": "{{id}}",
             "identifier_field": "id",
@@ -215,7 +234,7 @@ def write_admin_config(nodes: list[dict], field_schemas: dict[str, list[dict]], 
     with open(ADMIN_CONFIG_PATH, "w", encoding="utf-8") as f:
         f.write(DECAP_HEADER)
         f.write(body)
-    print(f"→ admin/config.yml: {len(collections)} collections regenerated")
+    print(f"→ admin/config.yml: {len(collections)} per-leaf-category collections regenerated")
 
 
 def main() -> int:
@@ -233,6 +252,10 @@ def main() -> int:
             raise ValueError(f"Category '{n['name']}' ({n['id']}) has unknown parent_id {n['parent_id']}")
 
     nodes.sort(key=lambda n: (n["parent_id"] or "", n["sort_order"], n["name"]))
+
+    slug_by_id = assign_slugs(nodes)
+    for n in nodes:
+        n["slug"] = slug_by_id[n["id"]]
 
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     with open(DATA_DIR / "categories.json", "w", encoding="utf-8") as f:
@@ -260,16 +283,20 @@ def main() -> int:
             f.write("\n")
     print(f"→ data/schemas/fields/: {len(field_schemas)} category field-schema files")
 
-    write_admin_config(nodes, field_schemas, by_id)
+    write_admin_config(nodes, field_schemas, by_id, slug_by_id)
 
-    # Ensure a data folder exists for every root category (top-level, parent_id is null).
+    # Create the full nested folder tree (root -> every descendant), mirroring
+    # data/categories.json exactly, so entries can live at any category depth.
+    # Only leaf folders (no children) get a .gitkeep - git doesn't track empty
+    # directories, and intermediate folders are already implied by their
+    # descendants' files.
+    has_children = {n["parent_id"] for n in nodes if n["parent_id"]}
     for n in nodes:
-        if n["parent_id"] is None:
-            folder = DATA_DIR / slugify(n["name"])
-            folder.mkdir(parents=True, exist_ok=True)
-            gitkeep = folder / ".gitkeep"
-            if not any(folder.iterdir()):
-                gitkeep.touch()
+        folder = DATA_DIR / folder_path_of(n["id"], by_id, slug_by_id)
+        folder.mkdir(parents=True, exist_ok=True)
+        if n["id"] not in has_children:
+            (folder / ".gitkeep").touch()
+    print(f"→ data/<root>/...: nested folder tree created for {len(nodes)} categories")
     print("✅ Import complete.")
     return 0
 

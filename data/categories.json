@@ -3,1248 +3,1456 @@
     "id": "00000000-0000-0000-0000-000000000001",
     "name": "Camera",
     "parent_id": null,
-    "sort_order": 1
+    "sort_order": 1,
+    "slug": "camera"
   },
   {
     "id": "00000000-0000-0000-0000-000000000002",
     "name": "Grip",
     "parent_id": null,
-    "sort_order": 2
+    "sort_order": 2,
+    "slug": "grip"
   },
   {
     "id": "00000000-0000-0000-0000-000000000003",
     "name": "Lighting",
     "parent_id": null,
-    "sort_order": 3
+    "sort_order": 3,
+    "slug": "lighting"
   },
   {
     "id": "00000000-0000-0000-0000-000000000004",
     "name": "Sound",
     "parent_id": null,
-    "sort_order": 4
+    "sort_order": 4,
+    "slug": "sound"
   },
   {
     "id": "00000000-0000-0000-0000-000000000005",
     "name": "Miscellaneous",
     "parent_id": null,
-    "sort_order": 5
+    "sort_order": 5,
+    "slug": "miscellaneous"
   },
   {
     "id": "c4bee1fd-8cde-4b34-8410-acc2e279c68e",
     "name": "Cameras",
     "parent_id": "00000000-0000-0000-0000-000000000001",
-    "sort_order": 1
+    "sort_order": 1,
+    "slug": "cameras"
   },
   {
     "id": "8b351c99-73a4-45de-b0e8-5bb4ed9b5837",
     "name": "Lenses",
     "parent_id": "00000000-0000-0000-0000-000000000001",
-    "sort_order": 2
+    "sort_order": 2,
+    "slug": "lenses"
   },
   {
     "id": "f294f25d-ce5b-4ba0-8e03-c569e042775b",
     "name": "Filters",
     "parent_id": "00000000-0000-0000-0000-000000000001",
-    "sort_order": 3
+    "sort_order": 3,
+    "slug": "filters"
   },
   {
     "id": "0df6ee06-3b8d-426a-93cf-865a1069d20e",
     "name": "Optical Accessories",
     "parent_id": "00000000-0000-0000-0000-000000000001",
-    "sort_order": 4
+    "sort_order": 4,
+    "slug": "optical-accessories"
   },
   {
     "id": "e50d1e8a-f036-4dd6-a630-73f42e2e37e4",
     "name": "Matte Boxes",
     "parent_id": "00000000-0000-0000-0000-000000000001",
-    "sort_order": 5
+    "sort_order": 5,
+    "slug": "matte-boxes"
   },
   {
     "id": "da5ddd48-d7ab-44c3-8af6-4ba23922cf35",
     "name": "Follow Focus",
     "parent_id": "00000000-0000-0000-0000-000000000001",
-    "sort_order": 6
+    "sort_order": 6,
+    "slug": "follow-focus"
   },
   {
     "id": "35559a5e-8a82-4fb8-aa02-6395a612ee2e",
     "name": "Lens Control",
     "parent_id": "00000000-0000-0000-0000-000000000001",
-    "sort_order": 7
+    "sort_order": 7,
+    "slug": "lens-control"
   },
   {
     "id": "e875660e-42a7-47fe-a76d-42412ae875d6",
     "name": "Focus Assist",
     "parent_id": "00000000-0000-0000-0000-000000000001",
-    "sort_order": 8
+    "sort_order": 8,
+    "slug": "focus-assist"
   },
   {
     "id": "8babdcda-72f0-468c-9957-ceb331f90d31",
     "name": "Wireless Video",
     "parent_id": "00000000-0000-0000-0000-000000000001",
-    "sort_order": 9
+    "sort_order": 9,
+    "slug": "wireless-video"
   },
   {
     "id": "47f5feb5-02d1-4742-bf34-9cd3324cc1df",
     "name": "Monitors",
     "parent_id": "00000000-0000-0000-0000-000000000001",
-    "sort_order": 10
+    "sort_order": 10,
+    "slug": "monitors"
   },
   {
     "id": "2ae80607-868c-4f8d-89aa-c4589a4b009a",
     "name": "Video Recorders",
     "parent_id": "00000000-0000-0000-0000-000000000001",
-    "sort_order": 11
+    "sort_order": 11,
+    "slug": "video-recorders"
   },
   {
     "id": "67a57edd-3707-474e-82d3-acffe4674e37",
     "name": "Video Accessories",
     "parent_id": "00000000-0000-0000-0000-000000000001",
-    "sort_order": 12
+    "sort_order": 12,
+    "slug": "video-accessories"
   },
   {
     "id": "f5eb8ac4-f985-485a-a005-0ae2cfa3d2ba",
     "name": "Cables",
     "parent_id": "00000000-0000-0000-0000-000000000001",
-    "sort_order": 13
+    "sort_order": 13,
+    "slug": "cables"
   },
   {
     "id": "c998cb13-1f0b-4d90-8d1b-117db724b93f",
     "name": "Power",
     "parent_id": "00000000-0000-0000-0000-000000000001",
-    "sort_order": 14
+    "sort_order": 14,
+    "slug": "power"
   },
   {
     "id": "0f3ccf13-2233-4a22-8a49-d84e54fd78b3",
     "name": "Data",
     "parent_id": "00000000-0000-0000-0000-000000000001",
-    "sort_order": 15
+    "sort_order": 15,
+    "slug": "data"
   },
   {
     "id": "dcfeacb6-ab64-450c-95f5-7be2153f087a",
     "name": "Carts",
     "parent_id": "00000000-0000-0000-0000-000000000001",
-    "sort_order": 16
+    "sort_order": 16,
+    "slug": "carts"
   },
   {
     "id": "d5dc9e94-3a5d-41f5-802c-dbda95cb89d2",
     "name": "Miscellaneous Accessories",
     "parent_id": "00000000-0000-0000-0000-000000000001",
-    "sort_order": 17
+    "sort_order": 17,
+    "slug": "miscellaneous-accessories"
   },
   {
     "id": "61366da8-a122-4077-a0db-cd485dc66707",
     "name": "Heads",
     "parent_id": "00000000-0000-0000-0000-000000000002",
-    "sort_order": 1
+    "sort_order": 1,
+    "slug": "heads"
   },
   {
     "id": "04c55edd-a24a-4609-8432-93071816f455",
     "name": "Tripods",
     "parent_id": "00000000-0000-0000-0000-000000000002",
-    "sort_order": 2
+    "sort_order": 2,
+    "slug": "tripods"
   },
   {
     "id": "8e38a1ed-582e-4362-875f-51d7c5600600",
     "name": "Dollys",
     "parent_id": "00000000-0000-0000-0000-000000000002",
-    "sort_order": 3
+    "sort_order": 3,
+    "slug": "dollys"
   },
   {
     "id": "2aa83675-79b4-42d3-81b5-3d5fd4a60035",
     "name": "Slider",
     "parent_id": "00000000-0000-0000-0000-000000000002",
-    "sort_order": 4
+    "sort_order": 4,
+    "slug": "slider"
   },
   {
     "id": "7990f186-351e-4b56-95d7-0c974cdd27cd",
     "name": "Jibs",
     "parent_id": "00000000-0000-0000-0000-000000000002",
-    "sort_order": 5
+    "sort_order": 5,
+    "slug": "jibs"
   },
   {
     "id": "170d8775-ae86-4a9a-bd2b-2331e40d59ac",
     "name": "Cranes",
     "parent_id": "00000000-0000-0000-0000-000000000002",
-    "sort_order": 6
+    "sort_order": 6,
+    "slug": "cranes"
   },
   {
     "id": "8b09db25-693a-4ba2-84c1-d63b4d089522",
     "name": "Gimbal",
     "parent_id": "00000000-0000-0000-0000-000000000002",
-    "sort_order": 7
+    "sort_order": 7,
+    "slug": "gimbal"
   },
   {
     "id": "4162afce-984d-49b1-94c4-b59b541de858",
     "name": "Camera Support",
     "parent_id": "00000000-0000-0000-0000-000000000002",
-    "sort_order": 8
+    "sort_order": 8,
+    "slug": "camera-support"
   },
   {
     "id": "67aa9552-03ef-4edd-a254-a9c97c366730",
     "name": "Rigging",
     "parent_id": "00000000-0000-0000-0000-000000000002",
-    "sort_order": 8
+    "sort_order": 8,
+    "slug": "rigging"
   },
   {
     "id": "3a980671-c1d5-4908-864d-c9a9f522bdda",
     "name": "Lamps",
     "parent_id": "00000000-0000-0000-0000-000000000003",
-    "sort_order": 1
+    "sort_order": 1,
+    "slug": "lamps"
   },
   {
     "id": "f81e44f9-702b-4d3f-a459-e9580252f567",
     "name": "Lamp Accessories",
     "parent_id": "00000000-0000-0000-0000-000000000003",
-    "sort_order": 2
+    "sort_order": 2,
+    "slug": "lamp-accessories"
   },
   {
     "id": "22286136-8a46-4d1f-83a7-cb086ffb08e5",
     "name": "Stands",
     "parent_id": "00000000-0000-0000-0000-000000000003",
-    "sort_order": 3
+    "sort_order": 3,
+    "slug": "stands"
   },
   {
     "id": "c414efa8-ca8f-49fd-9b15-a5a062bc4d02",
     "name": "Lighting Grip",
     "parent_id": "00000000-0000-0000-0000-000000000003",
-    "sort_order": 4
+    "sort_order": 4,
+    "slug": "lighting-grip"
   },
   {
     "id": "60c7ceab-9954-4109-abdb-1f9b92a4c9a2",
     "name": "Frames & Textiles",
     "parent_id": "00000000-0000-0000-0000-000000000003",
-    "sort_order": 5
+    "sort_order": 5,
+    "slug": "frames-textiles"
   },
   {
     "id": "430c4551-77b4-4706-bdba-a7ec838a65cd",
     "name": "Flags & Nets",
     "parent_id": "00000000-0000-0000-0000-000000000003",
-    "sort_order": 6
+    "sort_order": 6,
+    "slug": "flags-nets"
   },
   {
     "id": "9ad775d1-6b89-4b59-93e2-64a60b53847c",
     "name": "Control",
     "parent_id": "00000000-0000-0000-0000-000000000003",
-    "sort_order": 7
+    "sort_order": 7,
+    "slug": "control"
   },
   {
     "id": "a037c811-6fb1-4e3a-b1e7-fa08650ed96d",
     "name": "Mirrors & Reflectors",
     "parent_id": "00000000-0000-0000-0000-000000000003",
-    "sort_order": 8
+    "sort_order": 8,
+    "slug": "mirrors-reflectors"
   },
   {
     "id": "175bc97d-b0bb-49cc-82da-28894d447c44",
     "name": "Effects",
     "parent_id": "00000000-0000-0000-0000-000000000003",
-    "sort_order": 9
+    "sort_order": 9,
+    "slug": "effects"
   },
   {
     "id": "3d8cb9e6-f018-47d7-847e-b3e4f1e5d487",
     "name": "Power",
     "parent_id": "00000000-0000-0000-0000-000000000003",
-    "sort_order": 10
+    "sort_order": 10,
+    "slug": "power"
   },
   {
     "id": "6c3fe9db-71b9-4f48-89db-fee94f14487a",
     "name": "Light & Color Meters",
     "parent_id": "00000000-0000-0000-0000-000000000003",
-    "sort_order": 11
+    "sort_order": 11,
+    "slug": "light-color-meters"
   },
   {
     "id": "667c62df-24b6-4065-8f96-2352b4a30bbc",
     "name": "Safety",
     "parent_id": "00000000-0000-0000-0000-000000000003",
-    "sort_order": 12
+    "sort_order": 12,
+    "slug": "safety"
   },
   {
     "id": "e9458df5-91f8-4008-8ff6-03338758ff7c",
     "name": "Audio Recorders",
     "parent_id": "00000000-0000-0000-0000-000000000004",
-    "sort_order": 1
+    "sort_order": 1,
+    "slug": "audio-recorders"
   },
   {
     "id": "00c36915-9a9f-4235-a9fd-d20c2d84d6f6",
     "name": "Power",
     "parent_id": "00000000-0000-0000-0000-000000000004",
-    "sort_order": 2
+    "sort_order": 2,
+    "slug": "power"
   },
   {
     "id": "6de4fece-7900-459e-9171-3fef12c904d4",
     "name": "Boom Poles",
     "parent_id": "00000000-0000-0000-0000-000000000004",
-    "sort_order": 3
+    "sort_order": 3,
+    "slug": "boom-poles"
   },
   {
     "id": "8032c3c7-860f-41b3-b539-4659a4595afb",
     "name": "Cables & Adaptors",
     "parent_id": "00000000-0000-0000-0000-000000000004",
-    "sort_order": 4
+    "sort_order": 4,
+    "slug": "cables-adaptors"
   },
   {
     "id": "944b9656-17cd-42cd-990e-1c7f0b4c5201",
     "name": "Headphones & Monitors",
     "parent_id": "00000000-0000-0000-0000-000000000004",
-    "sort_order": 5
+    "sort_order": 5,
+    "slug": "headphones-monitors"
   },
   {
     "id": "4693fff2-9f92-437d-a924-c1741352bf8e",
     "name": "Microphones",
     "parent_id": "00000000-0000-0000-0000-000000000004",
-    "sort_order": 6
+    "sort_order": 6,
+    "slug": "microphones"
   },
   {
     "id": "e233703d-2bbf-4ef9-9625-80c54a7da0e8",
     "name": "Consumables",
     "parent_id": "00000000-0000-0000-0000-000000000004",
-    "sort_order": 7
+    "sort_order": 7,
+    "slug": "consumables"
   },
   {
     "id": "79b61a08-f1c0-4a77-9cc9-03144bf441e9",
     "name": "Communication",
     "parent_id": "00000000-0000-0000-0000-000000000004",
-    "sort_order": 8
+    "sort_order": 8,
+    "slug": "communication"
   },
   {
     "id": "4bc9b21e-cde1-4b84-9b24-b380c0943cf9",
     "name": "Mounting & Grip",
     "parent_id": "00000000-0000-0000-0000-000000000004",
-    "sort_order": 9
+    "sort_order": 9,
+    "slug": "mounting-grip"
   },
   {
     "id": "595aa88c-8121-41ac-a5cc-ac3cb48655af",
     "name": "Mixers, Controllers & Interfaces",
     "parent_id": "00000000-0000-0000-0000-000000000004",
-    "sort_order": 10
+    "sort_order": 10,
+    "slug": "mixers-controllers-interfaces"
   },
   {
     "id": "b5ea2d72-27f8-4c54-98fc-e9f883e14a48",
     "name": "Wind Protection",
     "parent_id": "00000000-0000-0000-0000-000000000004",
-    "sort_order": 11
+    "sort_order": 11,
+    "slug": "wind-protection"
   },
   {
     "id": "89e7b6ce-528f-4e9d-8d2b-147d4d328b23",
     "name": "Wireless Systems & RF",
     "parent_id": "00000000-0000-0000-0000-000000000004",
-    "sort_order": 12
+    "sort_order": 12,
+    "slug": "wireless-systems-rf"
   },
   {
     "id": "8ee18544-5c1c-4a3c-9a1a-d9229ce3549b",
     "name": "Shock Mounts & Suspensions",
     "parent_id": "00000000-0000-0000-0000-000000000004",
-    "sort_order": 13
+    "sort_order": 13,
+    "slug": "shock-mounts-suspensions"
   },
   {
     "id": "da2d11e3-7057-4423-9fa3-be8612aae09c",
     "name": "Slates & Timecode",
     "parent_id": "00000000-0000-0000-0000-000000000004",
-    "sort_order": 14
+    "sort_order": 14,
+    "slug": "slates-timecode"
   },
   {
     "id": "78bf1ce8-b271-4b97-95fb-3fe29424f5c1",
     "name": "Carts",
     "parent_id": "00000000-0000-0000-0000-000000000004",
-    "sort_order": 15
+    "sort_order": 15,
+    "slug": "carts"
   },
   {
     "id": "affaca57-bafc-47b4-b34f-cb393d5f9e96",
     "name": "Lav Accessories",
     "parent_id": "00000000-0000-0000-0000-000000000004",
-    "sort_order": 16
+    "sort_order": 16,
+    "slug": "lav-accessories"
   },
   {
     "id": "11571365-e1c7-47d9-b3a0-6216704c16e4",
     "name": "Transport & Cases",
     "parent_id": "00000000-0000-0000-0000-000000000005",
-    "sort_order": 1
+    "sort_order": 1,
+    "slug": "transport-cases"
   },
   {
     "id": "3f166e46-2e11-4564-8773-2cddee4cda65",
     "name": "Communication",
     "parent_id": "00000000-0000-0000-0000-000000000005",
-    "sort_order": 2
+    "sort_order": 2,
+    "slug": "communication"
   },
   {
     "id": "ce02b9ae-19f3-4890-9a47-e5dc879c6994",
     "name": "Vehicles",
     "parent_id": "00000000-0000-0000-0000-000000000005",
-    "sort_order": 3
+    "sort_order": 3,
+    "slug": "vehicles"
   },
   {
     "id": "a5d21109-1a1a-44f8-8f3d-12c6268cf553",
     "name": "Production Gear",
     "parent_id": "00000000-0000-0000-0000-000000000005",
-    "sort_order": 4
+    "sort_order": 4,
+    "slug": "production-gear"
   },
   {
     "id": "efe82c32-7020-45a3-b726-ecb6b5f8a8f0",
     "name": "Consumables",
     "parent_id": "00000000-0000-0000-0000-000000000005",
-    "sort_order": 5
+    "sort_order": 5,
+    "slug": "consumables"
   },
   {
     "id": "9b6a7198-2403-4451-bffb-663ced98d97d",
     "name": "Batteries",
     "parent_id": "00c36915-9a9f-4235-a9fd-d20c2d84d6f6",
-    "sort_order": 1
+    "sort_order": 1,
+    "slug": "batteries"
   },
   {
     "id": "8d61f9c1-3ce6-46b5-acf8-d7d6542a4a23",
     "name": "Chargers",
     "parent_id": "00c36915-9a9f-4235-a9fd-d20c2d84d6f6",
-    "sort_order": 2
+    "sort_order": 2,
+    "slug": "chargers"
   },
   {
     "id": "5f00622d-cb5f-4a97-bd68-f212563dfe78",
     "name": "Power Supplies",
     "parent_id": "00c36915-9a9f-4235-a9fd-d20c2d84d6f6",
-    "sort_order": 3
+    "sort_order": 3,
+    "slug": "power-supplies"
   },
   {
     "id": "9d788df4-01ff-4515-ad55-059f0837518d",
     "name": "Extenders",
     "parent_id": "0df6ee06-3b8d-426a-93cf-865a1069d20e",
-    "sort_order": 1
+    "sort_order": 1,
+    "slug": "extenders"
   },
   {
     "id": "e8905c5d-9764-4cfa-9a95-4bea317a22e0",
     "name": "Mount Adapters",
     "parent_id": "0df6ee06-3b8d-426a-93cf-865a1069d20e",
-    "sort_order": 2
+    "sort_order": 2,
+    "slug": "mount-adapters"
   },
   {
     "id": "db408993-c321-4eb9-b847-c663ac85b020",
     "name": "Other Optical Adapters",
     "parent_id": "0df6ee06-3b8d-426a-93cf-865a1069d20e",
-    "sort_order": 3
+    "sort_order": 3,
+    "slug": "other-optical-adapters"
   },
   {
     "id": "396a44c9-c456-4dde-898e-d9d16bc888f2",
     "name": "Media Cards",
     "parent_id": "0f3ccf13-2233-4a22-8a49-d84e54fd78b3",
-    "sort_order": 1
+    "sort_order": 1,
+    "slug": "media-cards"
   },
   {
     "id": "1037c0e4-8d3c-4da8-a9f8-d2411697f407",
     "name": "Card Reader",
     "parent_id": "0f3ccf13-2233-4a22-8a49-d84e54fd78b3",
-    "sort_order": 2
+    "sort_order": 2,
+    "slug": "card-reader"
   },
   {
     "id": "f978d891-1efd-494e-abdc-2b074b8bba8e",
     "name": "Computers",
     "parent_id": "0f3ccf13-2233-4a22-8a49-d84e54fd78b3",
-    "sort_order": 3
+    "sort_order": 3,
+    "slug": "computers"
   },
   {
     "id": "af3f4d3c-c3c8-4795-943b-cb03ca0344a3",
     "name": "Carts",
     "parent_id": "11571365-e1c7-47d9-b3a0-6216704c16e4",
-    "sort_order": 0
+    "sort_order": 0,
+    "slug": "carts"
   },
   {
     "id": "34d38ae6-ad2c-4081-bb13-2f9ace8c68d4",
     "name": "Panels",
     "parent_id": "15be57b4-0942-4861-9ee7-24a2b80e4715",
-    "sort_order": 1
+    "sort_order": 1,
+    "slug": "panels"
   },
   {
     "id": "bf35792e-0bb2-422c-b397-b87573cd76f1",
     "name": "Compact",
     "parent_id": "15be57b4-0942-4861-9ee7-24a2b80e4715",
-    "sort_order": 2
+    "sort_order": 2,
+    "slug": "compact"
   },
   {
     "id": "75379fa9-1508-4548-9190-b172b7b88b84",
     "name": "Point-Source & COB",
     "parent_id": "15be57b4-0942-4861-9ee7-24a2b80e4715",
-    "sort_order": 3
+    "sort_order": 3,
+    "slug": "point-source-cob"
   },
   {
     "id": "68d7afa2-8fb1-467d-8108-6fa1edd50bfd",
     "name": "PAR",
     "parent_id": "15be57b4-0942-4861-9ee7-24a2b80e4715",
-    "sort_order": 4
+    "sort_order": 4,
+    "slug": "par"
   },
   {
     "id": "427cb6d7-86be-4a05-97dc-363a94c02e67",
     "name": "Tubes",
     "parent_id": "15be57b4-0942-4861-9ee7-24a2b80e4715",
-    "sort_order": 5
+    "sort_order": 5,
+    "slug": "tubes"
   },
   {
     "id": "f2b6c78c-03d3-407a-8607-37fb1cb43220",
     "name": "Smoke & Haze",
     "parent_id": "175bc97d-b0bb-49cc-82da-28894d447c44",
-    "sort_order": 1
+    "sort_order": 1,
+    "slug": "smoke-haze"
   },
   {
     "id": "2a50e7fd-4f4e-4c1c-9854-dfc152232737",
     "name": "Wind",
     "parent_id": "175bc97d-b0bb-49cc-82da-28894d447c44",
-    "sort_order": 2
+    "sort_order": 2,
+    "slug": "wind"
   },
   {
     "id": "fe88c602-71bb-4898-b231-1b48868c5759",
     "name": "Booms",
     "parent_id": "22286136-8a46-4d1f-83a7-cb086ffb08e5",
-    "sort_order": 1
+    "sort_order": 1,
+    "slug": "booms"
   },
   {
     "id": "79cf2ac5-12c0-4c9f-adcd-de83bcf32786",
     "name": "Mini Stands",
     "parent_id": "22286136-8a46-4d1f-83a7-cb086ffb08e5",
-    "sort_order": 2
+    "sort_order": 2,
+    "slug": "mini-stands"
   },
   {
     "id": "6f861abc-5368-49bd-b9a9-1915f7365358",
     "name": "C-Stands",
     "parent_id": "22286136-8a46-4d1f-83a7-cb086ffb08e5",
-    "sort_order": 3
+    "sort_order": 3,
+    "slug": "c-stands"
   },
   {
     "id": "d013842c-46c5-434e-98c1-53833326f74d",
     "name": "Lightweight Stands",
     "parent_id": "22286136-8a46-4d1f-83a7-cb086ffb08e5",
-    "sort_order": 4
+    "sort_order": 4,
+    "slug": "lightweight-stands"
   },
   {
     "id": "dcffd13f-d92a-4c93-bce1-1501291b3c73",
     "name": "Combo Stands",
     "parent_id": "22286136-8a46-4d1f-83a7-cb086ffb08e5",
-    "sort_order": 5
+    "sort_order": 5,
+    "slug": "combo-stands"
   },
   {
     "id": "63301525-b693-42a3-97fc-a7b3c66446e5",
     "name": "Overhead & Roller Stands",
     "parent_id": "22286136-8a46-4d1f-83a7-cb086ffb08e5",
-    "sort_order": 6
+    "sort_order": 6,
+    "slug": "overhead-roller-stands"
   },
   {
     "id": "0f7419e3-49c5-4886-9d7e-4c5ed4a3d841",
     "name": "Wind-Up Stands",
     "parent_id": "22286136-8a46-4d1f-83a7-cb086ffb08e5",
-    "sort_order": 7
+    "sort_order": 7,
+    "slug": "wind-up-stands"
   },
   {
     "id": "abea5998-5647-48c8-a9af-c840a4fa9d29",
     "name": "Heavy Duty Stands",
     "parent_id": "22286136-8a46-4d1f-83a7-cb086ffb08e5",
-    "sort_order": 8
+    "sort_order": 8,
+    "slug": "heavy-duty-stands"
   },
   {
     "id": "08569c92-ec4f-478b-a826-ae973c499a5a",
     "name": "Accessories",
     "parent_id": "22286136-8a46-4d1f-83a7-cb086ffb08e5",
-    "sort_order": 9
+    "sort_order": 9,
+    "slug": "accessories"
   },
   {
     "id": "2c6bb03c-f7ba-45a1-8fa1-0e75a2ec609a",
     "name": "Hand Units",
     "parent_id": "35559a5e-8a82-4fb8-aa02-6395a612ee2e",
-    "sort_order": 1
+    "sort_order": 1,
+    "slug": "hand-units"
   },
   {
     "id": "e814da21-c113-4712-af1d-54a4520b4df5",
     "name": "Motors",
     "parent_id": "35559a5e-8a82-4fb8-aa02-6395a612ee2e",
-    "sort_order": 2
+    "sort_order": 2,
+    "slug": "motors"
   },
   {
     "id": "aa7b89ed-e5d2-487a-8b25-44b14e3e1cef",
     "name": "Controllers",
     "parent_id": "35559a5e-8a82-4fb8-aa02-6395a612ee2e",
-    "sort_order": 3
+    "sort_order": 3,
+    "slug": "controllers"
   },
   {
     "id": "24ccd1db-e005-424a-bc70-00248fc81994",
     "name": "Lens Control Accessories",
     "parent_id": "35559a5e-8a82-4fb8-aa02-6395a612ee2e",
-    "sort_order": 4
+    "sort_order": 4,
+    "slug": "lens-control-accessories"
   },
   {
     "id": "15be57b4-0942-4861-9ee7-24a2b80e4715",
     "name": "LED",
     "parent_id": "3a980671-c1d5-4908-864d-c9a9f522bdda",
-    "sort_order": 1
+    "sort_order": 1,
+    "slug": "led"
   },
   {
     "id": "412d0da3-7200-4ea6-90c8-542a84fe810b",
     "name": "HMI",
     "parent_id": "3a980671-c1d5-4908-864d-c9a9f522bdda",
-    "sort_order": 2
+    "sort_order": 2,
+    "slug": "hmi"
   },
   {
     "id": "a7172955-9f6f-4440-b1ee-7a460aad3858",
     "name": "Tungsten",
     "parent_id": "3a980671-c1d5-4908-864d-c9a9f522bdda",
-    "sort_order": 3
+    "sort_order": 3,
+    "slug": "tungsten"
   },
   {
     "id": "7340f6e4-6731-458a-8fd1-d5340b1bd7ef",
     "name": "Fluorescent",
     "parent_id": "3a980671-c1d5-4908-864d-c9a9f522bdda",
-    "sort_order": 4
+    "sort_order": 4,
+    "slug": "fluorescent"
   },
   {
     "id": "ae1a8972-3b5f-445f-8662-095e0b648b6f",
     "name": "Moving Lights & Effects",
     "parent_id": "3a980671-c1d5-4908-864d-c9a9f522bdda",
-    "sort_order": 5
+    "sort_order": 5,
+    "slug": "moving-lights-effects"
   },
   {
     "id": "27357344-8d10-43d9-abd8-bad96a88849a",
     "name": "Underwater Lighting",
     "parent_id": "3a980671-c1d5-4908-864d-c9a9f522bdda",
-    "sort_order": 6
+    "sort_order": 6,
+    "slug": "underwater-lighting"
   },
   {
     "id": "3712ced5-8376-40a9-a0a0-ca806926ec36",
     "name": "Outdoor Systems",
     "parent_id": "3a980671-c1d5-4908-864d-c9a9f522bdda",
-    "sort_order": 7
+    "sort_order": 7,
+    "slug": "outdoor-systems"
   },
   {
     "id": "486f207a-2e36-42a4-bfa6-4bf7d3bab3b2",
     "name": "Balloons",
     "parent_id": "3a980671-c1d5-4908-864d-c9a9f522bdda",
-    "sort_order": 8
+    "sort_order": 8,
+    "slug": "balloons"
   },
   {
     "id": "d450128c-1ca5-4ee1-bd12-cf70a4ef2f02",
     "name": "Single-Phase",
     "parent_id": "3d8cb9e6-f018-47d7-847e-b3e4f1e5d487",
-    "sort_order": 1
+    "sort_order": 1,
+    "slug": "single-phase"
   },
   {
     "id": "c45dbbfb-45cc-481e-9e22-8abdee65b119",
     "name": "Three-Phase",
     "parent_id": "3d8cb9e6-f018-47d7-847e-b3e4f1e5d487",
-    "sort_order": 2
+    "sort_order": 2,
+    "slug": "three-phase"
   },
   {
     "id": "1d2a389e-21aa-4add-ae52-f6755044c441",
     "name": "Earthing",
     "parent_id": "3d8cb9e6-f018-47d7-847e-b3e4f1e5d487",
-    "sort_order": 3
+    "sort_order": 3,
+    "slug": "earthing"
   },
   {
     "id": "668701e0-e878-404b-b7c4-72270dbd8de3",
     "name": "Batteries & Chargers",
     "parent_id": "3d8cb9e6-f018-47d7-847e-b3e4f1e5d487",
-    "sort_order": 4
+    "sort_order": 4,
+    "slug": "batteries-chargers"
   },
   {
     "id": "a22904c0-460c-44f5-9c7b-c1f8ea6a96e5",
     "name": "Intercoms",
     "parent_id": "3f166e46-2e11-4564-8773-2cddee4cda65",
-    "sort_order": 0
+    "sort_order": 0,
+    "slug": "intercoms"
   },
   {
     "id": "71fb937b-d460-448f-8494-13622f17508b",
     "name": "Radios",
     "parent_id": "3f166e46-2e11-4564-8773-2cddee4cda65",
-    "sort_order": 1
+    "sort_order": 1,
+    "slug": "radios"
   },
   {
     "id": "9e9e9cf9-80ce-4624-8357-961c321cab7d",
     "name": "Kits",
     "parent_id": "430c4551-77b4-4706-bdba-a7ec838a65cd",
-    "sort_order": 1
+    "sort_order": 1,
+    "slug": "kits"
   },
   {
     "id": "4952e332-31ea-4157-ad1a-02c987adc622",
     "name": "Flags",
     "parent_id": "430c4551-77b4-4706-bdba-a7ec838a65cd",
-    "sort_order": 2
+    "sort_order": 2,
+    "slug": "flags"
   },
   {
     "id": "a41d7429-8a76-43a6-8c9e-31625c1df06e",
     "name": "Floppies",
     "parent_id": "430c4551-77b4-4706-bdba-a7ec838a65cd",
-    "sort_order": 3
+    "sort_order": 3,
+    "slug": "floppies"
   },
   {
     "id": "bf93ae3c-d1cb-4135-a250-7d4254b6b1bc",
     "name": "Wag Flags",
     "parent_id": "430c4551-77b4-4706-bdba-a7ec838a65cd",
-    "sort_order": 4
+    "sort_order": 4,
+    "slug": "wag-flags"
   },
   {
     "id": "d4813133-041a-426c-b64a-89b4694d7a33",
     "name": "Meat Axe Flags",
     "parent_id": "430c4551-77b4-4706-bdba-a7ec838a65cd",
-    "sort_order": 5
+    "sort_order": 5,
+    "slug": "meat-axe-flags"
   },
   {
     "id": "3e5fbc1a-ba34-442f-bf67-762137c743a8",
     "name": "Cutters",
     "parent_id": "430c4551-77b4-4706-bdba-a7ec838a65cd",
-    "sort_order": 6
+    "sort_order": 6,
+    "slug": "cutters"
   },
   {
     "id": "7e2e24a1-4798-4c02-8d0c-ba2210ce4338",
     "name": "Ultrabounce",
     "parent_id": "430c4551-77b4-4706-bdba-a7ec838a65cd",
-    "sort_order": 7
+    "sort_order": 7,
+    "slug": "ultrabounce"
   },
   {
     "id": "0191a8c7-abcf-4819-beb6-27c9dd4e0a53",
     "name": "Nets",
     "parent_id": "430c4551-77b4-4706-bdba-a7ec838a65cd",
-    "sort_order": 8
+    "sort_order": 8,
+    "slug": "nets"
   },
   {
     "id": "44b90b34-7e35-4e85-b924-e9e2085a6cf0",
     "name": "Silk",
     "parent_id": "430c4551-77b4-4706-bdba-a7ec838a65cd",
-    "sort_order": 9
+    "sort_order": 9,
+    "slug": "silk"
   },
   {
     "id": "29d1c60f-b8de-43c1-a388-669cf0509b71",
     "name": "Lavalier",
     "parent_id": "4693fff2-9f92-437d-a924-c1741352bf8e",
-    "sort_order": 1
+    "sort_order": 1,
+    "slug": "lavalier"
   },
   {
     "id": "e00c7c02-1cef-4867-ba1a-2242896c93f8",
     "name": "Condenser & Shotgun",
     "parent_id": "4693fff2-9f92-437d-a924-c1741352bf8e",
-    "sort_order": 2
+    "sort_order": 2,
+    "slug": "condenser-shotgun"
   },
   {
     "id": "ddb524ed-5e3b-4d43-af67-0da579f0dae2",
     "name": "Dynamic",
     "parent_id": "4693fff2-9f92-437d-a924-c1741352bf8e",
-    "sort_order": 3
+    "sort_order": 3,
+    "slug": "dynamic"
   },
   {
     "id": "369bb213-8ec1-4738-ab5a-dda47dd4666d",
     "name": "Modular",
     "parent_id": "4693fff2-9f92-437d-a924-c1741352bf8e",
-    "sort_order": 4
+    "sort_order": 4,
+    "slug": "modular"
   },
   {
     "id": "34902919-9317-476b-9001-6a23f26d16a0",
     "name": "Handhelds",
     "parent_id": "4693fff2-9f92-437d-a924-c1741352bf8e",
-    "sort_order": 5
+    "sort_order": 5,
+    "slug": "handhelds"
   },
   {
     "id": "a556981f-bcf4-4192-b436-9361d9fd7e79",
     "name": "Hydrophone",
     "parent_id": "4693fff2-9f92-437d-a924-c1741352bf8e",
-    "sort_order": 6
+    "sort_order": 6,
+    "slug": "hydrophone"
   },
   {
     "id": "37dfb74f-70aa-40a6-a22e-51e400356d67",
     "name": "Stereo & M/S",
     "parent_id": "4693fff2-9f92-437d-a924-c1741352bf8e",
-    "sort_order": 7
+    "sort_order": 7,
+    "slug": "stereo-m-s"
   },
   {
     "id": "c9128f73-a0c7-4200-8517-724f431c1afb",
     "name": "Surround & VR",
     "parent_id": "4693fff2-9f92-437d-a924-c1741352bf8e",
-    "sort_order": 8
+    "sort_order": 8,
+    "slug": "surround-vr"
   },
   {
     "id": "6ebfc09a-2da9-49ba-bc23-e84afd8ed363",
     "name": "Mic Accessories",
     "parent_id": "4693fff2-9f92-437d-a924-c1741352bf8e",
-    "sort_order": 9
+    "sort_order": 9,
+    "slug": "mic-accessories"
   },
   {
     "id": "aee087bf-1cc2-4b75-aab5-23ab9a420bdd",
     "name": "Mic Stands",
     "parent_id": "4bc9b21e-cde1-4b84-9b24-b380c0943cf9",
-    "sort_order": 1
+    "sort_order": 1,
+    "slug": "mic-stands"
   },
   {
     "id": "25fdd94a-061f-43d1-aad0-9a849d6a4055",
     "name": "Mic Holder",
     "parent_id": "4bc9b21e-cde1-4b84-9b24-b380c0943cf9",
-    "sort_order": 2
+    "sort_order": 2,
+    "slug": "mic-holder"
   },
   {
     "id": "ec0b7615-2a92-49f8-bb06-76f50307d5e2",
     "name": "Boom Holder",
     "parent_id": "4bc9b21e-cde1-4b84-9b24-b380c0943cf9",
-    "sort_order": 3
+    "sort_order": 3,
+    "slug": "boom-holder"
   },
   {
     "id": "882158a6-e5e4-47e5-98b1-33e21ddcccb0",
     "name": "Mixers",
     "parent_id": "595aa88c-8121-41ac-a5cc-ac3cb48655af",
-    "sort_order": 1
+    "sort_order": 1,
+    "slug": "mixers"
   },
   {
     "id": "e9eda029-c69d-463b-bd3a-56e2825c0f60",
     "name": "Controllers",
     "parent_id": "595aa88c-8121-41ac-a5cc-ac3cb48655af",
-    "sort_order": 2
+    "sort_order": 2,
+    "slug": "controllers"
   },
   {
     "id": "1330daa7-031e-43fb-9f5e-acf0ed7cd664",
     "name": "Interfaces",
     "parent_id": "595aa88c-8121-41ac-a5cc-ac3cb48655af",
-    "sort_order": 3
+    "sort_order": 3,
+    "slug": "interfaces"
   },
   {
     "id": "ca080557-a5f4-4d13-b5ff-f4c4415879ca",
     "name": "Gel Frame",
     "parent_id": "60c7ceab-9954-4109-abdb-1f9b92a4c9a2",
-    "sort_order": 1
+    "sort_order": 1,
+    "slug": "gel-frame"
   },
   {
     "id": "3bffa6be-cd37-4429-b0c7-94ea8eb7092a",
     "name": "Lightweight Frame Kits",
     "parent_id": "60c7ceab-9954-4109-abdb-1f9b92a4c9a2",
-    "sort_order": 2
+    "sort_order": 2,
+    "slug": "lightweight-frame-kits"
   },
   {
     "id": "49027c33-6ba5-4ded-99dc-75c3184acfbb",
     "name": "Modular Frames",
     "parent_id": "60c7ceab-9954-4109-abdb-1f9b92a4c9a2",
-    "sort_order": 3
+    "sort_order": 3,
+    "slug": "modular-frames"
   },
   {
     "id": "d7aedd10-e792-4eaa-8ddc-3bc0659a580a",
     "name": "Fold-Away Frames",
     "parent_id": "60c7ceab-9954-4109-abdb-1f9b92a4c9a2",
-    "sort_order": 4
+    "sort_order": 4,
+    "slug": "fold-away-frames"
   },
   {
     "id": "5ae18665-569d-49f2-acef-f19c797cc154",
     "name": "Scaffolding Tube Frames",
     "parent_id": "60c7ceab-9954-4109-abdb-1f9b92a4c9a2",
-    "sort_order": 5
+    "sort_order": 5,
+    "slug": "scaffolding-tube-frames"
   },
   {
     "id": "ed39159c-8df8-4299-8a0c-1edbb6601780",
     "name": "Inflatable Frames",
     "parent_id": "60c7ceab-9954-4109-abdb-1f9b92a4c9a2",
-    "sort_order": 6
+    "sort_order": 6,
+    "slug": "inflatable-frames"
   },
   {
     "id": "b7011549-78a5-41c9-a679-2bd1ac57ffbc",
     "name": "Textiles",
     "parent_id": "60c7ceab-9954-4109-abdb-1f9b92a4c9a2",
-    "sort_order": 7
+    "sort_order": 7,
+    "slug": "textiles"
   },
   {
     "id": "fad13afd-ec64-4e18-874f-5509e3b971ef",
     "name": "Overheads & Butterfly Grids",
     "parent_id": "60c7ceab-9954-4109-abdb-1f9b92a4c9a2",
-    "sort_order": 8
+    "sort_order": 8,
+    "slug": "overheads-butterfly-grids"
   },
   {
     "id": "fbb7e2eb-1c20-4b1d-afbe-38a91747f509",
     "name": "Ulcers & Patterns",
     "parent_id": "60c7ceab-9954-4109-abdb-1f9b92a4c9a2",
-    "sort_order": 9
+    "sort_order": 9,
+    "slug": "ulcers-patterns"
   },
   {
     "id": "a7a72530-098b-484e-b399-3055a91af1f9",
     "name": "Cable Ramp",
     "parent_id": "667c62df-24b6-4065-8f96-2352b4a30bbc",
-    "sort_order": 1
+    "sort_order": 1,
+    "slug": "cable-ramp"
   },
   {
     "id": "bdc079ba-a36f-4d82-8c6f-48f10ee447e5",
     "name": "Rubber Matting",
     "parent_id": "667c62df-24b6-4065-8f96-2352b4a30bbc",
-    "sort_order": 2
+    "sort_order": 2,
+    "slug": "rubber-matting"
   },
   {
     "id": "dd0852bb-df2f-4a82-9f7d-dfec7a8ffcf6",
     "name": "Portable",
     "parent_id": "668701e0-e878-404b-b7c4-72270dbd8de3",
-    "sort_order": 1
+    "sort_order": 1,
+    "slug": "portable"
   },
   {
     "id": "a301dd1f-a26b-4d09-8026-9fd261f154d2",
     "name": "Adapters & Accessories",
     "parent_id": "668701e0-e878-404b-b7c4-72270dbd8de3",
-    "sort_order": 2
+    "sort_order": 2,
+    "slug": "adapters-accessories"
   },
   {
     "id": "234bf9a4-7584-4fbb-8ccb-c107182294c9",
     "name": "Converters",
     "parent_id": "67a57edd-3707-474e-82d3-acffe4674e37",
-    "sort_order": 1
+    "sort_order": 1,
+    "slug": "converters"
   },
   {
     "id": "325e20fb-546e-4791-a4a5-d4f11e5e5bc9",
     "name": "LUT-Box",
     "parent_id": "67a57edd-3707-474e-82d3-acffe4674e37",
-    "sort_order": 2
+    "sort_order": 2,
+    "slug": "lut-box"
   },
   {
     "id": "445d9af8-bffc-4f73-a98d-046ba872d97d",
     "name": "Multiviews",
     "parent_id": "67a57edd-3707-474e-82d3-acffe4674e37",
-    "sort_order": 3
+    "sort_order": 3,
+    "slug": "multiviews"
   },
   {
     "id": "277bb750-be31-428a-a42f-04c6b9984d92",
     "name": "Encoders",
     "parent_id": "67a57edd-3707-474e-82d3-acffe4674e37",
-    "sort_order": 4
+    "sort_order": 4,
+    "slug": "encoders"
   },
   {
     "id": "e2834b1c-9425-4540-b321-1d3c8f9e24ac",
     "name": "Splitters",
     "parent_id": "67a57edd-3707-474e-82d3-acffe4674e37",
-    "sort_order": 5
+    "sort_order": 5,
+    "slug": "splitters"
   },
   {
     "id": "6620d7d6-3cd3-44b6-8bde-833126317014",
     "name": "Routers",
     "parent_id": "67a57edd-3707-474e-82d3-acffe4674e37",
-    "sort_order": 6
+    "sort_order": 6,
+    "slug": "routers"
   },
   {
     "id": "79fb6db2-8a22-495b-a656-1bcb3b93b725",
     "name": "Video I/O",
     "parent_id": "67a57edd-3707-474e-82d3-acffe4674e37",
-    "sort_order": 7
+    "sort_order": 7,
+    "slug": "video-i-o"
   },
   {
     "id": "4ddd007d-5225-4e7f-93fb-6488c7b6f572",
     "name": "Boom Pole Accessories",
     "parent_id": "6de4fece-7900-459e-9171-3fef12c904d4",
-    "sort_order": 1
+    "sort_order": 1,
+    "slug": "boom-pole-accessories"
   },
   {
     "id": "8f01f818-4255-4673-91cc-e07548ac3a9e",
     "name": "Intercom",
     "parent_id": "79b61a08-f1c0-4a77-9cc9-03144bf441e9",
-    "sort_order": 1
+    "sort_order": 1,
+    "slug": "intercom"
   },
   {
     "id": "50c96d69-9f48-4fa3-80e1-818792058a02",
     "name": "Walkie Talkie",
     "parent_id": "79b61a08-f1c0-4a77-9cc9-03144bf441e9",
-    "sort_order": 2
+    "sort_order": 2,
+    "slug": "walkie-talkie"
   },
   {
     "id": "605ae117-dc1b-4460-b17d-9b6b7cfdb6fe",
     "name": "Spherical Primes",
     "parent_id": "8b351c99-73a4-45de-b0e8-5bb4ed9b5837",
-    "sort_order": 1
+    "sort_order": 1,
+    "slug": "spherical-primes"
   },
   {
     "id": "f5c93488-a94f-4330-9a7e-2ef5685498f2",
     "name": "Spherical Zooms",
     "parent_id": "8b351c99-73a4-45de-b0e8-5bb4ed9b5837",
-    "sort_order": 2
+    "sort_order": 2,
+    "slug": "spherical-zooms"
   },
   {
     "id": "ba70c2a2-936c-4db3-bbfa-02fec3da8e6e",
     "name": "Anamorphic Primes",
     "parent_id": "8b351c99-73a4-45de-b0e8-5bb4ed9b5837",
-    "sort_order": 3
+    "sort_order": 3,
+    "slug": "anamorphic-primes"
   },
   {
     "id": "d664e397-05e2-4e2a-a39f-1a7ccef7acdd",
     "name": "Anamorphic Zooms",
     "parent_id": "8b351c99-73a4-45de-b0e8-5bb4ed9b5837",
-    "sort_order": 4
+    "sort_order": 4,
+    "slug": "anamorphic-zooms"
   },
   {
     "id": "c9a8cf4c-81ec-487f-b400-a140ef203304",
     "name": "Transmitters",
     "parent_id": "8babdcda-72f0-468c-9957-ceb331f90d31",
-    "sort_order": 1
+    "sort_order": 1,
+    "slug": "transmitters"
   },
   {
     "id": "e745bc25-cec6-4f32-8873-3cf590c04f45",
     "name": "Receivers",
     "parent_id": "8babdcda-72f0-468c-9957-ceb331f90d31",
-    "sort_order": 2
+    "sort_order": 2,
+    "slug": "receivers"
   },
   {
     "id": "3855d781-eda9-4b4f-85b8-5929f0f9ece9",
     "name": "Headphones",
     "parent_id": "944b9656-17cd-42cd-990e-1c7f0b4c5201",
-    "sort_order": 1
+    "sort_order": 1,
+    "slug": "headphones"
   },
   {
     "id": "33f4b891-182e-452b-bad0-1d435eb2cdca",
     "name": "Speakers",
     "parent_id": "944b9656-17cd-42cd-990e-1c7f0b4c5201",
-    "sort_order": 2
+    "sort_order": 2,
+    "slug": "speakers"
   },
   {
     "id": "4d650e86-dd9a-45aa-ad76-94b1ea0ea936",
     "name": "Consoles",
     "parent_id": "9ad775d1-6b89-4b59-93e2-64a60b53847c",
-    "sort_order": 1
+    "sort_order": 1,
+    "slug": "consoles"
   },
   {
     "id": "1c4f1dd4-4007-4a6a-b90b-7ea2d3c4e2e4",
     "name": "PC",
     "parent_id": "9ad775d1-6b89-4b59-93e2-64a60b53847c",
-    "sort_order": 2
+    "sort_order": 2,
+    "slug": "pc"
   },
   {
     "id": "72316e5a-624c-473a-9ffc-5a097ef81e0d",
     "name": "Fixed Installation",
     "parent_id": "9ad775d1-6b89-4b59-93e2-64a60b53847c",
-    "sort_order": 3
+    "sort_order": 3,
+    "slug": "fixed-installation"
   },
   {
     "id": "4e3853a3-3c1d-4534-8d51-84654364b60b",
     "name": "Wireless",
     "parent_id": "9ad775d1-6b89-4b59-93e2-64a60b53847c",
-    "sort_order": 4
+    "sort_order": 4,
+    "slug": "wireless"
   },
   {
     "id": "aa62c542-5be5-4325-8ffe-b984c3bca707",
     "name": "DMX",
     "parent_id": "9ad775d1-6b89-4b59-93e2-64a60b53847c",
-    "sort_order": 5
+    "sort_order": 5,
+    "slug": "dmx"
   },
   {
     "id": "98dddd65-4d85-491e-a55f-ab5b9763de59",
     "name": "Data Distribution",
     "parent_id": "9ad775d1-6b89-4b59-93e2-64a60b53847c",
-    "sort_order": 6
+    "sort_order": 6,
+    "slug": "data-distribution"
   },
   {
     "id": "2edae13c-464f-4a10-8d5a-18fd9590a236",
     "name": "Dimmer Units",
     "parent_id": "9ad775d1-6b89-4b59-93e2-64a60b53847c",
-    "sort_order": 7
+    "sort_order": 7,
+    "slug": "dimmer-units"
   },
   {
     "id": "31b4177b-3275-4467-9578-bfd3fb2da79b",
     "name": "In-Line Dimmers",
     "parent_id": "9ad775d1-6b89-4b59-93e2-64a60b53847c",
-    "sort_order": 8
+    "sort_order": 8,
+    "slug": "in-line-dimmers"
   },
   {
     "id": "48349bda-f9cb-43b9-8405-b735568d47ac",
     "name": "LED Drivers",
     "parent_id": "9ad775d1-6b89-4b59-93e2-64a60b53847c",
-    "sort_order": 9
+    "sort_order": 9,
+    "slug": "led-drivers"
   },
   {
     "id": "91a9a1d9-5a0e-44bc-b6fb-7f80c5f92ed8",
     "name": "Dimmer Shutters",
     "parent_id": "9ad775d1-6b89-4b59-93e2-64a60b53847c",
-    "sort_order": 10
+    "sort_order": 10,
+    "slug": "dimmer-shutters"
   },
   {
     "id": "9d7aebb3-63a3-4f6c-95b3-0ac0baede8ac",
     "name": "Motorised Stirrups",
     "parent_id": "9ad775d1-6b89-4b59-93e2-64a60b53847c",
-    "sort_order": 11
+    "sort_order": 11,
+    "slug": "motorised-stirrups"
   },
   {
     "id": "bcd51490-db4e-4df3-a727-ae1135ea7df7",
     "name": "Accessories",
     "parent_id": "9ad775d1-6b89-4b59-93e2-64a60b53847c",
-    "sort_order": 12
+    "sort_order": 12,
+    "slug": "accessories"
   },
   {
     "id": "43dbb8d2-6b07-496e-86aa-6084ffdd5287",
     "name": "Cine Reflectors",
     "parent_id": "a037c811-6fb1-4e3a-b1e7-fa08650ed96d",
-    "sort_order": 1
+    "sort_order": 1,
+    "slug": "cine-reflectors"
   },
   {
     "id": "98b9f762-4ed4-4ce2-9cca-2d7c28ca1dae",
     "name": "Mirrors",
     "parent_id": "a037c811-6fb1-4e3a-b1e7-fa08650ed96d",
-    "sort_order": 2
+    "sort_order": 2,
+    "slug": "mirrors"
   },
   {
     "id": "8837ec52-63ad-44e4-ad76-757ad171071e",
     "name": "Mobile Reflectors & Diffusers",
     "parent_id": "a037c811-6fb1-4e3a-b1e7-fa08650ed96d",
-    "sort_order": 3
+    "sort_order": 3,
+    "slug": "mobile-reflectors-diffusers"
   },
   {
     "id": "d2b19bb4-542e-4a32-a013-fc2282b4fb4d",
     "name": "Grip Heads",
     "parent_id": "c414efa8-ca8f-49fd-9b15-a5a062bc4d02",
-    "sort_order": 1
+    "sort_order": 1,
+    "slug": "grip-heads"
   },
   {
     "id": "fd66b83b-04ee-4a75-a115-050a20a2f2aa",
     "name": "Arms",
     "parent_id": "c414efa8-ca8f-49fd-9b15-a5a062bc4d02",
-    "sort_order": 2
+    "sort_order": 2,
+    "slug": "arms"
   },
   {
     "id": "a399bfcb-3e9d-45dd-8913-28ab3f4abd0f",
     "name": "Clamps & Grips",
     "parent_id": "c414efa8-ca8f-49fd-9b15-a5a062bc4d02",
-    "sort_order": 3
+    "sort_order": 3,
+    "slug": "clamps-grips"
   },
   {
     "id": "b677e239-068f-4d0a-bf4a-471948916a6b",
     "name": "Clips & Magnets",
     "parent_id": "c414efa8-ca8f-49fd-9b15-a5a062bc4d02",
-    "sort_order": 4
+    "sort_order": 4,
+    "slug": "clips-magnets"
   },
   {
     "id": "f0090177-4255-4023-ad2a-2cf3e8a734f7",
     "name": "Brackets & Plates",
     "parent_id": "c414efa8-ca8f-49fd-9b15-a5a062bc4d02",
-    "sort_order": 5
+    "sort_order": 5,
+    "slug": "brackets-plates"
   },
   {
     "id": "61942959-3b8c-4d05-a375-6f1a7a74550d",
     "name": "Holders",
     "parent_id": "c414efa8-ca8f-49fd-9b15-a5a062bc4d02",
-    "sort_order": 6
+    "sort_order": 6,
+    "slug": "holders"
   },
   {
     "id": "8dd8d462-3fed-4909-b0be-a32e74be9aa8",
     "name": "Hangers",
     "parent_id": "c414efa8-ca8f-49fd-9b15-a5a062bc4d02",
-    "sort_order": 7
+    "sort_order": 7,
+    "slug": "hangers"
   },
   {
     "id": "6c0d78b3-8e0a-4cf8-acda-6e61bdef500b",
     "name": "Stand Extensions & Accessories",
     "parent_id": "c414efa8-ca8f-49fd-9b15-a5a062bc4d02",
-    "sort_order": 8
+    "sort_order": 8,
+    "slug": "stand-extensions-accessories"
   },
   {
     "id": "fe5d2f19-902d-49f8-a375-4bee4fe41bb7",
     "name": "Spigots, Pins & Adapters",
     "parent_id": "c414efa8-ca8f-49fd-9b15-a5a062bc4d02",
-    "sort_order": 9
+    "sort_order": 9,
+    "slug": "spigots-pins-adapters"
   },
   {
     "id": "533fe52a-abe0-441a-b523-de53b4bc07b8",
     "name": "Support Systems",
     "parent_id": "c414efa8-ca8f-49fd-9b15-a5a062bc4d02",
-    "sort_order": 10
+    "sort_order": 10,
+    "slug": "support-systems"
   },
   {
     "id": "99ee1fb7-257b-470f-b186-5066d0ee13c7",
     "name": "Suction Mounts",
     "parent_id": "c414efa8-ca8f-49fd-9b15-a5a062bc4d02",
-    "sort_order": 11
+    "sort_order": 11,
+    "slug": "suction-mounts"
   },
   {
     "id": "a29fa810-d361-4e46-9f2a-15e1f402b43d",
     "name": "Truss & Scaffolding",
     "parent_id": "c414efa8-ca8f-49fd-9b15-a5a062bc4d02",
-    "sort_order": 12
+    "sort_order": 12,
+    "slug": "truss-scaffolding"
   },
   {
     "id": "2b6123c2-b740-49f9-bee8-715eb5b09174",
     "name": "Apple Boxes",
     "parent_id": "c414efa8-ca8f-49fd-9b15-a5a062bc4d02",
-    "sort_order": 13
+    "sort_order": 13,
+    "slug": "apple-boxes"
   },
   {
     "id": "2a1a8cec-4aef-4529-9e00-272ce3c0a20b",
     "name": "Safety",
     "parent_id": "c414efa8-ca8f-49fd-9b15-a5a062bc4d02",
-    "sort_order": 14
+    "sort_order": 14,
+    "slug": "safety"
   },
   {
     "id": "41064609-e479-4a65-b6a8-25d0b1ffcd96",
     "name": "Kits & Racks",
     "parent_id": "c414efa8-ca8f-49fd-9b15-a5a062bc4d02",
-    "sort_order": 15
+    "sort_order": 15,
+    "slug": "kits-racks"
   },
   {
     "id": "0a2fbffb-4ef6-40d6-868e-fd5e57bc0f31",
     "name": "Digital Cameras",
     "parent_id": "c4bee1fd-8cde-4b34-8410-acc2e279c68e",
-    "sort_order": 0
+    "sort_order": 0,
+    "slug": "digital-cameras"
   },
   {
     "id": "86bb5bc0-f691-4030-94a4-fd6f65c4e927",
     "name": "Film Cameras",
     "parent_id": "c4bee1fd-8cde-4b34-8410-acc2e279c68e",
-    "sort_order": 1
+    "sort_order": 1,
+    "slug": "film-cameras"
   },
   {
     "id": "ff2ee2e8-0707-4597-9aa6-5a1915f88e6a",
     "name": "Batteries",
     "parent_id": "c998cb13-1f0b-4d90-8d1b-117db724b93f",
-    "sort_order": 1
+    "sort_order": 1,
+    "slug": "batteries"
   },
   {
     "id": "c28685d4-b42b-4f3b-acc2-69a6c4436e16",
     "name": "Hot-Swap Adapters",
     "parent_id": "c998cb13-1f0b-4d90-8d1b-117db724b93f",
-    "sort_order": 2
+    "sort_order": 2,
+    "slug": "hot-swap-adapters"
   },
   {
     "id": "5a79ce59-8162-4009-af6e-311986041e79",
     "name": "Chargers",
     "parent_id": "c998cb13-1f0b-4d90-8d1b-117db724b93f",
-    "sort_order": 3
+    "sort_order": 3,
+    "slug": "chargers"
   },
   {
     "id": "f2f65de4-908a-454c-a2d5-00901e26c484",
     "name": "Power Accessories",
     "parent_id": "c998cb13-1f0b-4d90-8d1b-117db724b93f",
-    "sort_order": 4
+    "sort_order": 4,
+    "slug": "power-accessories"
   },
   {
     "id": "70cb315b-17af-43be-a566-36fc3a86f95f",
     "name": "Timecode Devices",
     "parent_id": "da2d11e3-7057-4423-9fa3-be8612aae09c",
-    "sort_order": 1
+    "sort_order": 1,
+    "slug": "timecode-devices"
   },
   {
     "id": "46aaa53c-5c3e-4a3e-96eb-0fdd0bf80d9e",
     "name": "Slates & Displays",
     "parent_id": "da2d11e3-7057-4423-9fa3-be8612aae09c",
-    "sort_order": 2
+    "sort_order": 2,
+    "slug": "slates-displays"
   },
   {
     "id": "d28b2696-92d1-43d7-975b-6c75287116d3",
     "name": "Timecode Cables",
     "parent_id": "da2d11e3-7057-4423-9fa3-be8612aae09c",
-    "sort_order": 3
+    "sort_order": 3,
+    "slug": "timecode-cables"
   },
   {
     "id": "bc2ba9b5-9d6a-4bd9-9100-2f482d41ab00",
     "name": "Timecode Accessories",
     "parent_id": "da2d11e3-7057-4423-9fa3-be8612aae09c",
-    "sort_order": 4
+    "sort_order": 4,
+    "slug": "timecode-accessories"
   },
   {
     "id": "d9efe559-11d1-48bc-afea-495168d2ae9e",
     "name": "Carts Accessories",
     "parent_id": "dcfeacb6-ab64-450c-95f5-7be2153f087a",
-    "sort_order": 1
+    "sort_order": 1,
+    "slug": "carts-accessories"
   },
   {
     "id": "834cb4da-a2e8-4585-8c9b-871aacf97c6c",
     "name": "Tape",
     "parent_id": "e233703d-2bbf-4ef9-9625-80c54a7da0e8",
-    "sort_order": 1
+    "sort_order": 1,
+    "slug": "tape"
   },
   {
     "id": "6a7a5913-6ff9-45f9-99d8-846f665f9bdc",
     "name": "Accessories",
     "parent_id": "e50d1e8a-f036-4dd6-a630-73f42e2e37e4",
-    "sort_order": 1
+    "sort_order": 1,
+    "slug": "accessories"
   },
   {
     "id": "db02cea7-2b42-481f-95e8-ba6ea0ce0569",
     "name": "Accessories",
     "parent_id": "e9458df5-91f8-4008-8ff6-03338758ff7c",
-    "sort_order": 1
+    "sort_order": 1,
+    "slug": "accessories"
   },
   {
     "id": "9794513f-5750-42d4-b769-312037d0a2e3",
     "name": "Modifiers",
     "parent_id": "f81e44f9-702b-4d3f-a459-e9580252f567",
-    "sort_order": 1
+    "sort_order": 1,
+    "slug": "modifiers"
   }
 ]

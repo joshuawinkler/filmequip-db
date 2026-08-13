@@ -19,9 +19,9 @@ publish_mode: editorial_workflow
 media_folder: "" # no image upload — images are only linked via image_url (see CONTRIBUTING.md)
 
 collections:
-- name: camera
-  label: Camera
-  folder: data/camera
+- name: camera-cameras-digital-cameras
+  label: Camera › Cameras › Digital Cameras
+  folder: data/camera/cameras/digital-cameras
   create: true
   slug: '{{id}}'
   identifier_field: id
@@ -33,109 +33,18 @@ collections:
     name: id
     widget: string
     hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
-  - label: Category
-    name: category
-    widget: select
-    options:
-    - Camera > Cameras > Digital Cameras
-    - Camera > Cameras > Film Cameras
-    - Camera > Lenses > Spherical Primes
-    - Camera > Lenses > Spherical Zooms
-    - Camera > Lenses > Anamorphic Primes
-    - Camera > Lenses > Anamorphic Zooms
-    - Camera > Filters
-    - Camera > Optical Accessories > Extenders
-    - Camera > Optical Accessories > Mount Adapters
-    - Camera > Optical Accessories > Other Optical Adapters
-    - Camera > Matte Boxes > Accessories
-    - Camera > Follow Focus
-    - Camera > Lens Control > Hand Units
-    - Camera > Lens Control > Motors
-    - Camera > Lens Control > Controllers
-    - Camera > Lens Control > Lens Control Accessories
-    - Camera > Focus Assist
-    - Camera > Wireless Video > Transmitters
-    - Camera > Wireless Video > Receivers
-    - Camera > Monitors
-    - Camera > Video Recorders
-    - Camera > Video Accessories > Converters
-    - Camera > Video Accessories > LUT-Box
-    - Camera > Video Accessories > Multiviews
-    - Camera > Video Accessories > Encoders
-    - Camera > Video Accessories > Splitters
-    - Camera > Video Accessories > Routers
-    - Camera > Video Accessories > Video I/O
-    - Camera > Cables
-    - Camera > Power > Batteries
-    - Camera > Power > Hot-Swap Adapters
-    - Camera > Power > Chargers
-    - Camera > Power > Power Accessories
-    - Camera > Data > Media Cards
-    - Camera > Data > Card Reader
-    - Camera > Data > Computers
-    - Camera > Carts > Carts Accessories
-    - Camera > Miscellaneous Accessories
   - label: Manufacturer
     name: manufacturer
     widget: string
   - label: Model
     name: model
     widget: string
-  - label: Focal Length
-    name: focal_length
-    required: false
-    widget: string
-  - label: Sensor Size
-    name: sensor_size
-    required: false
-    widget: string
-  - label: Sensor Coverage
-    name: sensor_coverage
-    required: false
-    widget: select
-    options:
-    - Super 35
-    - Large Format
-    - Full Frame
-    - 65mm
-    - APS-C
-    - Micro Four Thirds
-    - 16mm
-    - Super 16
-  - label: Display Size
-    name: display_size
-    required: false
-    widget: select
-    options:
-    - 5 in
-    - 7 in
-    - 10 in
-    - 13 in
-    - 17 in
-    - 24 in
-  - label: Max Aperture
-    name: max_aperture
-    required: false
-    widget: string
-  - label: Resolution
-    name: resolution
-    required: false
-    widget: string
-  - label: Release
-    name: release
-    required: false
-    widget: number
-    value_type: float
-  - label: Noise Level
-    name: noise_level_db
-    required: false
-    widget: string
   - label: Lens Mounts
     name: lens_mounts
     required: false
     widget: select
     multiple: true
-    options:
+    options: &id001
     - Arri LPL
     - Arri PL
     - Canon EF
@@ -163,45 +72,13 @@ collections:
     - DJI DX
     - Panavision PV65
     - Sony FZ
-  - label: Max Resolution
-    name: max_resolution
+    - C Mount
+  - label: Sensor Size
+    name: sensor_size
     required: false
     widget: string
-  - label: Min FPS
-    name: min_fps
-    required: false
-    widget: number
-    value_type: float
-  - label: Focus Scale
-    name: focus_scale
-    required: false
-    widget: select
-    multiple: true
-    options:
-    - Metric
-    - Imperial
-  - label: Sensor Diagonal mm
-    name: sensor_diagonal_mm
-    required: false
-    widget: number
-    value_type: float
-  - label: Max FPS
-    name: max_fps
-    required: false
-    widget: number
-    value_type: float
-  - label: Mag Size
-    name: mag_size
-    required: false
-    widget: select
-    multiple: true
-    options:
-    - 100ft
-    - 200ft
-    - 400ft
-    - 1000ft
-  - label: Coverage
-    name: coverage
+  - label: Sensor Coverage
+    name: sensor_coverage
     required: false
     widget: select
     options:
@@ -213,34 +90,46 @@ collections:
     - Micro Four Thirds
     - 16mm
     - Super 16
-  - label: Close Focus in m
-    name: close_focus_in_m
+  - label: Release
+    name: release
     required: false
     widget: number
     value_type: float
-  - label: Dynamic Range
-    name: dynamic_range
+  - label: Resolution
+    name: resolution
     required: false
     widget: string
+  - label: Min FPS
+    name: min_fps
+    required: false
+    widget: number
+    value_type: float
+  - label: Max Resolution
+    name: max_resolution
+    required: false
+    widget: string
+  - label: Max FPS
+    name: max_fps
+    required: false
+    widget: number
+    value_type: float
+  - label: Sensor Diagonal mm
+    name: sensor_diagonal_mm
+    required: false
+    widget: number
+    value_type: float
   - label: Shutter Range
     name: shutter_range
     required: false
     widget: string
-  - label: Front Diameter in mm
-    name: front_diameter_in_mm
+  - label: Dynamic Range
+    name: dynamic_range
     required: false
-    widget: select
-    options:
-    - '80'
-    - '87'
-    - '95'
-    - '110'
-    - '114'
-    - '134'
-    - '156'
-    - '104'
-    - '135'
-    - '136'
+    widget: string
+  - label: Weight
+    name: weight
+    required: false
+    widget: string
   - label: Shutter Type
     name: shutter_type
     required: false
@@ -273,10 +162,6 @@ collections:
     - EI 25600
     - EI 51200
     - EI 200
-  - label: Weight
-    name: weight
-    required: false
-    widget: string
   - label: Min Sensitivity
     name: min_sensitivity
     required: false
@@ -441,9 +326,9 @@ collections:
     name: source_url
     widget: string
     required: false
-- name: grip
-  label: Grip
-  folder: data/grip
+- name: camera-cameras-film-cameras
+  label: Camera › Cameras › Film Cameras
+  folder: data/camera/cameras/film-cameras
   create: true
   slug: '{{id}}'
   identifier_field: id
@@ -455,19 +340,426 @@ collections:
     name: id
     widget: string
     hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
-  - label: Category
-    name: category
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Lens Mounts
+    name: lens_mounts
+    required: false
+    widget: select
+    multiple: true
+    options: *id001
+  - label: Coverage
+    name: coverage
+    required: false
+    widget: select
+    multiple: true
+    options:
+    - Super 8mm
+    - Standard 8mm
+    - Super 16mm
+    - Standard 16mm
+    - 4-Perf 35mm
+    - 3-Perf 35mm
+    - 2-Perf 35mm
+    - 8-Perf 35mm
+    - 8-Perf 65mm
+    - 5-Perf 65mm
+    - 15-Perf 65mm
+  - label: Release
+    name: release
+    required: false
+    widget: number
+    value_type: float
+  - label: Noise Level
+    name: noise_level_db
+    required: false
+    widget: string
+  - label: Min FPS
+    name: min_fps
+    required: false
+    widget: number
+    value_type: float
+  - label: Max FPS
+    name: max_fps
+    required: false
+    widget: number
+    value_type: float
+  - label: Mag Size
+    name: mag_size
+    required: false
+    widget: select
+    multiple: true
+    options:
+    - 100ft
+    - 200ft
+    - 400ft
+    - 1000ft
+  - label: Shutter Range
+    name: shutter_range
+    required: false
+    widget: string
+  - label: Weight
+    name: weight
+    required: false
+    widget: string
+  - label: Shutter Type
+    name: shutter_type
+    required: false
     widget: select
     options:
-    - Grip > Heads
-    - Grip > Tripods
-    - Grip > Dollys
-    - Grip > Slider
-    - Grip > Jibs
-    - Grip > Cranes
-    - Grip > Gimbal
-    - Grip > Camera Support
-    - Grip > Rigging
+    - electronically
+    - mechanical
+    - fixed
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: camera-lenses-spherical-primes
+  label: Camera › Lenses › Spherical Primes
+  folder: data/camera/lenses/spherical-primes
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Focal Length
+    name: focal_length
+    required: false
+    widget: string
+  - label: Max Aperture
+    name: max_aperture
+    required: false
+    widget: string
+  - label: Lens Mounts
+    name: lens_mounts
+    required: false
+    widget: select
+    multiple: true
+    options: &id002
+    - Arri LPL
+    - Arri PL
+    - Canon EF
+    - Leica L
+    - Sony E
+    - Nikon Z
+    - Fuji X
+    - M4/3
+    - Canon RF
+    - Fuji G
+    - Leica M
+    - Leica R
+    - Canon FD
+    - B4
+    - Panavision PV
+    - Arri Standard
+    - Arri B
+    - Arri Maxi PL
+    - Arri XPL
+    - Aaton
+    - Panavision SP70
+    - Nikon F
+    - Hasselblad HC
+    - DJI DL
+    - DJI DX
+    - Panavision PV65
+    - Sony FZ
+  - label: Focus Scale
+    name: focus_scale
+    required: false
+    widget: select
+    multiple: true
+    options: &id003
+    - Metric
+    - Imperial
+  - label: Coverage
+    name: coverage
+    required: false
+    widget: select
+    options: &id004
+    - Super 35
+    - Large Format
+    - Full Frame
+    - 65mm
+    - APS-C
+    - Micro Four Thirds
+    - 16mm
+    - Super 16
+  - label: Close Focus in m
+    name: close_focus_in_m
+    required: false
+    widget: number
+    value_type: float
+  - label: Front Diameter in mm
+    name: front_diameter_in_mm
+    required: false
+    widget: select
+    options: &id005
+    - '80'
+    - '87'
+    - '95'
+    - '110'
+    - '114'
+    - '134'
+    - '156'
+    - '104'
+    - '135'
+    - '136'
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: camera-lenses-spherical-zooms
+  label: Camera › Lenses › Spherical Zooms
+  folder: data/camera/lenses/spherical-zooms
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Focal Length
+    name: focal_length
+    required: false
+    widget: string
+  - label: Max Aperture
+    name: max_aperture
+    required: false
+    widget: string
+  - label: Lens Mounts
+    name: lens_mounts
+    required: false
+    widget: select
+    multiple: true
+    options: *id002
+  - label: Focus Scale
+    name: focus_scale
+    required: false
+    widget: select
+    multiple: true
+    options: *id003
+  - label: Coverage
+    name: coverage
+    required: false
+    widget: select
+    options: *id004
+  - label: Close Focus in m
+    name: close_focus_in_m
+    required: false
+    widget: number
+    value_type: float
+  - label: Front Diameter in mm
+    name: front_diameter_in_mm
+    required: false
+    widget: select
+    options: *id005
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: camera-lenses-anamorphic-primes
+  label: Camera › Lenses › Anamorphic Primes
+  folder: data/camera/lenses/anamorphic-primes
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Focal Length
+    name: focal_length
+    required: false
+    widget: string
+  - label: Max Aperture
+    name: max_aperture
+    required: false
+    widget: string
+  - label: Lens Mounts
+    name: lens_mounts
+    required: false
+    widget: select
+    multiple: true
+    options: *id002
+  - label: Focus Scale
+    name: focus_scale
+    required: false
+    widget: select
+    multiple: true
+    options: *id003
+  - label: Coverage
+    name: coverage
+    required: false
+    widget: select
+    options: *id004
+  - label: Close Focus in m
+    name: close_focus_in_m
+    required: false
+    widget: number
+    value_type: float
+  - label: Front Diameter in mm
+    name: front_diameter_in_mm
+    required: false
+    widget: select
+    options: *id005
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: camera-lenses-anamorphic-zooms
+  label: Camera › Lenses › Anamorphic Zooms
+  folder: data/camera/lenses/anamorphic-zooms
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Focal Length
+    name: focal_length
+    required: false
+    widget: string
+  - label: Max Aperture
+    name: max_aperture
+    required: false
+    widget: string
+  - label: Lens Mounts
+    name: lens_mounts
+    required: false
+    widget: select
+    multiple: true
+    options: *id002
+  - label: Focus Scale
+    name: focus_scale
+    required: false
+    widget: select
+    multiple: true
+    options: *id003
+  - label: Coverage
+    name: coverage
+    required: false
+    widget: select
+    options: *id004
+  - label: Close Focus in m
+    name: close_focus_in_m
+    required: false
+    widget: number
+    value_type: float
+  - label: Front Diameter in mm
+    name: front_diameter_in_mm
+    required: false
+    widget: select
+    options: *id005
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: camera-filters
+  label: Camera › Filters
+  folder: data/camera/filters
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -487,9 +779,9 @@ collections:
     name: source_url
     widget: string
     required: false
-- name: lighting
-  label: Lighting
-  folder: data/lighting
+- name: camera-optical-accessories-extenders
+  label: Camera › Optical Accessories › Extenders
+  folder: data/camera/optical-accessories/extenders
   create: true
   slug: '{{id}}'
   identifier_field: id
@@ -501,90 +793,6 @@ collections:
     name: id
     widget: string
     hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
-  - label: Category
-    name: category
-    widget: select
-    options:
-    - Lighting > Lamps > LED > Panels
-    - Lighting > Lamps > LED > Compact
-    - Lighting > Lamps > LED > Point-Source & COB
-    - Lighting > Lamps > LED > PAR
-    - Lighting > Lamps > LED > Tubes
-    - Lighting > Lamps > HMI
-    - Lighting > Lamps > Tungsten
-    - Lighting > Lamps > Fluorescent
-    - Lighting > Lamps > Moving Lights & Effects
-    - Lighting > Lamps > Underwater Lighting
-    - Lighting > Lamps > Outdoor Systems
-    - Lighting > Lamps > Balloons
-    - Lighting > Lamp Accessories > Modifiers
-    - Lighting > Stands > Booms
-    - Lighting > Stands > Mini Stands
-    - Lighting > Stands > C-Stands
-    - Lighting > Stands > Lightweight Stands
-    - Lighting > Stands > Combo Stands
-    - Lighting > Stands > Overhead & Roller Stands
-    - Lighting > Stands > Wind-Up Stands
-    - Lighting > Stands > Heavy Duty Stands
-    - Lighting > Stands > Accessories
-    - Lighting > Lighting Grip > Grip Heads
-    - Lighting > Lighting Grip > Arms
-    - Lighting > Lighting Grip > Clamps & Grips
-    - Lighting > Lighting Grip > Clips & Magnets
-    - Lighting > Lighting Grip > Brackets & Plates
-    - Lighting > Lighting Grip > Holders
-    - Lighting > Lighting Grip > Hangers
-    - Lighting > Lighting Grip > Stand Extensions & Accessories
-    - Lighting > Lighting Grip > Spigots, Pins & Adapters
-    - Lighting > Lighting Grip > Support Systems
-    - Lighting > Lighting Grip > Suction Mounts
-    - Lighting > Lighting Grip > Truss & Scaffolding
-    - Lighting > Lighting Grip > Apple Boxes
-    - Lighting > Lighting Grip > Safety
-    - Lighting > Lighting Grip > Kits & Racks
-    - Lighting > Frames & Textiles > Gel Frame
-    - Lighting > Frames & Textiles > Lightweight Frame Kits
-    - Lighting > Frames & Textiles > Modular Frames
-    - Lighting > Frames & Textiles > Fold-Away Frames
-    - Lighting > Frames & Textiles > Scaffolding Tube Frames
-    - Lighting > Frames & Textiles > Inflatable Frames
-    - Lighting > Frames & Textiles > Textiles
-    - Lighting > Frames & Textiles > Overheads & Butterfly Grids
-    - Lighting > Frames & Textiles > Ulcers & Patterns
-    - Lighting > Flags & Nets > Kits
-    - Lighting > Flags & Nets > Flags
-    - Lighting > Flags & Nets > Floppies
-    - Lighting > Flags & Nets > Wag Flags
-    - Lighting > Flags & Nets > Meat Axe Flags
-    - Lighting > Flags & Nets > Cutters
-    - Lighting > Flags & Nets > Ultrabounce
-    - Lighting > Flags & Nets > Nets
-    - Lighting > Flags & Nets > Silk
-    - Lighting > Control > Consoles
-    - Lighting > Control > PC
-    - Lighting > Control > Fixed Installation
-    - Lighting > Control > Wireless
-    - Lighting > Control > DMX
-    - Lighting > Control > Data Distribution
-    - Lighting > Control > Dimmer Units
-    - Lighting > Control > In-Line Dimmers
-    - Lighting > Control > LED Drivers
-    - Lighting > Control > Dimmer Shutters
-    - Lighting > Control > Motorised Stirrups
-    - Lighting > Control > Accessories
-    - Lighting > Mirrors & Reflectors > Cine Reflectors
-    - Lighting > Mirrors & Reflectors > Mirrors
-    - Lighting > Mirrors & Reflectors > Mobile Reflectors & Diffusers
-    - Lighting > Effects > Smoke & Haze
-    - Lighting > Effects > Wind
-    - Lighting > Power > Single-Phase
-    - Lighting > Power > Three-Phase
-    - Lighting > Power > Earthing
-    - Lighting > Power > Batteries & Chargers > Portable
-    - Lighting > Power > Batteries & Chargers > Adapters & Accessories
-    - Lighting > Light & Color Meters
-    - Lighting > Safety > Cable Ramp
-    - Lighting > Safety > Rubber Matting
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -604,9 +812,9 @@ collections:
     name: source_url
     widget: string
     required: false
-- name: sound
-  label: Sound
-  folder: data/sound
+- name: camera-optical-accessories-mount-adapters
+  label: Camera › Optical Accessories › Mount Adapters
+  folder: data/camera/optical-accessories/mount-adapters
   create: true
   slug: '{{id}}'
   identifier_field: id
@@ -618,45 +826,6 @@ collections:
     name: id
     widget: string
     hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
-  - label: Category
-    name: category
-    widget: select
-    options:
-    - Sound > Audio Recorders > Accessories
-    - Sound > Power > Batteries
-    - Sound > Power > Chargers
-    - Sound > Power > Power Supplies
-    - Sound > Boom Poles > Boom Pole Accessories
-    - Sound > Cables & Adaptors
-    - Sound > Headphones & Monitors > Headphones
-    - Sound > Headphones & Monitors > Speakers
-    - Sound > Microphones > Lavalier
-    - Sound > Microphones > Condenser & Shotgun
-    - Sound > Microphones > Dynamic
-    - Sound > Microphones > Modular
-    - Sound > Microphones > Handhelds
-    - Sound > Microphones > Hydrophone
-    - Sound > Microphones > Stereo & M/S
-    - Sound > Microphones > Surround & VR
-    - Sound > Microphones > Mic Accessories
-    - Sound > Consumables > Tape
-    - Sound > Communication > Intercom
-    - Sound > Communication > Walkie Talkie
-    - Sound > Mounting & Grip > Mic Stands
-    - Sound > Mounting & Grip > Mic Holder
-    - Sound > Mounting & Grip > Boom Holder
-    - Sound > Mixers, Controllers & Interfaces > Mixers
-    - Sound > Mixers, Controllers & Interfaces > Controllers
-    - Sound > Mixers, Controllers & Interfaces > Interfaces
-    - Sound > Wind Protection
-    - Sound > Wireless Systems & RF
-    - Sound > Shock Mounts & Suspensions
-    - Sound > Slates & Timecode > Timecode Devices
-    - Sound > Slates & Timecode > Slates & Displays
-    - Sound > Slates & Timecode > Timecode Cables
-    - Sound > Slates & Timecode > Timecode Accessories
-    - Sound > Carts
-    - Sound > Lav Accessories
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -676,9 +845,9 @@ collections:
     name: source_url
     widget: string
     required: false
-- name: miscellaneous
-  label: Miscellaneous
-  folder: data/miscellaneous
+- name: camera-optical-accessories-other-optical-adapters
+  label: Camera › Optical Accessories › Other Optical Adapters
+  folder: data/camera/optical-accessories/other-optical-adapters
   create: true
   slug: '{{id}}'
   identifier_field: id
@@ -690,16 +859,5231 @@ collections:
     name: id
     widget: string
     hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
-  - label: Category
-    name: category
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: camera-matte-boxes-accessories
+  label: Camera › Matte Boxes › Accessories
+  folder: data/camera/matte-boxes/accessories
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: camera-follow-focus
+  label: Camera › Follow Focus
+  folder: data/camera/follow-focus
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: camera-lens-control-hand-units
+  label: Camera › Lens Control › Hand Units
+  folder: data/camera/lens-control/hand-units
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: camera-lens-control-motors
+  label: Camera › Lens Control › Motors
+  folder: data/camera/lens-control/motors
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: camera-lens-control-controllers
+  label: Camera › Lens Control › Controllers
+  folder: data/camera/lens-control/controllers
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: camera-lens-control-lens-control-accessories
+  label: Camera › Lens Control › Lens Control Accessories
+  folder: data/camera/lens-control/lens-control-accessories
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: camera-focus-assist
+  label: Camera › Focus Assist
+  folder: data/camera/focus-assist
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: camera-wireless-video-transmitters
+  label: Camera › Wireless Video › Transmitters
+  folder: data/camera/wireless-video/transmitters
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: camera-wireless-video-receivers
+  label: Camera › Wireless Video › Receivers
+  folder: data/camera/wireless-video/receivers
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: camera-monitors
+  label: Camera › Monitors
+  folder: data/camera/monitors
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Display Size
+    name: display_size
+    required: false
     widget: select
     options:
-    - Miscellaneous > Transport & Cases > Carts
-    - Miscellaneous > Communication > Intercoms
-    - Miscellaneous > Communication > Radios
-    - Miscellaneous > Vehicles
-    - Miscellaneous > Production Gear
-    - Miscellaneous > Consumables
+    - 5 in
+    - 7 in
+    - 10 in
+    - 13 in
+    - 17 in
+    - 24 in
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: camera-video-recorders
+  label: Camera › Video Recorders
+  folder: data/camera/video-recorders
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: camera-video-accessories-converters
+  label: Camera › Video Accessories › Converters
+  folder: data/camera/video-accessories/converters
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: camera-video-accessories-lut-box
+  label: Camera › Video Accessories › LUT-Box
+  folder: data/camera/video-accessories/lut-box
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: camera-video-accessories-multiviews
+  label: Camera › Video Accessories › Multiviews
+  folder: data/camera/video-accessories/multiviews
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: camera-video-accessories-encoders
+  label: Camera › Video Accessories › Encoders
+  folder: data/camera/video-accessories/encoders
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: camera-video-accessories-splitters
+  label: Camera › Video Accessories › Splitters
+  folder: data/camera/video-accessories/splitters
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: camera-video-accessories-routers
+  label: Camera › Video Accessories › Routers
+  folder: data/camera/video-accessories/routers
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: camera-video-accessories-video-i-o
+  label: Camera › Video Accessories › Video I/O
+  folder: data/camera/video-accessories/video-i-o
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: camera-cables
+  label: Camera › Cables
+  folder: data/camera/cables
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: camera-power-batteries
+  label: Camera › Power › Batteries
+  folder: data/camera/power/batteries
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: camera-power-hot-swap-adapters
+  label: Camera › Power › Hot-Swap Adapters
+  folder: data/camera/power/hot-swap-adapters
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: camera-power-chargers
+  label: Camera › Power › Chargers
+  folder: data/camera/power/chargers
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: camera-power-power-accessories
+  label: Camera › Power › Power Accessories
+  folder: data/camera/power/power-accessories
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: camera-data-media-cards
+  label: Camera › Data › Media Cards
+  folder: data/camera/data/media-cards
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: camera-data-card-reader
+  label: Camera › Data › Card Reader
+  folder: data/camera/data/card-reader
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: camera-data-computers
+  label: Camera › Data › Computers
+  folder: data/camera/data/computers
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: camera-carts-carts-accessories
+  label: Camera › Carts › Carts Accessories
+  folder: data/camera/carts/carts-accessories
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: camera-miscellaneous-accessories
+  label: Camera › Miscellaneous Accessories
+  folder: data/camera/miscellaneous-accessories
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: grip-heads
+  label: Grip › Heads
+  folder: data/grip/heads
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: grip-tripods
+  label: Grip › Tripods
+  folder: data/grip/tripods
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: grip-dollys
+  label: Grip › Dollys
+  folder: data/grip/dollys
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: grip-slider
+  label: Grip › Slider
+  folder: data/grip/slider
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: grip-jibs
+  label: Grip › Jibs
+  folder: data/grip/jibs
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: grip-cranes
+  label: Grip › Cranes
+  folder: data/grip/cranes
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: grip-gimbal
+  label: Grip › Gimbal
+  folder: data/grip/gimbal
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: grip-camera-support
+  label: Grip › Camera Support
+  folder: data/grip/camera-support
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: grip-rigging
+  label: Grip › Rigging
+  folder: data/grip/rigging
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: lighting-lamps-led-panels
+  label: Lighting › Lamps › LED › Panels
+  folder: data/lighting/lamps/led/panels
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: lighting-lamps-led-compact
+  label: Lighting › Lamps › LED › Compact
+  folder: data/lighting/lamps/led/compact
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: lighting-lamps-led-point-source-cob
+  label: Lighting › Lamps › LED › Point-Source & COB
+  folder: data/lighting/lamps/led/point-source-cob
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: lighting-lamps-led-par
+  label: Lighting › Lamps › LED › PAR
+  folder: data/lighting/lamps/led/par
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: lighting-lamps-led-tubes
+  label: Lighting › Lamps › LED › Tubes
+  folder: data/lighting/lamps/led/tubes
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: lighting-lamps-hmi
+  label: Lighting › Lamps › HMI
+  folder: data/lighting/lamps/hmi
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: lighting-lamps-tungsten
+  label: Lighting › Lamps › Tungsten
+  folder: data/lighting/lamps/tungsten
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: lighting-lamps-fluorescent
+  label: Lighting › Lamps › Fluorescent
+  folder: data/lighting/lamps/fluorescent
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: lighting-lamps-moving-lights-effects
+  label: Lighting › Lamps › Moving Lights & Effects
+  folder: data/lighting/lamps/moving-lights-effects
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: lighting-lamps-underwater-lighting
+  label: Lighting › Lamps › Underwater Lighting
+  folder: data/lighting/lamps/underwater-lighting
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: lighting-lamps-outdoor-systems
+  label: Lighting › Lamps › Outdoor Systems
+  folder: data/lighting/lamps/outdoor-systems
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: lighting-lamps-balloons
+  label: Lighting › Lamps › Balloons
+  folder: data/lighting/lamps/balloons
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: lighting-lamp-accessories-modifiers
+  label: Lighting › Lamp Accessories › Modifiers
+  folder: data/lighting/lamp-accessories/modifiers
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: lighting-stands-booms
+  label: Lighting › Stands › Booms
+  folder: data/lighting/stands/booms
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: lighting-stands-mini-stands
+  label: Lighting › Stands › Mini Stands
+  folder: data/lighting/stands/mini-stands
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: lighting-stands-c-stands
+  label: Lighting › Stands › C-Stands
+  folder: data/lighting/stands/c-stands
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: lighting-stands-lightweight-stands
+  label: Lighting › Stands › Lightweight Stands
+  folder: data/lighting/stands/lightweight-stands
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: lighting-stands-combo-stands
+  label: Lighting › Stands › Combo Stands
+  folder: data/lighting/stands/combo-stands
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: lighting-stands-overhead-roller-stands
+  label: Lighting › Stands › Overhead & Roller Stands
+  folder: data/lighting/stands/overhead-roller-stands
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: lighting-stands-wind-up-stands
+  label: Lighting › Stands › Wind-Up Stands
+  folder: data/lighting/stands/wind-up-stands
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: lighting-stands-heavy-duty-stands
+  label: Lighting › Stands › Heavy Duty Stands
+  folder: data/lighting/stands/heavy-duty-stands
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: lighting-stands-accessories
+  label: Lighting › Stands › Accessories
+  folder: data/lighting/stands/accessories
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: lighting-lighting-grip-grip-heads
+  label: Lighting › Lighting Grip › Grip Heads
+  folder: data/lighting/lighting-grip/grip-heads
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: lighting-lighting-grip-arms
+  label: Lighting › Lighting Grip › Arms
+  folder: data/lighting/lighting-grip/arms
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: lighting-lighting-grip-clamps-grips
+  label: Lighting › Lighting Grip › Clamps & Grips
+  folder: data/lighting/lighting-grip/clamps-grips
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: lighting-lighting-grip-clips-magnets
+  label: Lighting › Lighting Grip › Clips & Magnets
+  folder: data/lighting/lighting-grip/clips-magnets
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: lighting-lighting-grip-brackets-plates
+  label: Lighting › Lighting Grip › Brackets & Plates
+  folder: data/lighting/lighting-grip/brackets-plates
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: lighting-lighting-grip-holders
+  label: Lighting › Lighting Grip › Holders
+  folder: data/lighting/lighting-grip/holders
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: lighting-lighting-grip-hangers
+  label: Lighting › Lighting Grip › Hangers
+  folder: data/lighting/lighting-grip/hangers
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: lighting-lighting-grip-stand-extensions-accessories
+  label: Lighting › Lighting Grip › Stand Extensions & Accessories
+  folder: data/lighting/lighting-grip/stand-extensions-accessories
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: lighting-lighting-grip-spigots-pins-adapters
+  label: Lighting › Lighting Grip › Spigots, Pins & Adapters
+  folder: data/lighting/lighting-grip/spigots-pins-adapters
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: lighting-lighting-grip-support-systems
+  label: Lighting › Lighting Grip › Support Systems
+  folder: data/lighting/lighting-grip/support-systems
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: lighting-lighting-grip-suction-mounts
+  label: Lighting › Lighting Grip › Suction Mounts
+  folder: data/lighting/lighting-grip/suction-mounts
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: lighting-lighting-grip-truss-scaffolding
+  label: Lighting › Lighting Grip › Truss & Scaffolding
+  folder: data/lighting/lighting-grip/truss-scaffolding
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: lighting-lighting-grip-apple-boxes
+  label: Lighting › Lighting Grip › Apple Boxes
+  folder: data/lighting/lighting-grip/apple-boxes
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: lighting-lighting-grip-safety
+  label: Lighting › Lighting Grip › Safety
+  folder: data/lighting/lighting-grip/safety
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: lighting-lighting-grip-kits-racks
+  label: Lighting › Lighting Grip › Kits & Racks
+  folder: data/lighting/lighting-grip/kits-racks
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: lighting-frames-textiles-gel-frame
+  label: Lighting › Frames & Textiles › Gel Frame
+  folder: data/lighting/frames-textiles/gel-frame
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: lighting-frames-textiles-lightweight-frame-kits
+  label: Lighting › Frames & Textiles › Lightweight Frame Kits
+  folder: data/lighting/frames-textiles/lightweight-frame-kits
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: lighting-frames-textiles-modular-frames
+  label: Lighting › Frames & Textiles › Modular Frames
+  folder: data/lighting/frames-textiles/modular-frames
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: lighting-frames-textiles-fold-away-frames
+  label: Lighting › Frames & Textiles › Fold-Away Frames
+  folder: data/lighting/frames-textiles/fold-away-frames
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: lighting-frames-textiles-scaffolding-tube-frames
+  label: Lighting › Frames & Textiles › Scaffolding Tube Frames
+  folder: data/lighting/frames-textiles/scaffolding-tube-frames
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: lighting-frames-textiles-inflatable-frames
+  label: Lighting › Frames & Textiles › Inflatable Frames
+  folder: data/lighting/frames-textiles/inflatable-frames
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: lighting-frames-textiles-textiles
+  label: Lighting › Frames & Textiles › Textiles
+  folder: data/lighting/frames-textiles/textiles
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: lighting-frames-textiles-overheads-butterfly-grids
+  label: Lighting › Frames & Textiles › Overheads & Butterfly Grids
+  folder: data/lighting/frames-textiles/overheads-butterfly-grids
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: lighting-frames-textiles-ulcers-patterns
+  label: Lighting › Frames & Textiles › Ulcers & Patterns
+  folder: data/lighting/frames-textiles/ulcers-patterns
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: lighting-flags-nets-kits
+  label: Lighting › Flags & Nets › Kits
+  folder: data/lighting/flags-nets/kits
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: lighting-flags-nets-flags
+  label: Lighting › Flags & Nets › Flags
+  folder: data/lighting/flags-nets/flags
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: lighting-flags-nets-floppies
+  label: Lighting › Flags & Nets › Floppies
+  folder: data/lighting/flags-nets/floppies
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: lighting-flags-nets-wag-flags
+  label: Lighting › Flags & Nets › Wag Flags
+  folder: data/lighting/flags-nets/wag-flags
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: lighting-flags-nets-meat-axe-flags
+  label: Lighting › Flags & Nets › Meat Axe Flags
+  folder: data/lighting/flags-nets/meat-axe-flags
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: lighting-flags-nets-cutters
+  label: Lighting › Flags & Nets › Cutters
+  folder: data/lighting/flags-nets/cutters
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: lighting-flags-nets-ultrabounce
+  label: Lighting › Flags & Nets › Ultrabounce
+  folder: data/lighting/flags-nets/ultrabounce
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: lighting-flags-nets-nets
+  label: Lighting › Flags & Nets › Nets
+  folder: data/lighting/flags-nets/nets
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: lighting-flags-nets-silk
+  label: Lighting › Flags & Nets › Silk
+  folder: data/lighting/flags-nets/silk
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: lighting-control-consoles
+  label: Lighting › Control › Consoles
+  folder: data/lighting/control/consoles
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: lighting-control-pc
+  label: Lighting › Control › PC
+  folder: data/lighting/control/pc
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: lighting-control-fixed-installation
+  label: Lighting › Control › Fixed Installation
+  folder: data/lighting/control/fixed-installation
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: lighting-control-wireless
+  label: Lighting › Control › Wireless
+  folder: data/lighting/control/wireless
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: lighting-control-dmx
+  label: Lighting › Control › DMX
+  folder: data/lighting/control/dmx
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: lighting-control-data-distribution
+  label: Lighting › Control › Data Distribution
+  folder: data/lighting/control/data-distribution
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: lighting-control-dimmer-units
+  label: Lighting › Control › Dimmer Units
+  folder: data/lighting/control/dimmer-units
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: lighting-control-in-line-dimmers
+  label: Lighting › Control › In-Line Dimmers
+  folder: data/lighting/control/in-line-dimmers
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: lighting-control-led-drivers
+  label: Lighting › Control › LED Drivers
+  folder: data/lighting/control/led-drivers
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: lighting-control-dimmer-shutters
+  label: Lighting › Control › Dimmer Shutters
+  folder: data/lighting/control/dimmer-shutters
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: lighting-control-motorised-stirrups
+  label: Lighting › Control › Motorised Stirrups
+  folder: data/lighting/control/motorised-stirrups
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: lighting-control-accessories
+  label: Lighting › Control › Accessories
+  folder: data/lighting/control/accessories
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: lighting-mirrors-reflectors-cine-reflectors
+  label: Lighting › Mirrors & Reflectors › Cine Reflectors
+  folder: data/lighting/mirrors-reflectors/cine-reflectors
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: lighting-mirrors-reflectors-mirrors
+  label: Lighting › Mirrors & Reflectors › Mirrors
+  folder: data/lighting/mirrors-reflectors/mirrors
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: lighting-mirrors-reflectors-mobile-reflectors-diffusers
+  label: Lighting › Mirrors & Reflectors › Mobile Reflectors & Diffusers
+  folder: data/lighting/mirrors-reflectors/mobile-reflectors-diffusers
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: lighting-effects-smoke-haze
+  label: Lighting › Effects › Smoke & Haze
+  folder: data/lighting/effects/smoke-haze
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: lighting-effects-wind
+  label: Lighting › Effects › Wind
+  folder: data/lighting/effects/wind
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: lighting-power-single-phase
+  label: Lighting › Power › Single-Phase
+  folder: data/lighting/power/single-phase
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: lighting-power-three-phase
+  label: Lighting › Power › Three-Phase
+  folder: data/lighting/power/three-phase
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: lighting-power-earthing
+  label: Lighting › Power › Earthing
+  folder: data/lighting/power/earthing
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: lighting-power-batteries-chargers-portable
+  label: Lighting › Power › Batteries & Chargers › Portable
+  folder: data/lighting/power/batteries-chargers/portable
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: lighting-power-batteries-chargers-adapters-accessories
+  label: Lighting › Power › Batteries & Chargers › Adapters & Accessories
+  folder: data/lighting/power/batteries-chargers/adapters-accessories
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: lighting-light-color-meters
+  label: Lighting › Light & Color Meters
+  folder: data/lighting/light-color-meters
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: lighting-safety-cable-ramp
+  label: Lighting › Safety › Cable Ramp
+  folder: data/lighting/safety/cable-ramp
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: lighting-safety-rubber-matting
+  label: Lighting › Safety › Rubber Matting
+  folder: data/lighting/safety/rubber-matting
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: sound-audio-recorders-accessories
+  label: Sound › Audio Recorders › Accessories
+  folder: data/sound/audio-recorders/accessories
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: sound-power-batteries
+  label: Sound › Power › Batteries
+  folder: data/sound/power/batteries
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: sound-power-chargers
+  label: Sound › Power › Chargers
+  folder: data/sound/power/chargers
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: sound-power-power-supplies
+  label: Sound › Power › Power Supplies
+  folder: data/sound/power/power-supplies
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: sound-boom-poles-boom-pole-accessories
+  label: Sound › Boom Poles › Boom Pole Accessories
+  folder: data/sound/boom-poles/boom-pole-accessories
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: sound-cables-adaptors
+  label: Sound › Cables & Adaptors
+  folder: data/sound/cables-adaptors
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: sound-headphones-monitors-headphones
+  label: Sound › Headphones & Monitors › Headphones
+  folder: data/sound/headphones-monitors/headphones
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: sound-headphones-monitors-speakers
+  label: Sound › Headphones & Monitors › Speakers
+  folder: data/sound/headphones-monitors/speakers
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: sound-microphones-lavalier
+  label: Sound › Microphones › Lavalier
+  folder: data/sound/microphones/lavalier
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: sound-microphones-condenser-shotgun
+  label: Sound › Microphones › Condenser & Shotgun
+  folder: data/sound/microphones/condenser-shotgun
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: sound-microphones-dynamic
+  label: Sound › Microphones › Dynamic
+  folder: data/sound/microphones/dynamic
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: sound-microphones-modular
+  label: Sound › Microphones › Modular
+  folder: data/sound/microphones/modular
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: sound-microphones-handhelds
+  label: Sound › Microphones › Handhelds
+  folder: data/sound/microphones/handhelds
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: sound-microphones-hydrophone
+  label: Sound › Microphones › Hydrophone
+  folder: data/sound/microphones/hydrophone
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: sound-microphones-stereo-m-s
+  label: Sound › Microphones › Stereo & M/S
+  folder: data/sound/microphones/stereo-m-s
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: sound-microphones-surround-vr
+  label: Sound › Microphones › Surround & VR
+  folder: data/sound/microphones/surround-vr
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: sound-microphones-mic-accessories
+  label: Sound › Microphones › Mic Accessories
+  folder: data/sound/microphones/mic-accessories
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: sound-consumables-tape
+  label: Sound › Consumables › Tape
+  folder: data/sound/consumables/tape
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: sound-communication-intercom
+  label: Sound › Communication › Intercom
+  folder: data/sound/communication/intercom
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: sound-communication-walkie-talkie
+  label: Sound › Communication › Walkie Talkie
+  folder: data/sound/communication/walkie-talkie
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: sound-mounting-grip-mic-stands
+  label: Sound › Mounting & Grip › Mic Stands
+  folder: data/sound/mounting-grip/mic-stands
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: sound-mounting-grip-mic-holder
+  label: Sound › Mounting & Grip › Mic Holder
+  folder: data/sound/mounting-grip/mic-holder
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: sound-mounting-grip-boom-holder
+  label: Sound › Mounting & Grip › Boom Holder
+  folder: data/sound/mounting-grip/boom-holder
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: sound-mixers-controllers-interfaces-mixers
+  label: Sound › Mixers, Controllers & Interfaces › Mixers
+  folder: data/sound/mixers-controllers-interfaces/mixers
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: sound-mixers-controllers-interfaces-controllers
+  label: Sound › Mixers, Controllers & Interfaces › Controllers
+  folder: data/sound/mixers-controllers-interfaces/controllers
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: sound-mixers-controllers-interfaces-interfaces
+  label: Sound › Mixers, Controllers & Interfaces › Interfaces
+  folder: data/sound/mixers-controllers-interfaces/interfaces
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: sound-wind-protection
+  label: Sound › Wind Protection
+  folder: data/sound/wind-protection
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: sound-wireless-systems-rf
+  label: Sound › Wireless Systems & RF
+  folder: data/sound/wireless-systems-rf
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: sound-shock-mounts-suspensions
+  label: Sound › Shock Mounts & Suspensions
+  folder: data/sound/shock-mounts-suspensions
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: sound-slates-timecode-timecode-devices
+  label: Sound › Slates & Timecode › Timecode Devices
+  folder: data/sound/slates-timecode/timecode-devices
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: sound-slates-timecode-slates-displays
+  label: Sound › Slates & Timecode › Slates & Displays
+  folder: data/sound/slates-timecode/slates-displays
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: sound-slates-timecode-timecode-cables
+  label: Sound › Slates & Timecode › Timecode Cables
+  folder: data/sound/slates-timecode/timecode-cables
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: sound-slates-timecode-timecode-accessories
+  label: Sound › Slates & Timecode › Timecode Accessories
+  folder: data/sound/slates-timecode/timecode-accessories
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: sound-carts
+  label: Sound › Carts
+  folder: data/sound/carts
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: sound-lav-accessories
+  label: Sound › Lav Accessories
+  folder: data/sound/lav-accessories
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: miscellaneous-transport-cases-carts
+  label: Miscellaneous › Transport & Cases › Carts
+  folder: data/miscellaneous/transport-cases/carts
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: miscellaneous-communication-intercoms
+  label: Miscellaneous › Communication › Intercoms
+  folder: data/miscellaneous/communication/intercoms
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: miscellaneous-communication-radios
+  label: Miscellaneous › Communication › Radios
+  folder: data/miscellaneous/communication/radios
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: miscellaneous-vehicles
+  label: Miscellaneous › Vehicles
+  folder: data/miscellaneous/vehicles
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: miscellaneous-production-gear
+  label: Miscellaneous › Production Gear
+  folder: data/miscellaneous/production-gear
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+  - label: Manufacturer
+    name: manufacturer
+    widget: string
+  - label: Model
+    name: model
+    widget: string
+  - label: Notes
+    name: notes
+    widget: text
+    required: false
+  - label: Image URL
+    name: image_url
+    widget: string
+    required: false
+    hint: Only freely licensed sources, e.g. Wikimedia Commons
+  - label: Source / datasheet
+    name: source_url
+    widget: string
+    required: false
+- name: miscellaneous-consumables
+  label: Miscellaneous › Consumables
+  folder: data/miscellaneous/consumables
+  create: true
+  slug: '{{id}}'
+  identifier_field: id
+  extension: yaml
+  format: yaml
+  summary: '{{manufacturer}} {{model}}'
+  fields:
+  - label: ID
+    name: id
+    widget: string
+    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
   - label: Manufacturer
     name: manufacturer
     widget: string
