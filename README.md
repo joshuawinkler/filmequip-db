@@ -7,8 +7,14 @@ prep apps, etc.).
 
 ## How it works
 
-- Raw data lives under `/data/<category>/*.yaml`, one file per device
-- Every file is validated against a schema in `/data/schemas/` (CI, on every PR)
+- Raw data lives under `/data/<root-category>/*.yaml`, one file per device,
+  where `<root-category>` is `camera`, `grip`, `lighting`, `sound`, or
+  `miscellaneous`
+- The full category tree (root down to leaf) lives in `/data/categories.json`;
+  each entry's `category` field is a `" > "`-joined breadcrumb path through it
+- Every file is validated against the common base schema
+  (`/data/schemas/base.schema.json`) plus any category-specific fields from
+  `/data/schemas/fields/<category_id>.json` (CI, on every PR)
 - On every merge to `main`, GitHub Actions builds static JSON bundles from it
   and deploys them to GitHub Pages — with no server of your own
 
@@ -17,11 +23,19 @@ prep apps, etc.).
 Live at:
 
 ```
-https://joshuawinkler.github.io/filmequip-db/v1/cameras.json
+https://joshuawinkler.github.io/filmequip-db/v1/camera.json
+https://joshuawinkler.github.io/filmequip-db/v1/grip.json
 https://joshuawinkler.github.io/filmequip-db/v1/lighting.json
+https://joshuawinkler.github.io/filmequip-db/v1/sound.json
+https://joshuawinkler.github.io/filmequip-db/v1/miscellaneous.json
 https://joshuawinkler.github.io/filmequip-db/v1/all.json
+https://joshuawinkler.github.io/filmequip-db/v1/categories.json
 https://joshuawinkler.github.io/filmequip-db/v1/version.json
 ```
+
+`categories.json` is the full category tree (`id`, `name`, `parent_id`,
+`sort_order`) — each entry's `category` field is a `" > "`-joined breadcrumb
+path through this tree, root to leaf.
 
 Example fetch in Swift:
 

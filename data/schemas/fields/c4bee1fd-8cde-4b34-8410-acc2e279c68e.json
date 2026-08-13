@@ -1,0 +1,85 @@
+{
+  "category_id": "c4bee1fd-8cde-4b34-8410-acc2e279c68e",
+  "category_name": "Cameras",
+  "fields": [
+    {
+      "key": "lens_mounts",
+      "label": "Lens Mounts",
+      "type": "multiselect",
+      "sort_order": 0,
+      "filterable": true,
+      "variant": true,
+      "variant_color": "green",
+      "options": [
+        "Arri LPL",
+        "Arri PL",
+        "Canon EF",
+        "Leica L",
+        "Sony E",
+        "Nikon Z",
+        "Fuji X",
+        "M4/3",
+        "Canon RF",
+        "Fuji G",
+        "Leica M",
+        "Leica R",
+        "Canon FD",
+        "B4",
+        "Panavision PV",
+        "Arri Standard",
+        "Arri B",
+        "Arri Maxi PL",
+        "Arri XPL",
+        "Aaton",
+        "Panavision SP70",
+        "Nikon F",
+        "Hasselblad HC",
+        "DJI DL",
+        "DJI DX",
+        "Panavision PV65",
+        "Sony FZ",
+        "C Mount"
+      ]
+    },
+    {
+      "key": "release",
+      "label": "Release",
+      "type": "number",
+      "sort_order": 1,
+      "filterable": true,
+      "variant": false
+    },
+    {
+      "key": "min_fps",
+      "label": "Min FPS",
+      "type": "number",
+      "sort_order": 2,
+      "filterable": true,
+      "variant": false
+    },
+    {
+      "key": "max_fps",
+      "label": "Max FPS",
+      "type": "number",
+      "sort_order": 3,
+      "filterable": true,
+      "variant": false
+    },
+    {
+      "key": "shutter_range",
+      "label": "Shutter Range",
+      "type": "text",
+      "sort_order": 4,
+      "filterable": false,
+      "variant": false
+    },
+    {
+      "key": "weight",
+      "label": "Weight",
+      "type": "text",
+      "sort_order": 5,
+      "filterable": false,
+      "variant": false
+    }
+  ]
+}

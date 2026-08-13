@@ -1,0 +1,119 @@
+{
+  "category_id": "8b351c99-73a4-45de-b0e8-5bb4ed9b5837",
+  "category_name": "Lenses",
+  "fields": [
+    {
+      "key": "focal_length",
+      "label": "Focal Length",
+      "type": "text",
+      "sort_order": 0,
+      "filterable": false,
+      "variant": false
+    },
+    {
+      "key": "max_aperture",
+      "label": "Max Aperture",
+      "type": "text",
+      "sort_order": 1,
+      "filterable": true,
+      "variant": false
+    },
+    {
+      "key": "lens_mounts",
+      "label": "Lens Mounts",
+      "type": "multiselect",
+      "sort_order": 2,
+      "filterable": true,
+      "variant": true,
+      "variant_color": "blue",
+      "options": [
+        "Arri LPL",
+        "Arri PL",
+        "Canon EF",
+        "Leica L",
+        "Sony E",
+        "Nikon Z",
+        "Fuji X",
+        "M4/3",
+        "Canon RF",
+        "Fuji G",
+        "Leica M",
+        "Leica R",
+        "Canon FD",
+        "B4",
+        "Panavision PV",
+        "Arri Standard",
+        "Arri B",
+        "Arri Maxi PL",
+        "Arri XPL",
+        "Aaton",
+        "Panavision SP70",
+        "Nikon F",
+        "Hasselblad HC",
+        "DJI DL",
+        "DJI DX",
+        "Panavision PV65",
+        "Sony FZ"
+      ]
+    },
+    {
+      "key": "focus_scale",
+      "label": "Focus Scale",
+      "type": "multiselect",
+      "sort_order": 3,
+      "filterable": false,
+      "variant": true,
+      "variant_color": "green",
+      "options": [
+        "Metric",
+        "Imperial"
+      ]
+    },
+    {
+      "key": "coverage",
+      "label": "Coverage",
+      "type": "select",
+      "sort_order": 4,
+      "filterable": true,
+      "variant": false,
+      "options": [
+        "Super 35",
+        "Large Format",
+        "Full Frame",
+        "65mm",
+        "APS-C",
+        "Micro Four Thirds",
+        "16mm",
+        "Super 16"
+      ]
+    },
+    {
+      "key": "close_focus_in_m",
+      "label": "Close Focus in m",
+      "type": "number",
+      "sort_order": 4,
+      "filterable": true,
+      "variant": false
+    },
+    {
+      "key": "front_diameter_in_mm",
+      "label": "Front Diameter in mm",
+      "type": "select",
+      "sort_order": 5,
+      "filterable": true,
+      "variant": false,
+      "options": [
+        "80",
+        "87",
+        "95",
+        "110",
+        "114",
+        "134",
+        "156",
+        "104",
+        "135",
+        "136"
+      ]
+    }
+  ]
+}

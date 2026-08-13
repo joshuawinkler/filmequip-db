@@ -1,0 +1,22 @@
+{
+  "category_id": "47f5feb5-02d1-4742-bf34-9cd3324cc1df",
+  "category_name": "Monitors",
+  "fields": [
+    {
+      "key": "display_size",
+      "label": "Display Size",
+      "type": "select",
+      "sort_order": 0,
+      "filterable": true,
+      "variant": false,
+      "options": [
+        "5 in",
+        "7 in",
+        "10 in",
+        "13 in",
+        "17 in",
+        "24 in"
+      ]
+    }
+  ]
+}
