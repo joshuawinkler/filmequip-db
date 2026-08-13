@@ -15,18 +15,27 @@ body:
     validations:
       required: true
   - type: dropdown
-    id: category
+    id: category_root
     attributes:
-      label: Category
+      label: Top-level category
       options:
-        - Digital Cameras
-        - Film Cameras
-        - LED
-        - HMI
-        - Tungsten
-        - Other (please specify below)
+        - Camera
+        - Grip
+        - Lighting
+        - Sound
+        - Miscellaneous
     validations:
       required: true
+  - type: input
+    id: category_path
+    attributes:
+      label: Full category
+      description: >
+        The full category path, root to leaf, e.g. "Camera > Cameras > Digital
+        Cameras". See data/categories.json in the repo for the full tree, or
+        leave blank and a maintainer will place it.
+    validations:
+      required: false
   - type: textarea
     id: specs
     attributes:

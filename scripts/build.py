@@ -1,14 +1,17 @@
 #!/usr/bin/env python3
 """
-Builds static JSON bundles for the API from /data/<category>/*.yaml,
+Builds static JSON bundles for the API from /data/<root-category>/*.yaml,
 and assembles the full GitHub Pages deploy folder.
 
+Root categories (and their data folders) are read from data/categories.json
+rather than hardcoded, so adding a new root category is just a data change.
+
 Output:
-  site/v1/cameras.json
-  site/v1/lighting.json
+  site/v1/<root-slug>.json  (e.g. camera.json, grip.json, lighting.json, ...)
   site/v1/all.json
-  site/v1/version.json   (timestamp + entry count, for cache invalidation)
-  site/admin/...          (copy of the Decap CMS admin UI)
+  site/v1/categories.json   (full category tree, from data/categories.json)
+  site/v1/version.json      (timestamp + entry count, for cache invalidation)
+  site/admin/...            (copy of the Decap CMS admin UI)
 """
 
 import json
@@ -27,8 +30,15 @@ ADMIN_SRC = ROOT / "admin"        # Decap CMS source folder
 ADMIN_DEST = SITE_DIR / "admin"   # gets deployed to Pages as well
 MANAGE_SRC = ROOT / "manage"      # structure manager tool source folder
 MANAGE_DEST = SITE_DIR / "manage" # gets deployed to Pages as well
+CATEGORIES_PATH = DATA_DIR / "categories.json"
 
-CATEGORIES = ["cameras", "lighting"]
+
+def load_root_slugs() -> list[str]:
+    with open(CATEGORIES_PATH, "r", encoding="utf-8") as f:
+        nodes = json.load(f)
+    roots = [n for n in nodes if n["parent_id"] is None]
+    roots.sort(key=lambda n: n["sort_order"])
+    return [n["name"].lower().replace(" ", "-") for n in roots]
 
 
 def load_category(folder: str) -> list[dict]:
@@ -57,8 +67,12 @@ def main() -> int:
         shutil.copytree(MANAGE_SRC, MANAGE_DEST)
         print(f"→ {MANAGE_DEST.relative_to(ROOT)}: manage/ copied")
 
+    shutil.copyfile(CATEGORIES_PATH, OUT_DIR / "categories.json")
+    print(f"→ {(OUT_DIR / 'categories.json').relative_to(ROOT)}: category tree copied")
+
+    categories = load_root_slugs()
     all_items = []
-    for category in CATEGORIES:
+    for category in categories:
         items = load_category(category)
         out_path = OUT_DIR / f"{category}.json"
         with open(out_path, "w", encoding="utf-8") as f:
@@ -72,7 +86,7 @@ def main() -> int:
     version_info = {
         "built_at": datetime.now(timezone.utc).isoformat(),
         "total_items": len(all_items),
-        "categories": {c: len(load_category(c)) for c in CATEGORIES},
+        "categories": {c: len(load_category(c)) for c in categories},
     }
     with open(OUT_DIR / "version.json", "w", encoding="utf-8") as f:
         json.dump(version_info, f, ensure_ascii=False, indent=2)

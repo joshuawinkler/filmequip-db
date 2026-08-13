@@ -1,0 +1,287 @@
+{
+  "category_id": "0a2fbffb-4ef6-40d6-868e-fd5e57bc0f31",
+  "category_name": "Digital Cameras",
+  "fields": [
+    {
+      "key": "sensor_size",
+      "label": "Sensor Size",
+      "type": "text",
+      "sort_order": 0,
+      "filterable": false,
+      "variant": false
+    },
+    {
+      "key": "sensor_coverage",
+      "label": "Sensor Coverage",
+      "type": "select",
+      "sort_order": 0,
+      "filterable": true,
+      "variant": false,
+      "options": [
+        "Super 35",
+        "Large Format",
+        "Full Frame",
+        "65mm",
+        "APS-C",
+        "Micro Four Thirds",
+        "16mm",
+        "Super 16"
+      ]
+    },
+    {
+      "key": "resolution",
+      "label": "Resolution",
+      "type": "text",
+      "sort_order": 1,
+      "filterable": false,
+      "variant": false
+    },
+    {
+      "key": "max_resolution",
+      "label": "Max Resolution",
+      "type": "text",
+      "sort_order": 2,
+      "filterable": false,
+      "variant": false
+    },
+    {
+      "key": "sensor_diagonal_mm",
+      "label": "Sensor Diagonal mm",
+      "type": "number",
+      "sort_order": 3,
+      "filterable": false,
+      "variant": false
+    },
+    {
+      "key": "dynamic_range",
+      "label": "Dynamic Range",
+      "type": "text",
+      "sort_order": 4,
+      "filterable": false,
+      "variant": false
+    },
+    {
+      "key": "shutter_type",
+      "label": "Shutter Type",
+      "type": "select",
+      "sort_order": 5,
+      "filterable": true,
+      "variant": false,
+      "options": [
+        "Rolling Shutter",
+        "Global Shutter"
+      ]
+    },
+    {
+      "key": "base_sensitivity",
+      "label": "Base Sensitivity",
+      "type": "multiselect",
+      "sort_order": 5,
+      "filterable": true,
+      "variant": false,
+      "options": [
+        "EI 100",
+        "EI 125",
+        "EI 320",
+        "EI 400",
+        "EI 500",
+        "EI 640",
+        "EI 800",
+        "EI 1250",
+        "EI 1600",
+        "EI 2500",
+        "EI 3200",
+        "EI 4000",
+        "EI 5000",
+        "EI 6400",
+        "EI 12800",
+        "EI 160",
+        "EI 25600",
+        "EI 51200",
+        "EI 200"
+      ]
+    },
+    {
+      "key": "min_sensitivity",
+      "label": "Min Sensitivity",
+      "type": "select",
+      "sort_order": 8,
+      "filterable": false,
+      "variant": false,
+      "options": [
+        "EI 100",
+        "EI 125",
+        "EI 320",
+        "EI 400",
+        "EI 500",
+        "EI 640",
+        "EI 800",
+        "EI 160",
+        "EI 250"
+      ]
+    },
+    {
+      "key": "max_sensitivity",
+      "label": "Max Sensitivity",
+      "type": "select",
+      "sort_order": 9,
+      "filterable": false,
+      "variant": false,
+      "options": [
+        "EI 400",
+        "EI 500",
+        "EI 640",
+        "EI 800",
+        "EI 1250",
+        "EI 1600",
+        "EI 2500",
+        "EI 3200",
+        "EI 4000",
+        "EI 5000",
+        "EI 6400",
+        "EI 12800",
+        "EI 51200",
+        "EI 25600"
+      ]
+    },
+    {
+      "key": "power_consumption",
+      "label": "Power Consumption",
+      "type": "text",
+      "sort_order": 9,
+      "filterable": false,
+      "variant": false
+    },
+    {
+      "key": "battery_mount",
+      "label": "Battery Mount",
+      "type": "multiselect",
+      "sort_order": 9,
+      "filterable": true,
+      "variant": true,
+      "variant_color": "blue",
+      "options": [
+        "V-Mount",
+        "Gold Mount",
+        "B-Mount",
+        "NP-FZ100",
+        "BP-U",
+        "NP-F570",
+        "Custom",
+        "DJI TB50",
+        "NP-W235",
+        "EN-EL15",
+        "DMW-BLJ31E"
+      ]
+    },
+    {
+      "key": "internal_nd_filters",
+      "label": "Internal ND Filters",
+      "type": "multiselect",
+      "sort_order": 10,
+      "filterable": true,
+      "variant": false,
+      "options": [
+        "0.3",
+        "0.6",
+        "0.9",
+        "1.2",
+        "1.5",
+        "1.8",
+        "2.1",
+        "2.4",
+        "Vario",
+        "none",
+        "2.7"
+      ]
+    },
+    {
+      "key": "media_types",
+      "label": "Media Types",
+      "type": "multiselect",
+      "sort_order": 11,
+      "filterable": true,
+      "variant": false,
+      "options": [
+        "Compact Drive",
+        "CFexpress Type B",
+        "USB-C SSD",
+        "CFast 2.0",
+        "SXR Capture Drive",
+        "SxS PRO+",
+        "XR Capture Drive",
+        "Internal SSD",
+        "SD",
+        "microSD",
+        "Blackmagic Media Module PCIe SSD",
+        "DJI PROSSD",
+        "DXL Mag SSD",
+        "RED Mini Mag SSD",
+        "REDMag SSD",
+        "CFexpress Type A"
+      ]
+    },
+    {
+      "key": "codecs",
+      "label": "Codecs",
+      "type": "multiselect",
+      "sort_order": 12,
+      "filterable": true,
+      "variant": false,
+      "options": [
+        "ARRIRAW",
+        "ProRes 4444 XQ",
+        "ProRes 4444",
+        "ProRes 422 HQ",
+        "ProRes 422",
+        "ProRes 422 LT",
+        "H.264",
+        "H.264 Proxy",
+        "H.265",
+        "Blackmagic RAW",
+        "ProRes RAW",
+        "R3D NE",
+        "N-RAW",
+        "DNxHD",
+        "DNxHR",
+        "R3D RAW",
+        "ProRes"
+      ]
+    },
+    {
+      "key": "interfaces",
+      "label": "Interfaces",
+      "type": "multiselect_amounts",
+      "sort_order": 14,
+      "filterable": true,
+      "variant": false,
+      "options": [
+        "HDMI",
+        "12G SDI (BNC)",
+        "BNC",
+        "RS/24V (Fischer 3-pin)",
+        "12V (LEMO 2-pin)",
+        "LBUS (LEMO 4-pin)",
+        "AUDIO (LEMO 6-pin)",
+        "ETH (LEMO 10-pin)",
+        "Arri MVF (custom CoaXPress)",
+        "PWR (LEMO 8-pin)",
+        "SERIAL (LEMO 4-pin)",
+        "TC (LEMO 5-pin)",
+        "Headphone (3.5 mm stereo jack)",
+        "Mic (3.5mm stereo jack)",
+        "USB-C",
+        "Mini XLR",
+        "12V Locking Connector (WEIPU SF6)"
+      ]
+    },
+    {
+      "key": "autofocus",
+      "label": "Autofocus",
+      "type": "boolean",
+      "sort_order": 16,
+      "filterable": true,
+      "variant": false
+    }
+  ]
+}

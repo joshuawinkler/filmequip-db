@@ -1,9 +1,9 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "camera.schema.json",
-  "title": "Camera",
+  "$id": "base.schema.json",
+  "title": "Equipment entry (base fields, common to every category)",
   "type": "object",
-  "required": ["id", "category", "manufacturer", "model", "type"],
+  "required": ["id", "category", "manufacturer", "model"],
   "properties": {
     "id": {
       "type": "string",
@@ -12,28 +12,11 @@
     },
     "category": {
       "type": "string",
-      "enum": ["Digital Cameras", "Film Cameras"]
+      "description": "Full breadcrumb path of category names, root to leaf, joined by ' > ', e.g. 'Camera > Cameras > Digital Cameras'. Must resolve to a leaf in data/categories.json.",
+      "pattern": "^[^>]+( > [^>]+)*$"
     },
     "manufacturer": { "type": "string" },
     "model": { "type": "string" },
-    "type": {
-      "type": "string",
-      "enum": ["digital", "film"]
-    },
-    "mount": {
-      "type": "string",
-      "description": "e.g. PL, EF, LPL, PV"
-    },
-    "sensor": {
-      "type": "object",
-      "properties": {
-        "size": { "type": "string", "description": "e.g. Super 35, Full Frame" },
-        "resolution": { "type": "string", "description": "e.g. 4.6K, 6K" },
-        "type": { "type": "string", "description": "e.g. CMOS" }
-      }
-    },
-    "weight_kg": { "type": "number" },
-    "release_year": { "type": "integer" },
     "notes": { "type": "string" },
     "image_url": {
       "type": "string",
@@ -45,6 +28,5 @@
       "format": "uri",
       "description": "Link to manufacturer page/datasheet for verification"
     }
-  },
-  "additionalProperties": false
+  }
 }

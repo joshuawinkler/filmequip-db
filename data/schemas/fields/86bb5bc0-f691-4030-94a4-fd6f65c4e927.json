@@ -1,0 +1,62 @@
+{
+  "category_id": "86bb5bc0-f691-4030-94a4-fd6f65c4e927",
+  "category_name": "Film Cameras",
+  "fields": [
+    {
+      "key": "coverage",
+      "label": "Coverage",
+      "type": "multiselect",
+      "sort_order": 0,
+      "filterable": true,
+      "variant": false,
+      "options": [
+        "Super 8mm",
+        "Standard 8mm",
+        "Super 16mm",
+        "Standard 16mm",
+        "4-Perf 35mm",
+        "3-Perf 35mm",
+        "2-Perf 35mm",
+        "8-Perf 35mm",
+        "8-Perf 65mm",
+        "5-Perf 65mm",
+        "15-Perf 65mm"
+      ]
+    },
+    {
+      "key": "noise_level_db",
+      "label": "Noise Level",
+      "type": "text",
+      "sort_order": 1,
+      "filterable": true,
+      "variant": false
+    },
+    {
+      "key": "mag_size",
+      "label": "Mag Size",
+      "type": "multiselect",
+      "sort_order": 3,
+      "filterable": true,
+      "variant": false,
+      "options": [
+        "100ft",
+        "200ft",
+        "400ft",
+        "1000ft"
+      ]
+    },
+    {
+      "key": "shutter_type",
+      "label": "Shutter Type",
+      "type": "select",
+      "sort_order": 5,
+      "filterable": true,
+      "variant": false,
+      "options": [
+        "electronically",
+        "mechanical",
+        "fixed"
+      ]
+    }
+  ]
+}
