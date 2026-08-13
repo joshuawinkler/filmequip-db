@@ -3,11 +3,11 @@
 
 backend:
   name: github
-  repo: DEIN-GITHUB-NAME/DEIN-REPO-NAME   # anpassen!
+  repo: joshuawinkler/filmequip-db
   branch: main
   # base_url + auth_endpoint nur nötig, wenn ihr einen eigenen OAuth-Proxy nutzt
   # (siehe README.md, Abschnitt "Decap CMS – Setup"), sonst diese Zeile entfernen:
-  base_url: https://DEIN-OAUTH-WORKER.workers.dev
+  base_url: https://decap-proxy.joshuawinkler.workers.dev
   auth_endpoint: auth
 
 # Öffnet für jede Änderung einen PR statt direkt auf main zu schreiben.
