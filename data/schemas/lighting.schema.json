@@ -1,0 +1,34 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "lighting.schema.json",
+  "title": "Lighting Fixture",
+  "type": "object",
+  "required": ["id", "category", "manufacturer", "model"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "category": {
+      "type": "string",
+      "enum": ["LED", "HMI", "Tungsten", "Fluorescent", "Moving Lights & Effects", "Underwater Lighting", "Outdoor Systems", "Balloons"]
+    },
+    "manufacturer": { "type": "string" },
+    "model": { "type": "string" },
+    "power_watts": { "type": "number" },
+    "color_temp_kelvin": {
+      "type": "string",
+      "description": "z.B. 2700-6500 (bicolor) oder 5600 (daylight)"
+    },
+    "weight_kg": { "type": "number" },
+    "power_source": {
+      "type": "array",
+      "items": { "type": "string", "enum": ["mains", "battery", "both"] }
+    },
+    "release_year": { "type": "integer" },
+    "notes": { "type": "string" },
+    "image_url": { "type": "string", "format": "uri" },
+    "source_url": { "type": "string", "format": "uri" }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,83 @@
+# Decap CMS Konfiguration
+# Doku: https://decapcms.org/docs/configuration-options/
+
+backend:
+  name: github
+  repo: DEIN-GITHUB-NAME/DEIN-REPO-NAME   # anpassen!
+  branch: main
+  # base_url + auth_endpoint nur nötig, wenn ihr einen eigenen OAuth-Proxy nutzt
+  # (siehe README.md, Abschnitt "Decap CMS – Setup"), sonst diese Zeile entfernen:
+  base_url: https://DEIN-OAUTH-WORKER.workers.dev
+  auth_endpoint: auth
+
+# Öffnet für jede Änderung einen PR statt direkt auf main zu schreiben.
+# Damit bleibt eure CI-Validierung + Review-Pflicht aus Variante 1 erhalten.
+publish_mode: editorial_workflow
+
+media_folder: "" # kein Bild-Upload – Bilder werden nur per image_url verlinkt (siehe CONTRIBUTING.md)
+
+collections:
+  - name: "cameras"
+    label: "Kameras"
+    folder: "data/cameras"
+    create: true
+    slug: "{{id}}"
+    identifier_field: id
+    extension: "yaml"
+    format: "yaml"
+    fields:
+      - { label: "ID", name: "id", widget: "string", hint: "Format: hersteller-modell-slug, z.B. arri-alexa-mini-lf" }
+      - label: "Kategorie"
+        name: "category"
+        widget: "select"
+        options: ["Digital Cameras", "Film Cameras"]
+      - { label: "Hersteller", name: "manufacturer", widget: "string" }
+      - { label: "Modell", name: "model", widget: "string" }
+      - label: "Typ"
+        name: "type"
+        widget: "select"
+        options: ["digital", "film"]
+      - { label: "Mount", name: "mount", widget: "string", required: false }
+      - label: "Sensor"
+        name: "sensor"
+        widget: "object"
+        required: false
+        fields:
+          - { label: "Größe", name: "size", widget: "string", required: false }
+          - { label: "Auflösung", name: "resolution", widget: "string", required: false }
+          - { label: "Typ", name: "type", widget: "string", required: false }
+      - { label: "Gewicht (kg)", name: "weight_kg", widget: "number", required: false, value_type: "float" }
+      - { label: "Erscheinungsjahr", name: "release_year", widget: "number", required: false, value_type: "int" }
+      - { label: "Notizen", name: "notes", widget: "text", required: false }
+      - { label: "Bild-URL", name: "image_url", widget: "string", required: false, hint: "Nur frei lizenzierte Quellen, z.B. Wikimedia Commons" }
+      - { label: "Quelle / Datenblatt", name: "source_url", widget: "string" }
+
+  - name: "lighting"
+    label: "Lighting"
+    folder: "data/lighting"
+    create: true
+    slug: "{{id}}"
+    identifier_field: id
+    extension: "yaml"
+    format: "yaml"
+    fields:
+      - { label: "ID", name: "id", widget: "string", hint: "Format: hersteller-modell-slug, z.B. aputure-600d-pro" }
+      - label: "Kategorie"
+        name: "category"
+        widget: "select"
+        options: ["LED", "HMI", "Tungsten", "Fluorescent", "Moving Lights & Effects", "Underwater Lighting", "Outdoor Systems", "Balloons"]
+      - { label: "Hersteller", name: "manufacturer", widget: "string" }
+      - { label: "Modell", name: "model", widget: "string" }
+      - { label: "Leistung (Watt)", name: "power_watts", widget: "number", required: false, value_type: "float" }
+      - { label: "Farbtemperatur (Kelvin)", name: "color_temp_kelvin", widget: "string", required: false, hint: "z.B. 2700-6500 oder 5600" }
+      - { label: "Gewicht (kg)", name: "weight_kg", widget: "number", required: false, value_type: "float" }
+      - label: "Stromquelle"
+        name: "power_source"
+        widget: "select"
+        multiple: true
+        required: false
+        options: ["mains", "battery", "both"]
+      - { label: "Erscheinungsjahr", name: "release_year", widget: "number", required: false, value_type: "int" }
+      - { label: "Notizen", name: "notes", widget: "text", required: false }
+      - { label: "Bild-URL", name: "image_url", widget: "string", required: false, hint: "Nur frei lizenzierte Quellen, z.B. Wikimedia Commons" }
+      - { label: "Quelle / Datenblatt", name: "source_url", widget: "string" }

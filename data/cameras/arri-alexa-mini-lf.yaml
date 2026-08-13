@@ -1,0 +1,14 @@
+id: arri-alexa-mini-lf
+category: Digital Cameras
+manufacturer: ARRI
+model: Alexa Mini LF
+type: digital
+mount: LPL
+sensor:
+  size: Large Format
+  resolution: "4.5K"
+  type: CMOS
+weight_kg: 2.3
+release_year: 2019
+notes: "Kompaktes Large-Format-Body, häufig für Steadicam/Gimbal genutzt."
+source_url: "https://www.arri.com/en/camera-systems/cameras/alexa-mini-lf"

@@ -1,0 +1,11 @@
+id: aputure-600d-pro
+category: LED
+manufacturer: Aputure
+model: LS 600d Pro
+power_watts: 600
+color_temp_kelvin: "5600"
+weight_kg: 6.4
+power_source: [mains, battery]
+release_year: 2021
+notes: "Bowens-Mount, oft mit Lightdome verwendet."
+source_url: "https://www.aputure.com/products/ls-600d-pro"

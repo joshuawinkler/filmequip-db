@@ -1,0 +1,50 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "camera.schema.json",
+  "title": "Camera",
+  "type": "object",
+  "required": ["id", "category", "manufacturer", "model", "type"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Eindeutige, unveränderliche ID. Format: hersteller-modell-slug, z.B. arri-alexa-mini-lf",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "category": {
+      "type": "string",
+      "enum": ["Digital Cameras", "Film Cameras"]
+    },
+    "manufacturer": { "type": "string" },
+    "model": { "type": "string" },
+    "type": {
+      "type": "string",
+      "enum": ["digital", "film"]
+    },
+    "mount": {
+      "type": "string",
+      "description": "z.B. PL, EF, LPL, PV"
+    },
+    "sensor": {
+      "type": "object",
+      "properties": {
+        "size": { "type": "string", "description": "z.B. Super 35, Full Frame" },
+        "resolution": { "type": "string", "description": "z.B. 4.6K, 6K" },
+        "type": { "type": "string", "description": "z.B. CMOS" }
+      }
+    },
+    "weight_kg": { "type": "number" },
+    "release_year": { "type": "integer" },
+    "notes": { "type": "string" },
+    "image_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "Bitte nur Links zu frei lizenzierten Bildern (z.B. Wikimedia Commons), keine eigenen Uploads ins Repo"
+    },
+    "source_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "Link zur Herstellerseite/Datenblatt zur Verifikation"
+    }
+  },
+  "additionalProperties": false
+}
