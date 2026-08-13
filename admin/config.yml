@@ -15,14 +15,15 @@ publish_mode: editorial_workflow
 media_folder: "" # no image upload — images are only linked via image_url (see CONTRIBUTING.md)
 
 collections:
-  - name: "cameras"
-    label: "Cameras"
-    folder: "data/cameras"
+  - name: "camera"
+    label: "Camera"
+    folder: "data/camera"
     create: true
     slug: "{{id}}"
     identifier_field: id
     extension: "yaml"
     format: "yaml"
+    summary: "{{manufacturer}} {{model}}"
     fields:
       - { label: "ID", name: "id", widget: "string", hint: "Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf" }
       - label: "Category"
@@ -58,6 +59,7 @@ collections:
     identifier_field: id
     extension: "yaml"
     format: "yaml"
+    summary: "{{manufacturer}} {{model}}"
     fields:
       - { label: "ID", name: "id", widget: "string", hint: "Format: manufacturer-model-slug, e.g. aputure-600d-pro" }
       - label: "Category"
