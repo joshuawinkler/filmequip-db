@@ -1,12 +1,14 @@
 #!/usr/bin/env python3
 """
-Baut aus /data/<kategorie>/*.yaml statische JSON-Bundles fuer die API.
+Builds static JSON bundles for the API from /data/<category>/*.yaml,
+and assembles the full GitHub Pages deploy folder.
 
 Output:
-  api/v1/cameras.json
-  api/v1/lighting.json
-  api/v1/all.json
-  api/v1/version.json   (Zeitstempel + Anzahl Eintraege, fuer Cache-Invalidierung)
+  site/v1/cameras.json
+  site/v1/lighting.json
+  site/v1/all.json
+  site/v1/version.json   (timestamp + entry count, for cache invalidation)
+  site/admin/...          (copy of the Decap CMS admin UI)
 """
 
 import json
@@ -19,10 +21,10 @@ import yaml
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT / "data"
-SITE_DIR = ROOT / "site"          # kompletter Pages-Deploy-Ordner
-OUT_DIR = SITE_DIR / "v1"         # JSON-API landet unter /v1/...
-ADMIN_SRC = ROOT / "admin"        # Decap CMS Quellordner
-ADMIN_DEST = SITE_DIR / "admin"   # wird mit auf Pages deployed
+SITE_DIR = ROOT / "site"          # full Pages deploy folder
+OUT_DIR = SITE_DIR / "v1"         # JSON API lives under /v1/...
+ADMIN_SRC = ROOT / "admin"        # Decap CMS source folder
+ADMIN_DEST = SITE_DIR / "admin"   # gets deployed to Pages as well
 
 CATEGORIES = ["cameras", "lighting"]
 
@@ -47,7 +49,7 @@ def main() -> int:
 
     if ADMIN_SRC.exists():
         shutil.copytree(ADMIN_SRC, ADMIN_DEST)
-        print(f"→ {ADMIN_DEST.relative_to(ROOT)}: admin/ kopiert")
+        print(f"→ {ADMIN_DEST.relative_to(ROOT)}: admin/ copied")
 
     all_items = []
     for category in CATEGORIES:
@@ -55,7 +57,7 @@ def main() -> int:
         out_path = OUT_DIR / f"{category}.json"
         with open(out_path, "w", encoding="utf-8") as f:
             json.dump(items, f, ensure_ascii=False, indent=2)
-        print(f"→ {out_path.relative_to(ROOT)}: {len(items)} Eintraege")
+        print(f"→ {out_path.relative_to(ROOT)}: {len(items)} entries")
         all_items.extend(items)
 
     with open(OUT_DIR / "all.json", "w", encoding="utf-8") as f:
@@ -69,7 +71,7 @@ def main() -> int:
     with open(OUT_DIR / "version.json", "w", encoding="utf-8") as f:
         json.dump(version_info, f, ensure_ascii=False, indent=2)
 
-    print(f"\n✅ Build fertig: {len(all_items)} Eintraege insgesamt.")
+    print(f"\n✅ Build complete: {len(all_items)} entries total.")
     return 0
 
 

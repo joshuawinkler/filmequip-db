@@ -1,36 +1,37 @@
-# Mitmachen
+# Contributing
 
-Danke, dass du zur Filmequipment-Datenbank beitragen willst! Zwei Wege stehen offen:
+Thanks for wanting to contribute to the Film Equipment Database! There are two ways in:
 
-## Weg 1: Ohne Git-Kenntnisse
+## Route 1: Without Git knowledge
 
-Öffne ein [Issue](../../issues/new/choose) mit der Vorlage "Neues Gerät hinzufügen"
-und trage die Daten ein, die du kennst. Ein Maintainer baut daraus einen Pull Request.
+Open an [issue](../../issues/new/choose) using the "Add new item" template
+and fill in whatever data you know. A maintainer will turn it into a pull request.
 
-## Weg 2: Per Pull Request
+## Route 2: Via pull request
 
-1. Repo forken, Branch anlegen
-2. Neue Datei unter `data/<kategorie>/<id>.yaml` anlegen
-   - `<id>` = `hersteller-modell-slug`, nur Kleinbuchstaben, Zahlen, Bindestriche
-   - Dateiname muss exakt der `id` im Dokument entsprechen
-3. Lokal validieren, bevor du den PR öffnest:
+1. Fork the repo, create a branch
+2. Add a new file under `data/<category>/<id>.yaml`
+   - `<id>` = `manufacturer-model-slug`, lowercase letters, numbers, hyphens only
+   - The filename must exactly match the `id` in the document
+3. Validate locally before opening the PR:
    ```bash
    pip install pyyaml jsonschema
    python3 scripts/validate.py
    ```
-4. PR öffnen. Die CI validiert automatisch; ein Maintainer reviewt danach.
+4. Open the PR. CI validates automatically; a maintainer reviews afterwards.
 
-## Regeln für Daten
+## Data rules
 
-- **Nur öffentlich verifizierbare technische Daten** (Herstellerseite, Datenblatt) —
-  keine Vermutungen, keine persönlichen Erfahrungswerte als Fakt eintragen.
-- Jeder Eintrag braucht eine `source_url`.
-- Keine Preise, keine Verleih-spezifischen Informationen — das Projekt bildet
-  Geräte-Fakten ab, keine kommerziellen Konditionen.
-- Bilder: nur `image_url` auf frei lizenzierte Quellen (z.B. Wikimedia Commons)
-  verlinken, keine eigenen Bild-Uploads ins Repo.
+- **Only publicly verifiable technical data** (manufacturer page, datasheet) —
+  no guesses, no personal anecdotal figures presented as fact.
+- Every entry needs a `source_url`.
+- No prices, no rental-specific information — this project captures
+  device facts, not commercial terms.
+- Images: only link `image_url` to freely licensed sources (e.g. Wikimedia
+  Commons), no image uploads into the repo.
 
-## Neue Kategorie / neues Schema-Feld vorschlagen
+## Proposing a new category / new schema field
 
-Öffne ein Issue mit Label `schema-change` und beschreibe den Bedarf — Schema-Änderungen
-betreffen alle Integratoren der API, deshalb werden sie bewusst langsamer behandelt.
+Open an issue with the `schema-change` label and describe the need — schema
+changes affect every consumer of the API, so they're deliberately handled
+more slowly.

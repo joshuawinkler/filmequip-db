@@ -1,24 +1,22 @@
-# Decap CMS Konfiguration
-# Doku: https://decapcms.org/docs/configuration-options/
+# Decap CMS configuration
+# Docs: https://decapcms.org/docs/configuration-options/
 
 backend:
   name: github
   repo: joshuawinkler/filmequip-db
   branch: main
-  # base_url + auth_endpoint nur nötig, wenn ihr einen eigenen OAuth-Proxy nutzt
-  # (siehe README.md, Abschnitt "Decap CMS – Setup"), sonst diese Zeile entfernen:
   base_url: https://decap-proxy.joshuawinkler.workers.dev
   auth_endpoint: auth
 
-# Öffnet für jede Änderung einen PR statt direkt auf main zu schreiben.
-# Damit bleibt eure CI-Validierung + Review-Pflicht aus Variante 1 erhalten.
+# Opens a PR for every change instead of writing directly to main.
+# This preserves the CI validation + review requirement.
 publish_mode: editorial_workflow
 
-media_folder: "" # kein Bild-Upload – Bilder werden nur per image_url verlinkt (siehe CONTRIBUTING.md)
+media_folder: "" # no image upload — images are only linked via image_url (see CONTRIBUTING.md)
 
 collections:
   - name: "cameras"
-    label: "Kameras"
+    label: "Cameras"
     folder: "data/cameras"
     create: true
     slug: "{{id}}"
@@ -26,14 +24,14 @@ collections:
     extension: "yaml"
     format: "yaml"
     fields:
-      - { label: "ID", name: "id", widget: "string", hint: "Format: hersteller-modell-slug, z.B. arri-alexa-mini-lf" }
-      - label: "Kategorie"
+      - { label: "ID", name: "id", widget: "string", hint: "Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf" }
+      - label: "Category"
         name: "category"
         widget: "select"
         options: ["Digital Cameras", "Film Cameras"]
-      - { label: "Hersteller", name: "manufacturer", widget: "string" }
-      - { label: "Modell", name: "model", widget: "string" }
-      - label: "Typ"
+      - { label: "Manufacturer", name: "manufacturer", widget: "string" }
+      - { label: "Model", name: "model", widget: "string" }
+      - label: "Type"
         name: "type"
         widget: "select"
         options: ["digital", "film"]
@@ -43,14 +41,14 @@ collections:
         widget: "object"
         required: false
         fields:
-          - { label: "Größe", name: "size", widget: "string", required: false }
-          - { label: "Auflösung", name: "resolution", widget: "string", required: false }
-          - { label: "Typ", name: "type", widget: "string", required: false }
-      - { label: "Gewicht (kg)", name: "weight_kg", widget: "number", required: false, value_type: "float" }
-      - { label: "Erscheinungsjahr", name: "release_year", widget: "number", required: false, value_type: "int" }
-      - { label: "Notizen", name: "notes", widget: "text", required: false }
-      - { label: "Bild-URL", name: "image_url", widget: "string", required: false, hint: "Nur frei lizenzierte Quellen, z.B. Wikimedia Commons" }
-      - { label: "Quelle / Datenblatt", name: "source_url", widget: "string" }
+          - { label: "Size", name: "size", widget: "string", required: false }
+          - { label: "Resolution", name: "resolution", widget: "string", required: false }
+          - { label: "Type", name: "type", widget: "string", required: false }
+      - { label: "Weight (kg)", name: "weight_kg", widget: "number", required: false, value_type: "float" }
+      - { label: "Release year", name: "release_year", widget: "number", required: false, value_type: "int" }
+      - { label: "Notes", name: "notes", widget: "text", required: false }
+      - { label: "Image URL", name: "image_url", widget: "string", required: false, hint: "Only freely licensed sources, e.g. Wikimedia Commons" }
+      - { label: "Source / datasheet", name: "source_url", widget: "string" }
 
   - name: "lighting"
     label: "Lighting"
@@ -61,23 +59,23 @@ collections:
     extension: "yaml"
     format: "yaml"
     fields:
-      - { label: "ID", name: "id", widget: "string", hint: "Format: hersteller-modell-slug, z.B. aputure-600d-pro" }
-      - label: "Kategorie"
+      - { label: "ID", name: "id", widget: "string", hint: "Format: manufacturer-model-slug, e.g. aputure-600d-pro" }
+      - label: "Category"
         name: "category"
         widget: "select"
         options: ["LED", "HMI", "Tungsten", "Fluorescent", "Moving Lights & Effects", "Underwater Lighting", "Outdoor Systems", "Balloons"]
-      - { label: "Hersteller", name: "manufacturer", widget: "string" }
-      - { label: "Modell", name: "model", widget: "string" }
-      - { label: "Leistung (Watt)", name: "power_watts", widget: "number", required: false, value_type: "float" }
-      - { label: "Farbtemperatur (Kelvin)", name: "color_temp_kelvin", widget: "string", required: false, hint: "z.B. 2700-6500 oder 5600" }
-      - { label: "Gewicht (kg)", name: "weight_kg", widget: "number", required: false, value_type: "float" }
-      - label: "Stromquelle"
+      - { label: "Manufacturer", name: "manufacturer", widget: "string" }
+      - { label: "Model", name: "model", widget: "string" }
+      - { label: "Power (watts)", name: "power_watts", widget: "number", required: false, value_type: "float" }
+      - { label: "Color temperature (Kelvin)", name: "color_temp_kelvin", widget: "string", required: false, hint: "e.g. 2700-6500 or 5600" }
+      - { label: "Weight (kg)", name: "weight_kg", widget: "number", required: false, value_type: "float" }
+      - label: "Power source"
         name: "power_source"
         widget: "select"
         multiple: true
         required: false
         options: ["mains", "battery", "both"]
-      - { label: "Erscheinungsjahr", name: "release_year", widget: "number", required: false, value_type: "int" }
-      - { label: "Notizen", name: "notes", widget: "text", required: false }
-      - { label: "Bild-URL", name: "image_url", widget: "string", required: false, hint: "Nur frei lizenzierte Quellen, z.B. Wikimedia Commons" }
-      - { label: "Quelle / Datenblatt", name: "source_url", widget: "string" }
+      - { label: "Release year", name: "release_year", widget: "number", required: false, value_type: "int" }
+      - { label: "Notes", name: "notes", widget: "text", required: false }
+      - { label: "Image URL", name: "image_url", widget: "string", required: false, hint: "Only freely licensed sources, e.g. Wikimedia Commons" }
+      - { label: "Source / datasheet", name: "source_url", widget: "string" }

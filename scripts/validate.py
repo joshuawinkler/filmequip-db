@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """
-Validiert alle YAML-Datensätze in /data/<kategorie>/*.yaml gegen das
-passende JSON-Schema in /data/schemas/<kategorie>.schema.json.
+Validates all YAML records in /data/<category>/*.yaml against the
+matching JSON schema in /data/schemas/<category>.schema.json.
 
-Prüft zusätzlich:
-- eindeutige IDs über die gesamte Datenbank hinweg
-- dass die ID im Dateinamen mit der ID im Dokument übereinstimmt
+Also checks:
+- unique IDs across the whole database
+- that the ID in the filename matches the ID in the document
 """
 
 import sys
@@ -19,7 +19,7 @@ ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT / "data"
 SCHEMA_DIR = DATA_DIR / "schemas"
 
-# Mapping: Ordnername in /data -> Schema-Dateiname
+# Mapping: folder name in /data -> schema file name
 CATEGORY_SCHEMAS = {
     "cameras": "camera.schema.json",
     "lighting": "lighting.schema.json",
@@ -47,40 +47,40 @@ def main() -> int:
                 try:
                     doc = yaml.safe_load(f)
                 except yaml.YAMLError as e:
-                    errors.append(f"{yaml_path}: YAML-Parsing-Fehler: {e}")
+                    errors.append(f"{yaml_path}: YAML parsing error: {e}")
                     continue
 
             if doc is None:
-                errors.append(f"{yaml_path}: Datei ist leer")
+                errors.append(f"{yaml_path}: file is empty")
                 continue
 
             try:
                 validate(instance=doc, schema=schema)
             except ValidationError as e:
-                errors.append(f"{yaml_path}: Schema-Fehler: {e.message}")
+                errors.append(f"{yaml_path}: schema error: {e.message}")
 
             doc_id = doc.get("id")
             expected_stem = yaml_path.stem
             if doc_id and doc_id != expected_stem:
                 errors.append(
-                    f"{yaml_path}: Dateiname '{expected_stem}' passt nicht zur id '{doc_id}'"
+                    f"{yaml_path}: filename '{expected_stem}' does not match id '{doc_id}'"
                 )
 
             if doc_id:
                 if doc_id in seen_ids:
                     errors.append(
-                        f"{yaml_path}: Doppelte id '{doc_id}' (bereits in {seen_ids[doc_id]})"
+                        f"{yaml_path}: duplicate id '{doc_id}' (already used in {seen_ids[doc_id]})"
                     )
                 else:
                     seen_ids[doc_id] = yaml_path
 
     if errors:
-        print(f"❌ {len(errors)} Fehler gefunden:\n")
+        print(f"❌ {len(errors)} error(s) found:\n")
         for e in errors:
             print(f" - {e}")
         return 1
 
-    print(f"✅ Alle {len(seen_ids)} Einträge sind valide.")
+    print(f"✅ All {len(seen_ids)} entries are valid.")
     return 0
 
 

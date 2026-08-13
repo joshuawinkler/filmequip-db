@@ -7,7 +7,7 @@
   "properties": {
     "id": {
       "type": "string",
-      "description": "Eindeutige, unveränderliche ID. Format: hersteller-modell-slug, z.B. arri-alexa-mini-lf",
+      "description": "Unique, immutable ID. Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf",
       "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
     },
     "category": {
@@ -22,14 +22,14 @@
     },
     "mount": {
       "type": "string",
-      "description": "z.B. PL, EF, LPL, PV"
+      "description": "e.g. PL, EF, LPL, PV"
     },
     "sensor": {
       "type": "object",
       "properties": {
-        "size": { "type": "string", "description": "z.B. Super 35, Full Frame" },
-        "resolution": { "type": "string", "description": "z.B. 4.6K, 6K" },
-        "type": { "type": "string", "description": "z.B. CMOS" }
+        "size": { "type": "string", "description": "e.g. Super 35, Full Frame" },
+        "resolution": { "type": "string", "description": "e.g. 4.6K, 6K" },
+        "type": { "type": "string", "description": "e.g. CMOS" }
       }
     },
     "weight_kg": { "type": "number" },
@@ -38,12 +38,12 @@
     "image_url": {
       "type": "string",
       "format": "uri",
-      "description": "Bitte nur Links zu frei lizenzierten Bildern (z.B. Wikimedia Commons), keine eigenen Uploads ins Repo"
+      "description": "Only link to freely licensed images (e.g. Wikimedia Commons), no uploads of your own into the repo"
     },
     "source_url": {
       "type": "string",
       "format": "uri",
-      "description": "Link zur Herstellerseite/Datenblatt zur Verifikation"
+      "description": "Link to manufacturer page/datasheet for verification"
     }
   },
   "additionalProperties": false

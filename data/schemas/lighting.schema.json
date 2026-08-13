@@ -18,7 +18,7 @@
     "power_watts": { "type": "number" },
     "color_temp_kelvin": {
       "type": "string",
-      "description": "z.B. 2700-6500 (bicolor) oder 5600 (daylight)"
+      "description": "e.g. 2700-6500 (bicolor) or 5600 (daylight)"
     },
     "weight_kg": { "type": "number" },
     "power_source": {

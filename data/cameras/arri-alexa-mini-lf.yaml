@@ -10,5 +10,5 @@ sensor:
   type: CMOS
 weight_kg: 2.3
 release_year: 2019
-notes: "Kompaktes Large-Format-Body, häufig für Steadicam/Gimbal genutzt."
+notes: "Compact large-format body, commonly used on Steadicam/gimbal rigs."
 source_url: "https://www.arri.com/en/camera-systems/cameras/alexa-mini-lf"
