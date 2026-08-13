@@ -75,34 +75,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     sys.exit(main())
-
-
-def main() -> int:
-    OUT_DIR.mkdir(parents=True, exist_ok=True)
-
-    all_items = []
-    for category in CATEGORIES:
-        items = load_category(category)
-        out_path = OUT_DIR / f"{category}.json"
-        with open(out_path, "w", encoding="utf-8") as f:
-            json.dump(items, f, ensure_ascii=False, indent=2)
-        print(f"→ {out_path.relative_to(ROOT)}: {len(items)} Eintraege")
-        all_items.extend(items)
-
-    with open(OUT_DIR / "all.json", "w", encoding="utf-8") as f:
-        json.dump(all_items, f, ensure_ascii=False, indent=2)
-
-    version_info = {
-        "built_at": datetime.now(timezone.utc).isoformat(),
-        "total_items": len(all_items),
-        "categories": {c: len(load_category(c)) for c in CATEGORIES},
-    }
-    with open(OUT_DIR / "version.json", "w", encoding="utf-8") as f:
-        json.dump(version_info, f, ensure_ascii=False, indent=2)
-
-    print(f"\n✅ Build fertig: {len(all_items)} Eintraege insgesamt.")
-    return 0
-
-
-if __name__ == "__main__":
-    sys.exit(main())
