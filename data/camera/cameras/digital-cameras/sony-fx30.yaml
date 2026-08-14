@@ -1,0 +1,13 @@
+id: sony-fx30
+name: FX30
+manufacturer: Sony
+lens_mounts:
+- Sony E
+sensor_coverage: Super 35
+base_sensitivity:
+- EI 800
+- EI 2500
+battery_mount:
+- NP-FZ100
+internal_nd_filters:
+- none

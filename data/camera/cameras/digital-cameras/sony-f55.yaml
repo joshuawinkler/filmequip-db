@@ -1,0 +1,7 @@
+id: sony-f55
+name: F55
+manufacturer: Sony
+lens_mounts:
+- Arri PL
+- Sony FZ
+sensor_coverage: Super 35

@@ -1,0 +1,6 @@
+id: sony-fx9
+name: FX9
+manufacturer: Sony
+lens_mounts:
+- Sony E
+sensor_coverage: Full Frame

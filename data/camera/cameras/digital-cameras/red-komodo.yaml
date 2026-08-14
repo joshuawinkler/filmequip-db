@@ -1,0 +1,27 @@
+id: red-komodo
+name: Komodo
+manufacturer: RED
+lens_mounts:
+- Arri PL
+- Canon EF
+- Canon RF
+sensor_size: 27.03x14.26mm
+sensor_coverage: Super 35
+resolution: 6144x3240
+min_fps: 23.98
+max_resolution: 6K
+max_fps: 120
+sensor_diagonal_mm: 30.56
+dynamic_range: 16 stops
+shutter_type: Global Shutter
+base_sensitivity:
+- EI 800
+battery_mount:
+- V-Mount
+media_types:
+- CFast 2.0
+codecs:
+- R3D RAW
+- ProRes 422 HQ
+- ProRes 422
+autofocus: true

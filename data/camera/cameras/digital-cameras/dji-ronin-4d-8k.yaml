@@ -1,0 +1,39 @@
+id: dji-ronin-4d-8k
+name: Ronin 4D 8K
+manufacturer: DJI
+lens_mounts:
+- Arri PL
+- Canon EF
+- Leica L
+- Sony E
+- Leica M
+- DJI DL
+- DJI DX
+sensor_coverage: Full Frame
+max_resolution: 8K
+max_fps: 120
+dynamic_range: 14.7 stops
+shutter_type: Rolling Shutter
+base_sensitivity:
+- EI 320
+- EI 1600
+battery_mount:
+- DJI TB50
+internal_nd_filters:
+- '0.3'
+- '0.6'
+- '0.9'
+- '1.2'
+- '1.5'
+- '1.8'
+- '2.1'
+- '2.4'
+- '2.7'
+media_types:
+- DJI PROSSD
+- CFexpress Type B
+- USB-C SSD
+codecs:
+- ProRes RAW
+- ProRes 422 HQ
+- H.264

@@ -1,0 +1,12 @@
+id: arri-arriflex-765
+name: Arriflex 765
+manufacturer: ARRI
+coverage:
+- 5-Perf 65mm
+lens_mounts:
+- Arri Maxi PL
+noise_level_db: '25'
+min_fps: 2
+max_fps: 100
+shutter_range: 15° - 180°
+shutter_type: mechanical

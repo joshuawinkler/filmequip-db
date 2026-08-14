@@ -1,0 +1,13 @@
+id: arri-arriflex-16-sr3
+name: Arriflex 16 SR3
+manufacturer: ARRI
+coverage:
+- Super 16mm
+- Standard 16mm
+lens_mounts:
+- Arri PL
+noise_level_db: 20dB
+min_fps: 5
+max_fps: 75
+shutter_range: 90° - 180°
+shutter_type: mechanical

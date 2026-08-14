@@ -8,5 +8,72 @@
 <body>
   <!-- Decap CMS loads itself and reads config.yml from the same folder -->
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <script>
+    // The `id` field is hidden in every collection's config (see config.yml) -
+    // it's derived here from Name (+ Manufacturer, or "generic" when none is
+    // given) right before saving, instead of being typed by hand. Matches the
+    // collection's `slug: '{{id}}'` so the generated id is always the
+    // filename. Also blocks the save if that id is already used by another
+    // entry in the same category folder, so the user gets prompted to tweak
+    // Name/Manufacturer instead of silently colliding with an existing entry.
+    (function () {
+      var COLLECTION_FOLDERS = {"lighting": "data/lighting", "lighting-lamps": "data/lighting/lamps", "lighting-lamps-led": "data/lighting/lamps/led", "lighting-lamps-led-panels": "data/lighting/lamps/led/panels", "lighting-lamps-led-compact": "data/lighting/lamps/led/compact", "lighting-lamps-led-point-source-cob": "data/lighting/lamps/led/point-source-cob", "lighting-lamps-led-par": "data/lighting/lamps/led/par", "lighting-lamps-led-tubes": "data/lighting/lamps/led/tubes", "lighting-lamps-hmi": "data/lighting/lamps/hmi", "lighting-lamps-tungsten": "data/lighting/lamps/tungsten", "lighting-lamps-fluorescent": "data/lighting/lamps/fluorescent", "lighting-lamps-moving-lights-effects": "data/lighting/lamps/moving-lights-effects", "lighting-lamps-underwater-lighting": "data/lighting/lamps/underwater-lighting", "lighting-lamps-outdoor-systems": "data/lighting/lamps/outdoor-systems", "lighting-lamps-balloons": "data/lighting/lamps/balloons", "lighting-lamp-accessories": "data/lighting/lamp-accessories", "lighting-lamp-accessories-modifiers": "data/lighting/lamp-accessories/modifiers", "lighting-stands": "data/lighting/stands", "lighting-stands-booms": "data/lighting/stands/booms", "lighting-stands-mini-stands": "data/lighting/stands/mini-stands", "lighting-stands-c-stands": "data/lighting/stands/c-stands", "lighting-stands-lightweight-stands": "data/lighting/stands/lightweight-stands", "lighting-stands-combo-stands": "data/lighting/stands/combo-stands", "lighting-stands-overhead-roller-stands": "data/lighting/stands/overhead-roller-stands", "lighting-stands-wind-up-stands": "data/lighting/stands/wind-up-stands", "lighting-stands-heavy-duty-stands": "data/lighting/stands/heavy-duty-stands", "lighting-stands-accessories": "data/lighting/stands/accessories", "lighting-lighting-grip": "data/lighting/lighting-grip", "lighting-lighting-grip-grip-heads": "data/lighting/lighting-grip/grip-heads", "lighting-lighting-grip-arms": "data/lighting/lighting-grip/arms", "lighting-lighting-grip-clamps-grips": "data/lighting/lighting-grip/clamps-grips", "lighting-lighting-grip-clips-magnets": "data/lighting/lighting-grip/clips-magnets", "lighting-lighting-grip-brackets-plates": "data/lighting/lighting-grip/brackets-plates", "lighting-lighting-grip-holders": "data/lighting/lighting-grip/holders", "lighting-lighting-grip-hangers": "data/lighting/lighting-grip/hangers", "lighting-lighting-grip-stand-extensions-accessories": "data/lighting/lighting-grip/stand-extensions-accessories", "lighting-lighting-grip-spigots-pins-adapters": "data/lighting/lighting-grip/spigots-pins-adapters", "lighting-lighting-grip-support-systems": "data/lighting/lighting-grip/support-systems", "lighting-lighting-grip-suction-mounts": "data/lighting/lighting-grip/suction-mounts", "lighting-lighting-grip-truss-scaffolding": "data/lighting/lighting-grip/truss-scaffolding", "lighting-lighting-grip-apple-boxes": "data/lighting/lighting-grip/apple-boxes", "lighting-lighting-grip-safety": "data/lighting/lighting-grip/safety", "lighting-lighting-grip-kits-racks": "data/lighting/lighting-grip/kits-racks", "lighting-frames-textiles": "data/lighting/frames-textiles", "lighting-frames-textiles-gel-frame": "data/lighting/frames-textiles/gel-frame", "lighting-frames-textiles-lightweight-frame-kits": "data/lighting/frames-textiles/lightweight-frame-kits", "lighting-frames-textiles-modular-frames": "data/lighting/frames-textiles/modular-frames", "lighting-frames-textiles-fold-away-frames": "data/lighting/frames-textiles/fold-away-frames", "lighting-frames-textiles-scaffolding-tube-frames": "data/lighting/frames-textiles/scaffolding-tube-frames", "lighting-frames-textiles-inflatable-frames": "data/lighting/frames-textiles/inflatable-frames", "lighting-frames-textiles-textiles": "data/lighting/frames-textiles/textiles", "lighting-frames-textiles-overheads-butterfly-grids": "data/lighting/frames-textiles/overheads-butterfly-grids", "lighting-frames-textiles-ulcers-patterns": "data/lighting/frames-textiles/ulcers-patterns", "lighting-flags-nets": "data/lighting/flags-nets", "lighting-flags-nets-kits": "data/lighting/flags-nets/kits", "lighting-flags-nets-flags": "data/lighting/flags-nets/flags", "lighting-flags-nets-floppies": "data/lighting/flags-nets/floppies", "lighting-flags-nets-wag-flags": "data/lighting/flags-nets/wag-flags", "lighting-flags-nets-meat-axe-flags": "data/lighting/flags-nets/meat-axe-flags", "lighting-flags-nets-cutters": "data/lighting/flags-nets/cutters", "lighting-flags-nets-ultrabounce": "data/lighting/flags-nets/ultrabounce", "lighting-flags-nets-nets": "data/lighting/flags-nets/nets", "lighting-flags-nets-silk": "data/lighting/flags-nets/silk", "lighting-control": "data/lighting/control", "lighting-control-consoles": "data/lighting/control/consoles", "lighting-control-pc": "data/lighting/control/pc", "lighting-control-fixed-installation": "data/lighting/control/fixed-installation", "lighting-control-wireless": "data/lighting/control/wireless", "lighting-control-dmx": "data/lighting/control/dmx", "lighting-control-data-distribution": "data/lighting/control/data-distribution", "lighting-control-dimmer-units": "data/lighting/control/dimmer-units", "lighting-control-in-line-dimmers": "data/lighting/control/in-line-dimmers", "lighting-control-led-drivers": "data/lighting/control/led-drivers", "lighting-control-dimmer-shutters": "data/lighting/control/dimmer-shutters", "lighting-control-motorised-stirrups": "data/lighting/control/motorised-stirrups", "lighting-control-accessories": "data/lighting/control/accessories", "lighting-mirrors-reflectors": "data/lighting/mirrors-reflectors", "lighting-mirrors-reflectors-cine-reflectors": "data/lighting/mirrors-reflectors/cine-reflectors", "lighting-mirrors-reflectors-mirrors": "data/lighting/mirrors-reflectors/mirrors", "lighting-mirrors-reflectors-mobile-reflectors-diffusers": "data/lighting/mirrors-reflectors/mobile-reflectors-diffusers", "lighting-effects": "data/lighting/effects", "lighting-effects-smoke-haze": "data/lighting/effects/smoke-haze", "lighting-effects-wind": "data/lighting/effects/wind", "lighting-power": "data/lighting/power", "lighting-power-single-phase": "data/lighting/power/single-phase", "lighting-power-three-phase": "data/lighting/power/three-phase", "lighting-power-earthing": "data/lighting/power/earthing", "lighting-power-batteries-chargers": "data/lighting/power/batteries-chargers", "lighting-power-batteries-chargers-portable": "data/lighting/power/batteries-chargers/portable", "lighting-power-batteries-chargers-adapters-accessories": "data/lighting/power/batteries-chargers/adapters-accessories", "lighting-light-color-meters": "data/lighting/light-color-meters", "lighting-safety": "data/lighting/safety", "lighting-safety-cable-ramp": "data/lighting/safety/cable-ramp", "lighting-safety-rubber-matting": "data/lighting/safety/rubber-matting"};
+
+      function slugify(value) {
+        return (value || "")
+          .toString()
+          .normalize("NFKD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .toLowerCase()
+          .trim()
+          .replace(/[^a-z0-9]+/g, "-")
+          .replace(/^-+|-+$/g, "");
+      }
+
+      CMS.registerEventListener({
+        name: "preSave",
+        handler: async function (_ref) {
+          var entry = _ref.entry;
+          var name = entry.getIn(["data", "name"]);
+          var manufacturer = entry.getIn(["data", "manufacturer"]);
+          var prefix = manufacturer ? manufacturer : "generic";
+          var id = slugify(prefix + " " + (name || ""));
+
+          if (!id) {
+            throw new Error("Cannot generate ID: enter a Name first.");
+          }
+
+          var folder = COLLECTION_FOLDERS[entry.get("collection")];
+          var path = entry.get("path");
+          var currentFile = path ? path.slice(path.lastIndexOf("/") + 1) : null;
+
+          if (folder) {
+            try {
+              var res = await fetch(
+                "https://api.github.com/repos/joshuawinkler/filmequip-db/contents/" + folder + "?ref=main"
+              );
+              if (res.ok) {
+                var files = await res.json();
+                var collision = Array.isArray(files) && files.some(function (f) {
+                  return f.name === id + ".yaml" && f.name !== currentFile;
+                });
+                if (collision) {
+                  throw new Error(
+                    'ID "' + id + '" already exists in this category. ' +
+                    "Change the Name/Manufacturer so it's unique."
+                  );
+                }
+              }
+            } catch (err) {
+              if (err instanceof Error && /already exists/.test(err.message)) throw err;
+              console.warn("Could not check ID uniqueness, saving anyway:", err);
+            }
+          }
+
+          return entry.setIn(["data", "id"], id);
+        },
+      });
+    })();
+  </script>
 </body>
 </html>

@@ -1,0 +1,37 @@
+id: panasonic-lumix-s1-ii
+name: LUMIX S1 II
+manufacturer: Panasonic
+lens_mounts:
+- Leica L
+sensor_size: 35.8x23.8mm
+sensor_coverage: Full Frame
+resolution: 5952x3968
+min_fps: 23.98
+max_resolution: 6K
+max_fps: 239.76
+base_sensitivity:
+- EI 640
+- EI 500
+- EI 4000
+- EI 5000
+battery_mount:
+- DMW-BLJ31E
+max_sensitivity: EI 51200
+internal_nd_filters:
+- none
+media_types:
+- USB-C SSD
+- CFexpress Type B
+- SD
+codecs:
+- ProRes RAW
+- ProRes
+- H.264
+- H.265
+interfaces:
+- name: HDMI
+  amount: 1
+- name: Mic (3.5mm stereo jack)
+  amount: 1
+- name: Headphone (3.5 mm stereo jack)
+  amount: 1

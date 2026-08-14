@@ -1,0 +1,7 @@
+id: sony-a7s-iii
+name: A7S III
+manufacturer: Sony
+lens_mounts:
+- Sony E
+sensor_coverage: Full Frame
+max_resolution: 4K

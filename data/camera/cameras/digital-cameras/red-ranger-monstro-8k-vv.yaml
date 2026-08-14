@@ -1,0 +1,11 @@
+id: red-ranger-monstro-8k-vv
+name: Ranger Monstro 8K VV
+manufacturer: RED
+lens_mounts:
+- Arri PL
+- Canon EF
+sensor_coverage: Full Frame
+max_resolution: 8K
+shutter_type: Rolling Shutter
+base_sensitivity:
+- EI 800

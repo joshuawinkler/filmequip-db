@@ -1,0 +1,15 @@
+id: arri-arricam-lite-lt
+name: Arricam Lite (LT)
+manufacturer: ARRI
+coverage:
+- 4-Perf 35mm
+- 3-Perf 35mm
+- 2-Perf 35mm
+lens_mounts:
+- Arri PL
+- Panavision PV
+noise_level_db: 24dB
+min_fps: 1
+max_fps: 48
+shutter_range: 0° - 180°
+shutter_type: electronically

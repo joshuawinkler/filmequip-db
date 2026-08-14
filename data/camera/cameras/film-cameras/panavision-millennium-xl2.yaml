@@ -1,0 +1,13 @@
+id: panavision-millennium-xl2
+name: Millennium XL2
+manufacturer: Panavision
+coverage:
+- 4-Perf 35mm
+- 3-Perf 35mm
+lens_mounts:
+- Panavision PV
+noise_level_db: sound-sync
+min_fps: 3
+max_fps: 50
+shutter_range: 11.2° - 180°
+shutter_type: electronically

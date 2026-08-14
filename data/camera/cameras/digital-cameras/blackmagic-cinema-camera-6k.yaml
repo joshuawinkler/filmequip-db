@@ -1,0 +1,44 @@
+id: blackmagic-cinema-camera-6k
+name: Cinema Camera 6K
+manufacturer: Blackmagic
+lens_mounts:
+- Leica L
+sensor_size: 36x24mm
+sensor_coverage: Full Frame
+resolution: 6048x4032
+min_fps: 23.98
+max_resolution: 6K
+max_fps: 120
+sensor_diagonal_mm: 43.27
+dynamic_range: 13 stops
+weight: 1,135 kg
+shutter_type: Rolling Shutter
+base_sensitivity:
+- EI 400
+- EI 3200
+min_sensitivity: EI 100
+battery_mount:
+- NP-F570
+max_sensitivity: EI 25600
+power_consumption: 30 W
+internal_nd_filters:
+- none
+media_types:
+- CFexpress Type B
+- USB-C SSD
+codecs:
+- Blackmagic RAW
+- H.264 Proxy
+interfaces:
+- name: HDMI
+  amount: 1
+- name: USB-C
+  amount: 1
+- name: Mini XLR
+  amount: 2
+- name: Mic (3.5mm stereo jack)
+  amount: 1
+- name: Headphone (3.5 mm stereo jack)
+  amount: 1
+- name: 12V Locking Connector (WEIPU SF6)
+  amount: 1

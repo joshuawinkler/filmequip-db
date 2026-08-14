@@ -31,8 +31,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: name-slug, prefixed with manufacturer when known, e.g. arri-alexa-mini-lf or generic-7-inch-monitor'
+    widget: hidden
+    required: false
+    default: ''
   - label: Name
     name: name
     widget: string
@@ -76,8 +77,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: name-slug, prefixed with manufacturer when known, e.g. arri-alexa-mini-lf or generic-7-inch-monitor'
+    widget: hidden
+    required: false
+    default: ''
   - label: Name
     name: name
     widget: string
@@ -121,8 +123,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: name-slug, prefixed with manufacturer when known, e.g. arri-alexa-mini-lf or generic-7-inch-monitor'
+    widget: hidden
+    required: false
+    default: ''
   - label: Name
     name: name
     widget: string
@@ -166,8 +169,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: name-slug, prefixed with manufacturer when known, e.g. arri-alexa-mini-lf or generic-7-inch-monitor'
+    widget: hidden
+    required: false
+    default: ''
   - label: Name
     name: name
     widget: string
@@ -211,8 +215,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: name-slug, prefixed with manufacturer when known, e.g. arri-alexa-mini-lf or generic-7-inch-monitor'
+    widget: hidden
+    required: false
+    default: ''
   - label: Name
     name: name
     widget: string
@@ -256,8 +261,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: name-slug, prefixed with manufacturer when known, e.g. arri-alexa-mini-lf or generic-7-inch-monitor'
+    widget: hidden
+    required: false
+    default: ''
   - label: Name
     name: name
     widget: string
@@ -301,8 +307,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: name-slug, prefixed with manufacturer when known, e.g. arri-alexa-mini-lf or generic-7-inch-monitor'
+    widget: hidden
+    required: false
+    default: ''
   - label: Name
     name: name
     widget: string
@@ -346,8 +353,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: name-slug, prefixed with manufacturer when known, e.g. arri-alexa-mini-lf or generic-7-inch-monitor'
+    widget: hidden
+    required: false
+    default: ''
   - label: Name
     name: name
     widget: string
@@ -391,8 +399,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: name-slug, prefixed with manufacturer when known, e.g. arri-alexa-mini-lf or generic-7-inch-monitor'
+    widget: hidden
+    required: false
+    default: ''
   - label: Name
     name: name
     widget: string
@@ -436,8 +445,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: name-slug, prefixed with manufacturer when known, e.g. arri-alexa-mini-lf or generic-7-inch-monitor'
+    widget: hidden
+    required: false
+    default: ''
   - label: Name
     name: name
     widget: string

@@ -1,0 +1,10 @@
+id: aaton-xtr-prod
+name: XTR Prod
+manufacturer: Aaton
+coverage:
+- Super 16mm
+lens_mounts:
+- Arri PL
+- Panavision PV
+min_fps: 3
+max_fps: 75

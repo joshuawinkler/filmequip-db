@@ -1,0 +1,15 @@
+id: arri-arriflex-235
+name: Arriflex 235
+manufacturer: ARRI
+coverage:
+- 4-Perf 35mm
+- 3-Perf 35mm
+- 2-Perf 35mm
+lens_mounts:
+- Arri PL
+- Panavision PV
+noise_level_db: MOS
+min_fps: 1
+max_fps: 75
+shutter_range: 45° - 180°
+shutter_type: mechanical

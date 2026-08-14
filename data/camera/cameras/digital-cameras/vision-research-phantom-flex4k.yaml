@@ -1,0 +1,17 @@
+id: vision-research-phantom-flex4k
+name: Phantom Flex4K
+manufacturer: Vision Research
+lens_mounts:
+- Arri PL
+sensor_size: 27.6x15.5 mm
+sensor_coverage: Super 35
+resolution: 4069×2304
+min_fps: 15
+max_resolution: 4K
+max_fps: 2930
+weight: 5.9 kg
+base_sensitivity:
+- EI 640
+- EI 5000
+codecs:
+- ProRes 422

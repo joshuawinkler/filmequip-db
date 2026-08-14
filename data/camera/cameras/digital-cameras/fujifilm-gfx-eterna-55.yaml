@@ -1,0 +1,38 @@
+id: fujifilm-gfx-eterna-55
+name: GFX Eterna 55
+manufacturer: Fujifilm
+lens_mounts:
+- Fuji G
+- Arri PL
+sensor_size: 43.8×32.9mm
+sensor_coverage: 65mm
+resolution: 8192x4320
+min_fps: 22
+max_resolution: 8K
+max_fps: 119.8
+dynamic_range: 14 stops
+shutter_range: 5.6° - 360°
+weight: 2 kg
+shutter_type: Rolling Shutter
+base_sensitivity:
+- EI 800
+- EI 3200
+min_sensitivity: EI 100
+battery_mount:
+- V-Mount
+- NP-W235
+max_sensitivity: EI 25600
+power_consumption: 49 W
+internal_nd_filters:
+- Vario
+media_types:
+- CFexpress Type B
+- USB-C SSD
+- SD
+codecs:
+- ProRes 422 HQ
+- ProRes 422
+- ProRes 422 LT
+- H.264
+- H.264 Proxy
+- H.265

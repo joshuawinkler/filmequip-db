@@ -1,0 +1,44 @@
+id: nikon-zr
+name: ZR
+manufacturer: Nikon
+lens_mounts:
+- Nikon Z
+sensor_size: 35.9x23.9mm
+sensor_coverage: Full Frame
+resolution: 6048x3402
+min_fps: 23.976
+max_resolution: 6K
+max_fps: 240
+dynamic_range: 15 stops
+shutter_type: Rolling Shutter
+base_sensitivity:
+- EI 800
+- EI 6400
+min_sensitivity: EI 100
+battery_mount:
+- EN-EL15
+max_sensitivity: EI 51200
+power_consumption: 10 W
+internal_nd_filters:
+- none
+media_types:
+- CFexpress Type B
+- microSD
+codecs:
+- R3D NE
+- N-RAW
+- ProRes RAW
+- ProRes 422 HQ
+- H.264
+- H.265
+- H.264 Proxy
+interfaces:
+- name: HDMI
+  amount: 1
+- name: USB-C
+  amount: 1
+- name: Mic (3.5mm stereo jack)
+  amount: 1
+- name: Headphone (3.5 mm stereo jack)
+  amount: 1
+autofocus: true

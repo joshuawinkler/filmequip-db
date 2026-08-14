@@ -1,0 +1,12 @@
+id: blackmagic-ursa-cine-12k-lf
+name: URSA Cine 12K LF
+manufacturer: Blackmagic
+lens_mounts:
+- Arri LPL
+- Arri PL
+- Canon EF
+- B4
+battery_mount:
+- V-Mount
+- Gold Mount
+- B-Mount

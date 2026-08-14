@@ -1,0 +1,7 @@
+id: sony-fx2
+name: FX2
+manufacturer: Sony
+lens_mounts:
+- Sony E
+sensor_coverage: Full Frame
+battery_mount: []

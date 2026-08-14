@@ -1,0 +1,12 @@
+id: arri-alexa-lf
+name: Alexa LF
+manufacturer: ARRI
+lens_mounts:
+- Arri LPL
+- Arri PL
+- Arri XPL
+- Canon EF
+- Leica M
+- Panavision PV
+- Panavision SP70
+weight: 7,8 kg

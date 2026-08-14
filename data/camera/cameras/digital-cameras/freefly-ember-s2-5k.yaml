@@ -1,0 +1,28 @@
+id: freefly-ember-s2-5k
+name: Ember S2.5K
+manufacturer: Freefly
+lens_mounts:
+- Canon EF
+- Canon RF
+- Canon FD
+- Nikon F
+- Leica M
+- Arri LPL
+- Arri PL
+sensor_coverage: Super 35
+resolution: 2560x2048
+max_resolution: 2.5K
+max_fps: 3563
+dynamic_range: 11 stops
+weight: 0.918 kg
+shutter_type: Global Shutter
+base_sensitivity:
+- EI 400
+min_sensitivity: EI 100
+max_sensitivity: EI 400
+power_consumption: 55 W
+media_types:
+- Internal SSD
+codecs:
+- ProRes 422 LT
+interfaces: []

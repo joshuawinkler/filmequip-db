@@ -1,0 +1,12 @@
+id: aaton-penelope
+name: Penelope
+manufacturer: Aaton
+coverage:
+- 3-Perf 35mm
+- 2-Perf 35mm
+lens_mounts:
+- Arri PL
+- Panavision PV
+noise_level_db: 23dB
+min_fps: 3
+max_fps: 40

@@ -1,0 +1,47 @@
+id: arri-alexa-265
+name: Alexa 265
+manufacturer: ARRI
+lens_mounts:
+- Arri PL
+- Arri LPL
+- Canon EF
+- Leica M
+sensor_size: 54.12x25.58 mm
+sensor_coverage: 65mm
+release: 2024
+resolution: 6560x3100
+min_fps: 0.75
+max_resolution: 6.5K
+max_fps: 60
+sensor_diagonal_mm: 59.86
+dynamic_range: 15 stops
+shutter_range: 5.0° - 358° / 1s - 1/8000s
+shutter_type: Rolling Shutter
+base_sensitivity:
+- EI 800
+min_sensitivity: EI 160
+battery_mount:
+- B-Mount
+max_sensitivity: EI 6400
+power_consumption: 75 W
+internal_nd_filters:
+- '0.6'
+- '1.2'
+- '1.8'
+media_types:
+- Compact Drive
+codecs:
+- ARRIRAW
+interfaces:
+- name: 12G SDI (BNC)
+  amount: 2
+- name: 12V (LEMO 2-pin)
+  amount: 1
+- name: ETH (LEMO 10-pin)
+  amount: 1
+- name: LBUS (LEMO 4-pin)
+  amount: 1
+- name: AUDIO (LEMO 6-pin)
+  amount: 1
+- name: RS/24V (Fischer 3-pin)
+  amount: 1

@@ -1,0 +1,12 @@
+id: panavision-system-65-high-speed
+name: System 65 High Speed
+manufacturer: Panavision
+coverage:
+- 5-Perf 65mm
+lens_mounts:
+- Panavision PV
+release: 1991
+noise_level_db: MOS
+max_fps: 60
+shutter_range: 172.8°
+shutter_type: fixed

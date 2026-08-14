@@ -1,0 +1,13 @@
+id: arri-arriflex-16-sr3-advanced-hs
+name: Arriflex 16 SR3 Advanced HS
+manufacturer: ARRI
+coverage:
+- Super 16mm
+- Standard 16mm
+lens_mounts:
+- Arri PL
+noise_level_db: 27dB
+min_fps: 10
+max_fps: 150
+shutter_range: 90° - 180°
+shutter_type: mechanical

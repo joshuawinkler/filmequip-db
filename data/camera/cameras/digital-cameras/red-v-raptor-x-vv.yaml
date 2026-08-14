@@ -1,0 +1,20 @@
+id: red-v-raptor-x-vv
+name: V-Raptor [X] VV
+manufacturer: RED
+lens_mounts:
+- Arri PL
+- Canon EF
+- Canon RF
+- Nikon Z
+sensor_coverage: Full Frame
+resolution: 8192x4320
+min_fps: 23.98
+max_resolution: 8K
+max_fps: 600
+shutter_type: Global Shutter
+base_sensitivity:
+- EI 800
+battery_mount:
+- V-Mount
+media_types:
+- CFexpress Type B

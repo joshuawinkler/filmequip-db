@@ -1,0 +1,10 @@
+id: vision-research-phantom-veo4k-pl
+name: Phantom VEO4K-PL
+manufacturer: Vision Research
+lens_mounts:
+- Arri PL
+sensor_coverage: Super 35
+resolution: 4096x2304
+max_resolution: 4K
+dynamic_range: 12 stops
+shutter_type: Global Shutter
