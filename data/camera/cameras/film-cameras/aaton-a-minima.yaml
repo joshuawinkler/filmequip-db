@@ -1,0 +1,16 @@
+id: aaton-a-minima
+manufacturer: Aaton
+model: A-Minima
+coverage:
+- Super 16mm
+lens_mounts:
+- Arri PL
+- Nikon F
+release: 1999
+min_fps: 1
+max_fps: 50
+mag_size:
+- 200ft
+shutter_range: 172.8°
+weight: 2,0 kg
+shutter_type: fixed

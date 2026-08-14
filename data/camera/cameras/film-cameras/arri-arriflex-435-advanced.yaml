@@ -1,0 +1,14 @@
+id: arri-arriflex-435-advanced
+manufacturer: ARRI
+model: Arriflex 435 Advanced
+coverage:
+- 4-Perf 35mm
+- 3-Perf 35mm
+lens_mounts:
+- Arri PL
+- Panavision PV
+noise_level_db: MOS
+min_fps: 0.1
+max_fps: 150
+shutter_range: 11.2° - 180°
+shutter_type: electronically

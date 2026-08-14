@@ -1,0 +1,10 @@
+id: panavision-panaflex-platinum
+manufacturer: Panavision
+model: Panaflex Platinum
+lens_mounts:
+- Panavision PV
+noise_level_db: sync-sound
+min_fps: 4
+max_fps: 40
+shutter_range: 50° - 200°
+shutter_type: electronically

@@ -1,0 +1,22 @@
+id: sony-cinealta-venice-2-6k
+manufacturer: Sony
+model: CineAlta Venice 2 6K
+lens_mounts:
+- Sony E
+- Arri LPL
+- Arri PL
+- Leica M
+- Panavision PV
+sensor_coverage: Full Frame
+base_sensitivity:
+- EI 500
+- EI 2500
+internal_nd_filters:
+- '0.3'
+- '0.6'
+- '0.9'
+- '1.2'
+- '1.5'
+- '1.8'
+- '2.1'
+- '2.4'

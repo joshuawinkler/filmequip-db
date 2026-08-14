@@ -1,0 +1,11 @@
+id: blackmagic-ursa-cine-17k-65
+manufacturer: Blackmagic
+model: URSA Cine 17K 65
+lens_mounts:
+- Arri PL
+- Arri LPL
+- Canon EF
+battery_mount:
+- V-Mount
+- Gold Mount
+- B-Mount

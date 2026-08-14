@@ -1,0 +1,12 @@
+id: arri-arriflex-416
+manufacturer: ARRI
+model: Arriflex 416
+coverage:
+- Super 16mm
+lens_mounts:
+- Arri PL
+noise_level_db: '20'
+min_fps: 1
+max_fps: 75
+shutter_range: 45° - 180°
+shutter_type: mechanical

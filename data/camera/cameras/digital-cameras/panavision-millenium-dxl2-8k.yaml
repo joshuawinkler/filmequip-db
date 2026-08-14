@@ -1,0 +1,29 @@
+id: panavision-millenium-dxl2-8k
+manufacturer: Panavision
+model: Millenium DXL2 8K
+lens_mounts:
+- Arri PL
+- Panavision PV
+- Panavision PV65
+- Panavision SP70
+sensor_size: 40.96x21.6mm
+sensor_coverage: Full Frame
+resolution: 8192x4320
+max_resolution: 8K
+max_fps: 300
+sensor_diagonal_mm: 46.3
+dynamic_range: 16 stops
+weight: 4.5 kg
+shutter_type: Rolling Shutter
+base_sensitivity:
+- EI 1600
+min_sensitivity: EI 250
+battery_mount:
+- Gold Mount
+max_sensitivity: EI 12800
+media_types:
+- DXL Mag SSD
+codecs:
+- R3D RAW
+- DNxHD
+- ProRes

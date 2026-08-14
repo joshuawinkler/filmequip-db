@@ -1,0 +1,11 @@
+id: panavision-panaflex-lightweight-ii
+manufacturer: Panavision
+model: Panaflex Lightweight II
+coverage: []
+lens_mounts:
+- Panavision PV
+noise_level_db: sync-sound
+min_fps: 4
+max_fps: 40
+shutter_range: 180°
+shutter_type: fixed

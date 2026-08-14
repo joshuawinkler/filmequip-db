@@ -1,0 +1,34 @@
+id: sony-fx6
+manufacturer: Sony
+model: FX6
+lens_mounts:
+- Sony E
+sensor_size: 35.6x23.8mm
+sensor_coverage: Full Frame
+resolution: 4240x2832
+min_fps: 1
+max_resolution: 4K
+max_fps: 240
+dynamic_range: 15 stops
+weight: 0.89 kg
+shutter_type: Rolling Shutter
+base_sensitivity:
+- EI 800
+- EI 12800
+battery_mount:
+- BP-U
+power_consumption: 18 W
+internal_nd_filters:
+- Vario
+media_types:
+- CFexpress Type A
+- SD
+interfaces:
+- name: HDMI
+  amount: 1
+- name: USB-C
+  amount: 1
+- name: 12G SDI (BNC)
+  amount: 1
+- name: Headphone (3.5 mm stereo jack)
+  amount: 1

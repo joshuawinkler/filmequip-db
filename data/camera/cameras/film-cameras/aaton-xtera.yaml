@@ -1,0 +1,11 @@
+id: aaton-xtera
+manufacturer: Aaton
+model: Xtera
+coverage:
+- Super 16mm
+lens_mounts:
+- Arri PL
+- Panavision PV
+noise_level_db: 21dB
+min_fps: 3
+max_fps: 75

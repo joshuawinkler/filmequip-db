@@ -1,0 +1,25 @@
+id: kinefinity-vista
+manufacturer: Kinefinity
+model: Vista
+lens_mounts:
+- Arri PL
+- Canon EF
+- Sony E
+sensor_coverage: Full Frame
+release: 2026
+max_resolution: 6K
+power_consumption: 7 W
+internal_nd_filters:
+- none
+media_types:
+- CFexpress Type B
+- Internal SSD
+interfaces:
+- name: HDMI
+  amount: 2
+- name: 12V (LEMO 2-pin)
+  amount: 1
+- name: Mic (3.5mm stereo jack)
+  amount: 1
+- name: Headphone (3.5 mm stereo jack)
+  amount: 1

@@ -1,0 +1,12 @@
+id: arri-alexa-35
+manufacturer: ARRI
+model: Alexa 35
+lens_mounts:
+- Arri LPL
+- Arri PL
+- Canon EF
+- Leica M
+- Panavision PV
+- Panavision SP70
+battery_mount:
+- B-Mount

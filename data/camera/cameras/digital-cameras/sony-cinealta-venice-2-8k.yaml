@@ -1,0 +1,9 @@
+id: sony-cinealta-venice-2-8k
+manufacturer: Sony
+model: CineAlta Venice 2 8K
+lens_mounts:
+- Sony E
+sensor_coverage: Full Frame
+base_sensitivity:
+- EI 500
+- EI 2500
