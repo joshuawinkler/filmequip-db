@@ -1,0 +1,41 @@
+id: dji-ronin-4d-6k
+manufacturer: DJI
+model: Ronin 4D 6K
+lens_mounts:
+- DJI DX
+- DJI DL
+- Leica L
+- Leica M
+- Sony E
+- Arri PL
+- Canon EF
+sensor_coverage: Full Frame
+max_resolution: 6K
+max_fps: 120
+dynamic_range: 14.3 stops
+shutter_type: Rolling Shutter
+base_sensitivity:
+- EI 800
+- EI 4000
+battery_mount:
+- DJI TB50
+internal_nd_filters:
+- '0.3'
+- '0.6'
+- '0.9'
+- '1.2'
+- '1.5'
+- '1.8'
+- '2.1'
+- '2.4'
+- '2.7'
+media_types:
+- DJI PROSSD
+- CFexpress Type B
+- USB-C SSD
+codecs:
+- ProRes RAW
+- ProRes 4444 XQ
+- ProRes 422 HQ
+- ProRes 422 LT
+- H.264

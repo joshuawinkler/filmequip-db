@@ -1,0 +1,13 @@
+id: a-cam-sp-16
+manufacturer: a-cam
+model: SP-16
+coverage:
+- Super 16mm
+lens_mounts:
+- C Mount
+noise_level_db: MOS
+min_fps: 1
+max_fps: 36
+mag_size:
+- 100ft
+shutter_type: fixed

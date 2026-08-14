@@ -1,0 +1,12 @@
+id: arri-arriflex-16st
+manufacturer: ARRI
+model: Arriflex 16ST
+coverage:
+- Standard 16mm
+lens_mounts:
+- Arri Standard
+noise_level_db: MOS
+mag_size:
+- 100ft
+shutter_range: 180°
+shutter_type: fixed

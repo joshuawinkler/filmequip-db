@@ -1,0 +1,18 @@
+id: sony-cinealta-venice
+manufacturer: Sony
+model: CineAlta Venice
+sensor_size: 36.2x24.1mm
+lens_mounts:
+- Arri PL
+- Arri LPL
+- Sony E
+- Leica M
+- Panavision PV
+sensor_coverage: Full Frame
+resolution: 6048x4032
+sensor_diagonal_mm: 43.49
+dynamic_range: 15 stops
+shutter_type: Rolling Shutter
+base_sensitivity:
+- EI 500
+- EI 2500

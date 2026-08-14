@@ -1,0 +1,13 @@
+id: sony-fx3
+manufacturer: Sony
+model: FX3
+lens_mounts:
+- Sony E
+max_resolution: 4K
+base_sensitivity:
+- EI 800
+- EI 12800
+battery_mount:
+- NP-FZ100
+internal_nd_filters:
+- none

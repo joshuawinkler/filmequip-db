@@ -1,0 +1,14 @@
+id: vision-research-phantom-veo-640s
+manufacturer: Vision Research
+model: Phantom VEO 640S
+lens_mounts:
+- Arri PL
+sensor_coverage: Super 35
+resolution: 2560x1600
+min_fps: 24
+max_fps: 290000
+dynamic_range: 10 stops
+shutter_type: Global Shutter
+base_sensitivity:
+- EI 1250
+battery_mount: []

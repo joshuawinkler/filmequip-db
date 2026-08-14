@@ -1,0 +1,12 @@
+id: panavision-system-65-studio
+manufacturer: Panavision
+model: System 65 Studio
+coverage:
+- 5-Perf 65mm
+lens_mounts:
+- Panavision PV
+noise_level_db: 27dB
+min_fps: 4
+max_fps: 40
+shutter_range: 50° - 180°
+shutter_type: mechanical

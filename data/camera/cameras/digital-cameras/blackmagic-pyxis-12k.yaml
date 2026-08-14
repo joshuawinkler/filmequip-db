@@ -1,0 +1,9 @@
+id: blackmagic-pyxis-12k
+manufacturer: Blackmagic
+model: Pyxis 12K
+lens_mounts:
+- Arri PL
+- Canon EF
+- Leica L
+battery_mount:
+- BP-U

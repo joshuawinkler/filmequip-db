@@ -1,0 +1,13 @@
+id: red-v-raptor-xl-x-vv
+manufacturer: RED
+model: V-Raptor XL [X] VV
+lens_mounts:
+- Arri LPL
+- Arri PL
+- Canon EF
+- Leica M
+- Nikon Z
+sensor_coverage: Full Frame
+max_fps: 480
+base_sensitivity:
+- EI 800

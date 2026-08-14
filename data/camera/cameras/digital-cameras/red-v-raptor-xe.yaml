@@ -1,0 +1,12 @@
+id: red-v-raptor-xe
+manufacturer: RED
+model: V-Raptor XE
+lens_mounts:
+- Canon RF
+- Nikon Z
+sensor_coverage: Full Frame
+max_resolution: 8K
+max_fps: 300
+shutter_type: Global Shutter
+base_sensitivity:
+- EI 800
