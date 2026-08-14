@@ -23,7 +23,7 @@ collections:
   label: SOUND
   folder: data/sound
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -31,8 +31,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -56,7 +57,7 @@ collections:
   label: SOUND › Audio Recorders
   folder: data/sound/audio-recorders
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -64,8 +65,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -89,7 +91,7 @@ collections:
   label: SOUND › Audio Recorders › Accessories
   folder: data/sound/audio-recorders/accessories
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -97,8 +99,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -122,7 +125,7 @@ collections:
   label: SOUND › Power
   folder: data/sound/power
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -130,8 +133,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -155,7 +159,7 @@ collections:
   label: SOUND › Power › Batteries
   folder: data/sound/power/batteries
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -163,8 +167,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -188,7 +193,7 @@ collections:
   label: SOUND › Power › Chargers
   folder: data/sound/power/chargers
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -196,8 +201,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -221,7 +227,7 @@ collections:
   label: SOUND › Power › Power Supplies
   folder: data/sound/power/power-supplies
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -229,8 +235,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -254,7 +261,7 @@ collections:
   label: SOUND › Boom Poles
   folder: data/sound/boom-poles
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -262,8 +269,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -287,7 +295,7 @@ collections:
   label: SOUND › Boom Poles › Boom Pole Accessories
   folder: data/sound/boom-poles/boom-pole-accessories
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -295,8 +303,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -320,7 +329,7 @@ collections:
   label: SOUND › Cables & Adaptors
   folder: data/sound/cables-adaptors
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -328,8 +337,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -353,7 +363,7 @@ collections:
   label: SOUND › Headphones & Monitors
   folder: data/sound/headphones-monitors
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -361,8 +371,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -386,7 +397,7 @@ collections:
   label: SOUND › Headphones & Monitors › Headphones
   folder: data/sound/headphones-monitors/headphones
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -394,8 +405,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -419,7 +431,7 @@ collections:
   label: SOUND › Headphones & Monitors › Speakers
   folder: data/sound/headphones-monitors/speakers
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -427,8 +439,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -452,7 +465,7 @@ collections:
   label: SOUND › Microphones
   folder: data/sound/microphones
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -460,8 +473,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -485,7 +499,7 @@ collections:
   label: SOUND › Microphones › Lavalier
   folder: data/sound/microphones/lavalier
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -493,8 +507,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -518,7 +533,7 @@ collections:
   label: SOUND › Microphones › Condenser & Shotgun
   folder: data/sound/microphones/condenser-shotgun
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -526,8 +541,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -551,7 +567,7 @@ collections:
   label: SOUND › Microphones › Dynamic
   folder: data/sound/microphones/dynamic
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -559,8 +575,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -584,7 +601,7 @@ collections:
   label: SOUND › Microphones › Modular
   folder: data/sound/microphones/modular
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -592,8 +609,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -617,7 +635,7 @@ collections:
   label: SOUND › Microphones › Handhelds
   folder: data/sound/microphones/handhelds
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -625,8 +643,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -650,7 +669,7 @@ collections:
   label: SOUND › Microphones › Hydrophone
   folder: data/sound/microphones/hydrophone
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -658,8 +677,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -683,7 +703,7 @@ collections:
   label: SOUND › Microphones › Stereo & M/S
   folder: data/sound/microphones/stereo-m-s
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -691,8 +711,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -716,7 +737,7 @@ collections:
   label: SOUND › Microphones › Surround & VR
   folder: data/sound/microphones/surround-vr
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -724,8 +745,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -749,7 +771,7 @@ collections:
   label: SOUND › Microphones › Mic Accessories
   folder: data/sound/microphones/mic-accessories
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -757,8 +779,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -782,7 +805,7 @@ collections:
   label: SOUND › Consumables
   folder: data/sound/consumables
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -790,8 +813,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -815,7 +839,7 @@ collections:
   label: SOUND › Consumables › Tape
   folder: data/sound/consumables/tape
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -823,8 +847,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -848,7 +873,7 @@ collections:
   label: SOUND › Communication
   folder: data/sound/communication
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -856,8 +881,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -881,7 +907,7 @@ collections:
   label: SOUND › Communication › Intercom
   folder: data/sound/communication/intercom
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -889,8 +915,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -914,7 +941,7 @@ collections:
   label: SOUND › Communication › Walkie Talkie
   folder: data/sound/communication/walkie-talkie
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -922,8 +949,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -947,7 +975,7 @@ collections:
   label: SOUND › Mounting & Grip
   folder: data/sound/mounting-grip
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -955,8 +983,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -980,7 +1009,7 @@ collections:
   label: SOUND › Mounting & Grip › Mic Stands
   folder: data/sound/mounting-grip/mic-stands
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -988,8 +1017,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -1013,7 +1043,7 @@ collections:
   label: SOUND › Mounting & Grip › Mic Holder
   folder: data/sound/mounting-grip/mic-holder
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -1021,8 +1051,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -1046,7 +1077,7 @@ collections:
   label: SOUND › Mounting & Grip › Boom Holder
   folder: data/sound/mounting-grip/boom-holder
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -1054,8 +1085,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -1079,7 +1111,7 @@ collections:
   label: SOUND › Mixers, Controllers & Interfaces
   folder: data/sound/mixers-controllers-interfaces
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -1087,8 +1119,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -1112,7 +1145,7 @@ collections:
   label: SOUND › Mixers, Controllers & Interfaces › Mixers
   folder: data/sound/mixers-controllers-interfaces/mixers
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -1120,8 +1153,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -1145,7 +1179,7 @@ collections:
   label: SOUND › Mixers, Controllers & Interfaces › Controllers
   folder: data/sound/mixers-controllers-interfaces/controllers
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -1153,8 +1187,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -1178,7 +1213,7 @@ collections:
   label: SOUND › Mixers, Controllers & Interfaces › Interfaces
   folder: data/sound/mixers-controllers-interfaces/interfaces
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -1186,8 +1221,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -1211,7 +1247,7 @@ collections:
   label: SOUND › Wind Protection
   folder: data/sound/wind-protection
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -1219,8 +1255,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -1244,7 +1281,7 @@ collections:
   label: SOUND › Wireless Systems & RF
   folder: data/sound/wireless-systems-rf
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -1252,8 +1289,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -1277,7 +1315,7 @@ collections:
   label: SOUND › Shock Mounts & Suspensions
   folder: data/sound/shock-mounts-suspensions
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -1285,8 +1323,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -1310,7 +1349,7 @@ collections:
   label: SOUND › Slates & Timecode
   folder: data/sound/slates-timecode
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -1318,8 +1357,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -1343,7 +1383,7 @@ collections:
   label: SOUND › Slates & Timecode › Timecode Devices
   folder: data/sound/slates-timecode/timecode-devices
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -1351,8 +1391,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -1376,7 +1417,7 @@ collections:
   label: SOUND › Slates & Timecode › Slates & Displays
   folder: data/sound/slates-timecode/slates-displays
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -1384,8 +1425,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -1409,7 +1451,7 @@ collections:
   label: SOUND › Slates & Timecode › Timecode Cables
   folder: data/sound/slates-timecode/timecode-cables
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -1417,8 +1459,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -1442,7 +1485,7 @@ collections:
   label: SOUND › Slates & Timecode › Timecode Accessories
   folder: data/sound/slates-timecode/timecode-accessories
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -1450,8 +1493,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -1475,7 +1519,7 @@ collections:
   label: SOUND › Carts
   folder: data/sound/carts
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -1483,8 +1527,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -1508,7 +1553,7 @@ collections:
   label: SOUND › Lav Accessories
   folder: data/sound/lav-accessories
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -1516,8 +1561,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
