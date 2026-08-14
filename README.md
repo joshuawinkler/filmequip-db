@@ -18,6 +18,13 @@ prep apps, etc.).
 - On every merge to `main`, GitHub Actions builds static JSON bundles from it
   and deploys them to GitHub Pages — with no server of your own
 
+## Browsing the database
+
+`https://joshuawinkler.github.io/filmequip-db/` is a public, read-only UI
+(source in `/browse`) for browsing, searching and filtering every entry — no
+login needed. It's a static single-page app that just reads the JSON API
+below at load time.
+
 ## Using the API
 
 Live at:
@@ -30,12 +37,16 @@ https://joshuawinkler.github.io/filmequip-db/v1/sound.json
 https://joshuawinkler.github.io/filmequip-db/v1/miscellaneous.json
 https://joshuawinkler.github.io/filmequip-db/v1/all.json
 https://joshuawinkler.github.io/filmequip-db/v1/categories.json
+https://joshuawinkler.github.io/filmequip-db/v1/fields.json
 https://joshuawinkler.github.io/filmequip-db/v1/version.json
 ```
 
 `categories.json` is the full category tree (`id`, `name`, `parent_id`,
-`sort_order`) — each entry's `category` field is a `" > "`-joined breadcrumb
-path through this tree, root to leaf.
+`sort_order`) — each entry's `category_id` points into it, and `category` is
+a `" > "`-joined breadcrumb path through this tree, root to leaf, for
+display. `fields.json` maps each `category_id` to the category-specific field
+definitions (label, type, options, etc.) used to validate and label its
+entries.
 
 Example fetch in Swift:
 
