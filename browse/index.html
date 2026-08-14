@@ -124,11 +124,42 @@
   .breadcrumb-bar h2 { font-size: 18px; margin: 0; }
   .result-count { color: var(--text-dim); font-size: 12px; }
 
-  .facets { display: flex; flex-wrap: wrap; gap: 14px 22px; margin: 10px 0 18px; padding: 12px 14px; background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius); }
-  .facets.empty { display: none; }
-  .facet-group { min-width: 0; }
-  .facet-group h4 { margin: 0 0 6px; font-size: 10px; text-transform: uppercase; letter-spacing: 0.03em; color: var(--text-dim); font-weight: 500; }
-  .facet-options { display: flex; flex-wrap: wrap; gap: 5px; max-width: 320px; }
+  #filtersToggle { position: relative; }
+  #filtersToggle .badge {
+    display: inline-block; background: var(--accent); color: white;
+    border-radius: 999px; font-size: 10px; line-height: 1; padding: 2px 5px; margin-left: 6px;
+  }
+
+  /* compact strip shown when the panel is closed but filters are active */
+  .active-filters-strip {
+    display: flex; align-items: center; flex-wrap: wrap; gap: 6px;
+    margin: 8px 0 4px;
+  }
+  .active-filters-strip .chip { padding: 2px 8px 2px 10px; }
+  .active-filters-strip .chip .x { opacity: 0.7; margin-left: 2px; }
+
+  .facets-panel {
+    margin: 8px 0 18px;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    max-height: 300px;
+    overflow-y: auto;
+  }
+  .facets-panel.hidden { display: none; }
+  .facets {
+    display: flex; flex-wrap: wrap; gap: 10px 20px;
+    padding: 10px 14px;
+  }
+  .facets-panel-footer {
+    position: sticky; bottom: 0;
+    display: flex; justify-content: flex-end;
+    padding: 6px 12px; border-top: 1px solid var(--border);
+    background: var(--panel);
+  }
+  .facet-group { min-width: 0; max-width: 260px; }
+  .facet-group h4 { margin: 0 0 5px; font-size: 10px; text-transform: uppercase; letter-spacing: 0.03em; color: var(--text-dim); font-weight: 500; }
+  .facet-options { display: flex; flex-wrap: wrap; gap: 4px; }
   .chip {
     display: inline-flex;
     align-items: center;
@@ -136,7 +167,7 @@
     background: var(--panel-2);
     border: 1px solid var(--border);
     border-radius: 999px;
-    padding: 3px 10px;
+    padding: 2px 9px;
     font-size: 11px;
     cursor: pointer;
     color: var(--text-dim);
@@ -144,9 +175,10 @@
   }
   .chip:hover { border-color: var(--accent); color: var(--text); }
   .chip.active { background: var(--accent); border-color: var(--accent); color: white; }
+  .chip.more { background: none; border-style: dashed; }
   .chip .n { opacity: 0.7; font-size: 10px; }
   .chip.active .n { opacity: 0.85; }
-  .clear-filters { font-size: 11px; color: var(--accent); background: none; border: none; cursor: pointer; padding: 0; align-self: flex-end; }
+  .clear-filters { font-size: 11px; color: var(--accent); background: none; border: none; cursor: pointer; padding: 0; }
 
   /* ---------- Grid ---------- */
   #grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
@@ -240,18 +272,22 @@
     <div id="loading" class="center">Loading database…</div>
     <div id="content" class="hidden">
       <div class="toolbar">
-        <input id="searchBox" placeholder="Search manufacturer, model, notes…" oninput="onSearchInput()" />
+        <input id="searchBox" placeholder="Search manufacturer, name, notes…" oninput="onSearchInput()" />
+        <button id="filtersToggle" class="secondary" onclick="toggleFiltersPanel()">Filters<span id="filtersBadge"></span></button>
         <select id="sortSelect" onchange="render()">
           <option value="name">Sort: Name A–Z</option>
           <option value="mfr">Sort: Manufacturer A–Z</option>
           <option value="cat">Sort: Category</option>
         </select>
       </div>
+      <div id="activeFiltersStrip" class="active-filters-strip"></div>
       <div class="breadcrumb-bar">
         <h2 id="scopeTitle">All equipment</h2>
         <span class="result-count" id="resultCount"></span>
       </div>
-      <div id="facets" class="facets"></div>
+      <div id="facetsPanel" class="facets-panel hidden">
+        <div id="facets" class="facets"></div>
+      </div>
       <div id="grid"></div>
       <div id="emptyState" class="empty-state hidden">No items match your search/filters.</div>
     </div>
@@ -277,8 +313,11 @@ let selectedCategoryId = null; // null = all
 let searchQuery = "";
 let activeFilters = {}; // fieldKey -> Set(values)
 let expanded = new Set();
+let filtersOpen = false;
+let expandedFacetGroups = new Set(); // field keys where "+N more" has been clicked
 
-const NON_FIELD_KEYS = new Set(["id", "category", "category_id", "manufacturer", "model", "notes", "image_url", "source_url"]);
+const NON_FIELD_KEYS = new Set(["id", "category", "category_id", "manufacturer", "name", "generic", "search_aliases", "notes", "image_url", "source_url"]);
+const FACET_GROUP_PREVIEW_COUNT = 8;
 
 // ---------- Load ----------
 async function loadState() {
@@ -400,7 +439,8 @@ function onSearchInput() {
 
 function matchesSearch(item) {
   if (!searchQuery) return true;
-  const hay = [item.manufacturer, item.model, item.notes, item.category].filter(Boolean).join(" ").toLowerCase();
+  const hay = [item.manufacturer, item.name, item.notes, item.category, ...(item.search_aliases || [])]
+    .filter(Boolean).join(" ").toLowerCase();
   return hay.includes(searchQuery);
 }
 
@@ -488,31 +528,86 @@ function toggleFilter(key, value) {
 
 function clearFilters() { activeFilters = {}; render(); }
 
+function toggleFiltersPanel() { filtersOpen = !filtersOpen; render(); }
+
+function toggleFacetGroupExpanded(key) {
+  expandedFacetGroups.has(key) ? expandedFacetGroups.delete(key) : expandedFacetGroups.add(key);
+  render();
+}
+
+function activeFilterCount() {
+  return Object.values(activeFilters).reduce((n, set) => n + set.size, 0);
+}
+
+function facetLabelFor(key, value) {
+  return fieldDefsByKey[key] && fieldDefsByKey[key].type === "boolean" ? "Yes" : value;
+}
+
+// Compact one-line strip of currently active filters, always visible
+// (even with the full panel collapsed) so filtering state is never hidden.
+function renderActiveFiltersStrip() {
+  const host = document.getElementById("activeFiltersStrip");
+  const entries = [];
+  Object.entries(activeFilters).forEach(([key, values]) => {
+    values.forEach(v => entries.push({ key, value: v }));
+  });
+  if (entries.length === 0) { host.innerHTML = ""; return; }
+  host.innerHTML = entries.map(({ key, value }) => `
+    <span class="chip active" data-key="${escapeHtml(key)}" data-value="${escapeHtml(value)}">
+      ${escapeHtml(fieldDefsByKey[key] ? fieldDefsByKey[key].label : key)}: ${escapeHtml(facetLabelFor(key, value))}
+      <span class="x">✕</span>
+    </span>
+  `).join("") + `<button class="clear-filters" onclick="clearFilters()">Clear all</button>`;
+  host.querySelectorAll(".chip").forEach(el => {
+    el.onclick = () => toggleFilter(el.dataset.key, el.dataset.value);
+  });
+}
+
 function renderFacets() {
-  const host = document.getElementById("facets");
-  const facets = computeFacets();
-  const hasActive = Object.keys(activeFilters).length > 0;
-  if (facets.length === 0 && !hasActive) {
-    host.classList.add("empty");
-    host.innerHTML = "";
+  const panel = document.getElementById("facetsPanel");
+  const badge = document.getElementById("filtersBadge");
+  const count = activeFilterCount();
+  badge.innerHTML = count ? `<span class="badge">${count}</span>` : "";
+
+  renderActiveFiltersStrip();
+
+  if (!filtersOpen) {
+    panel.classList.add("hidden");
     return;
   }
-  host.classList.remove("empty");
-  host.innerHTML = facets.map(f => `
+  panel.classList.remove("hidden");
+
+  const host = document.getElementById("facets");
+  const facets = computeFacets();
+  if (facets.length === 0) {
+    host.innerHTML = `<div style="color:var(--text-dim); padding:6px 2px;">No filterable specs for this selection.</div>`;
+    return;
+  }
+
+  host.innerHTML = facets.map(f => {
+    const isExpanded = expandedFacetGroups.has(f.key);
+    const visibleOptions = isExpanded ? f.options : f.options.slice(0, FACET_GROUP_PREVIEW_COUNT);
+    const hiddenCount = f.options.length - visibleOptions.length;
+    return `
     <div class="facet-group">
       <h4>${escapeHtml(f.label)}</h4>
       <div class="facet-options">
-        ${f.options.map(o => {
+        ${visibleOptions.map(o => {
           const active = activeFilters[f.key] && activeFilters[f.key].has(String(o.value));
-          const label = f.key && fieldDefsByKey[f.key] && fieldDefsByKey[f.key].type === "boolean" ? "Yes" : o.value;
-          return `<span class="chip${active ? " active" : ""}" data-key="${escapeHtml(f.key)}" data-value="${escapeHtml(String(o.value))}">${escapeHtml(label)} <span class="n">${o.count}</span></span>`;
+          return `<span class="chip${active ? " active" : ""}" data-key="${escapeHtml(f.key)}" data-value="${escapeHtml(String(o.value))}">${escapeHtml(facetLabelFor(f.key, o.value))} <span class="n">${o.count}</span></span>`;
         }).join("")}
+        ${hiddenCount > 0 ? `<span class="chip more" data-expand-key="${escapeHtml(f.key)}">+${hiddenCount} more</span>` : ""}
+        ${isExpanded && f.options.length > FACET_GROUP_PREVIEW_COUNT ? `<span class="chip more" data-expand-key="${escapeHtml(f.key)}">Show less</span>` : ""}
       </div>
     </div>
-  `).join("") + (hasActive ? `<button class="clear-filters" onclick="clearFilters()">Clear filters</button>` : "");
+  `;
+  }).join("");
 
-  host.querySelectorAll(".chip").forEach(el => {
+  host.querySelectorAll(".chip[data-key]").forEach(el => {
     el.onclick = () => toggleFilter(el.dataset.key, el.dataset.value);
+  });
+  host.querySelectorAll(".chip[data-expand-key]").forEach(el => {
+    el.onclick = () => toggleFacetGroupExpanded(el.dataset.expandKey);
   });
 }
 
@@ -520,9 +615,9 @@ function renderFacets() {
 function sortItems(items) {
   const mode = document.getElementById("sortSelect").value;
   const copy = [...items];
-  if (mode === "mfr") copy.sort((a, b) => (a.manufacturer || "").localeCompare(b.manufacturer || "") || (a.model || "").localeCompare(b.model || ""));
-  else if (mode === "cat") copy.sort((a, b) => (a.category || "").localeCompare(b.category || "") || (a.model || "").localeCompare(b.model || ""));
-  else copy.sort((a, b) => (a.model || "").localeCompare(b.model || ""));
+  if (mode === "mfr") copy.sort((a, b) => (a.manufacturer || "").localeCompare(b.manufacturer || "") || (a.name || "").localeCompare(b.name || ""));
+  else if (mode === "cat") copy.sort((a, b) => (a.category || "").localeCompare(b.category || "") || (a.name || "").localeCompare(b.name || ""));
+  else copy.sort((a, b) => (a.name || "").localeCompare(b.name || ""));
   return copy;
 }
 
@@ -553,7 +648,7 @@ function renderGrid() {
       <div class="card" data-idx="${i}">
         <div class="thumb">${it.image_url ? `<img loading="lazy" src="${escapeHtml(it.image_url)}" onerror="this.parentElement.innerHTML='🎥'" />` : "🎥"}</div>
         <div class="mfr">${escapeHtml(it.manufacturer || "")}</div>
-        <div class="model">${escapeHtml(it.model || it.id || "")}</div>
+        <div class="model">${escapeHtml(it.name || it.id || "")}</div>
         <div class="cat">${escapeHtml(it.category || "")}</div>
         ${tags.length ? `<div class="tags">${tags.map(t => `<span class="tag">${escapeHtml(t)}</span>`).join("")}</div>` : ""}
       </div>`;
@@ -599,7 +694,7 @@ function openModal(item) {
     <div class="modal-top">
       <div>
         <div class="breadcrumb">${escapeHtml(item.category || "")}</div>
-        <h2>${escapeHtml(item.model || item.id || "")}</h2>
+        <h2>${escapeHtml(item.name || item.id || "")}</h2>
         <div class="mfr-line">${escapeHtml(item.manufacturer || "")}</div>
       </div>
       <button class="secondary close-btn" onclick="closeModal()">Close</button>
