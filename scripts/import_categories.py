@@ -59,12 +59,25 @@ media_folder: "" # no image upload — images are only linked via image_url (see
 collections:
 """
 
+# Same dark theme/tokens as manage/index.html. Decap CMS's own UI takes over
+# almost the entire page once it loads (it's a light theme, not ours to
+# restyle), so all a themed background buys here is matching color instead
+# of a flash of white before Decap mounts.
+ADMIN_CSS_VARS = """    --bg: #0f1115;
+    --text: #e7e9ee;"""
+
 ADMIN_SITE_HTML = """<!doctype html>
 <html>
 <head>
   <meta charset="utf-8" />
   <meta name="robots" content="noindex" />
   <title>Filmequip DB – Admin – {title}</title>
+  <style>
+    :root {{
+{css_vars}
+    }}
+    html, body {{ margin: 0; background: var(--bg); color: var(--text); }}
+  </style>
 </head>
 <body>
   <!-- Decap CMS loads itself and reads config.yml from the same folder -->
@@ -79,13 +92,52 @@ ADMIN_INDEX_HTML = """<!doctype html>
   <meta charset="utf-8" />
   <meta name="robots" content="noindex" />
   <title>Filmequip DB – Admin</title>
+  <style>
+    :root {{
+{css_vars}
+      --panel: #171a21;
+      --border: #2a2f3a;
+      --text-dim: #9aa1b0;
+      --accent: #5b8cff;
+      --radius: 8px;
+    }}
+    * {{ box-sizing: border-box; }}
+    body {{
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, sans-serif;
+      font-size: 13px;
+      line-height: 1.5;
+    }}
+    header {{ padding: 14px 20px; border-bottom: 1px solid var(--border); }}
+    header h1 {{ font-size: 15px; margin: 0; font-weight: 600; }}
+    main {{ max-width: 640px; margin: 0 auto; padding: 28px; }}
+    .card {{
+      display: block;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      margin-bottom: 14px;
+      color: var(--text);
+      text-decoration: none;
+    }}
+    .card:hover {{ border-color: var(--accent); }}
+    .card h2 {{ font-size: 14px; margin: 0; }}
+    .card .desc {{ color: var(--text-dim); font-size: 12px; margin-top: 4px; }}
+  </style>
 </head>
 <body>
-  <h1>Filmequip DB – Admin</h1>
-  <p>Each top-level category has its own Decap CMS instance:</p>
-  <ul>
-{links}
-  </ul>
+
+<header>
+  <h1>Filmequip DB — Admin</h1>
+</header>
+
+<main>
+{cards}
+</main>
+
 </body>
 </html>
 """
@@ -282,16 +334,20 @@ def write_admin_sites(
             f.write(DECAP_HEADER)
             f.write(body)
         with open(site_dir / "index.html", "w", encoding="utf-8") as f:
-            f.write(ADMIN_SITE_HTML.format(title=root["name"]))
+            f.write(ADMIN_SITE_HTML.format(title=root["name"], css_vars=ADMIN_CSS_VARS))
 
         total_collections += len(collections)
         print(f"→ admin/{slug_by_id[root['id']]}/config.yml: {len(collections)} collections regenerated")
 
-    links = "\n".join(
-        f'    <li><a href="{slug_by_id[r["id"]]}/">{r["name"]}</a></li>' for r in roots
+    cards = "\n".join(
+        f'  <a class="card" href="{slug_by_id[r["id"]]}/">\n'
+        f'    <h2>{r["name"]}</h2>\n'
+        f'    <div class="desc">data/{slug_by_id[r["id"]]}/</div>\n'
+        f'  </a>'
+        for r in roots
     )
     with open(ADMIN_DIR / "index.html", "w", encoding="utf-8") as f:
-        f.write(ADMIN_INDEX_HTML.format(links=links))
+        f.write(ADMIN_INDEX_HTML.format(css_vars=ADMIN_CSS_VARS, cards=cards))
 
     print(f"→ admin/index.html: landing page linking {len(roots)} sites")
     print(f"✅ {total_collections} total collections across {len(roots)} sites")
