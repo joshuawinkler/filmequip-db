@@ -191,6 +191,7 @@ const AUTH_BASE = "https://decap-proxy.joshuawinkler.workers.dev";
 const API = "https://api.github.com";
 const GITHUB_REPO = `${OWNER}/${REPO}`;
 const OAUTH_PROXY_BASE_URL = AUTH_BASE;
+const SITE_URL = "https://joshuawinkler.github.io/filmequip-db";
 
 let token = null;
 let categories = [];       // [{id,name,parent_id,sort_order,slug}]
@@ -739,6 +740,12 @@ publish_mode: editorial_workflow
 
 media_folder: "" # no image upload — images are only linked via image_url (see CONTRIBUTING.md)
 
+# Adds a link to the top toolbar back to the structure manager (Decap has no
+# supported way to add a custom-labeled nav tab - this is the one real,
+# stable link it does support; its label is always the bare URL, not
+# renamed to "Categories").
+display_url: ${SITE_URL}/manage/
+
 collections:
 `;
 
@@ -775,10 +782,14 @@ function buildAdminSiteHtml(rootName) {
     :root {
 ${ADMIN_CSS_VARS}
     }
-    html, body { margin: 0; background: var(--bg); color: var(--text); }
+    html, body { margin: 0; height: 100%; background: var(--bg); color: var(--text); }
+    body { display: flex; }
+    #nc-root { flex: 1 1 auto; min-height: 0; display: flex; }
+    #nc-root > * { flex: 1 1 auto; min-height: 0; }
   </style>
 </head>
 <body>
+  <div id="nc-root"></div>
   <!-- Decap CMS loads itself and reads config.yml from the same folder -->
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"><\/script>
 </body>
