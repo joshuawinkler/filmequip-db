@@ -82,17 +82,8 @@ ADMIN_SITE_HTML = """<!doctype html>
     :root {
 __CSS_VARS__
     }
-    html, body {
-      margin: 0;
-      height: 100%;
-    }
-    body {
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
+    html, body { margin: 0; background: var(--bg); }
     .admin-nav {
-      flex: 0 0 auto;
       background: var(--panel);
       border-bottom: 1px solid var(--border);
       padding: 12px 20px;
@@ -112,19 +103,6 @@ __CSS_VARS__
     .admin-nav a:hover { color: var(--text); background: rgba(255,255,255,0.06); }
     .admin-nav a.current { color: var(--accent); font-weight: 600; }
     .admin-nav .sep { color: var(--border); }
-    /* Decap's own UI assumes it owns the full viewport height - since the nav
-       bar above it takes up some of that, stretch #nc-root (and whatever
-       Decap mounts inside it) to fill exactly what's left instead of Decap's
-       shorter-than-viewport app leaving this page's background exposed. */
-    #nc-root {
-      flex: 1 1 auto;
-      min-height: 0;
-      display: flex;
-    }
-    #nc-root > * {
-      flex: 1 1 auto;
-      min-height: 0;
-    }
   </style>
 </head>
 <body>
