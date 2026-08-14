@@ -8,5 +8,71 @@
 <body>
   <!-- Decap CMS loads itself and reads config.yml from the same folder -->
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <script>
+    // The `id` field is hidden in every collection's config (see config.yml) -
+    // it's derived here from Manufacturer + Model right before saving, instead
+    // of being typed by hand. Mirrors Decap's own slug algorithm so the
+    // generated id always matches the collection's `slug: '{{fields.manufacturer}}-{{fields.model}}'`
+    // filename. Also blocks the save if that id is already used by another
+    // entry in the same category folder, so the user gets prompted to tweak
+    // Manufacturer/Model instead of silently colliding with an existing entry.
+    (function () {
+      var COLLECTION_FOLDERS = {"camera": "data/camera", "camera-cameras": "data/camera/cameras", "camera-cameras-digital-cameras": "data/camera/cameras/digital-cameras", "camera-cameras-film-cameras": "data/camera/cameras/film-cameras", "camera-lenses": "data/camera/lenses", "camera-lenses-spherical-primes": "data/camera/lenses/spherical-primes", "camera-lenses-spherical-zooms": "data/camera/lenses/spherical-zooms", "camera-lenses-anamorphic-primes": "data/camera/lenses/anamorphic-primes", "camera-lenses-anamorphic-zooms": "data/camera/lenses/anamorphic-zooms", "camera-filters": "data/camera/filters", "camera-optical-accessories": "data/camera/optical-accessories", "camera-optical-accessories-extenders": "data/camera/optical-accessories/extenders", "camera-optical-accessories-mount-adapters": "data/camera/optical-accessories/mount-adapters", "camera-optical-accessories-other-optical-adapters": "data/camera/optical-accessories/other-optical-adapters", "camera-matte-boxes": "data/camera/matte-boxes", "camera-matte-boxes-accessories": "data/camera/matte-boxes/accessories", "camera-follow-focus": "data/camera/follow-focus", "camera-lens-control": "data/camera/lens-control", "camera-lens-control-hand-units": "data/camera/lens-control/hand-units", "camera-lens-control-motors": "data/camera/lens-control/motors", "camera-lens-control-controllers": "data/camera/lens-control/controllers", "camera-lens-control-lens-control-accessories": "data/camera/lens-control/lens-control-accessories", "camera-focus-assist": "data/camera/focus-assist", "camera-wireless-video": "data/camera/wireless-video", "camera-wireless-video-transmitters": "data/camera/wireless-video/transmitters", "camera-wireless-video-receivers": "data/camera/wireless-video/receivers", "camera-monitors": "data/camera/monitors", "camera-video-recorders": "data/camera/video-recorders", "camera-video-accessories": "data/camera/video-accessories", "camera-video-accessories-converters": "data/camera/video-accessories/converters", "camera-video-accessories-lut-box": "data/camera/video-accessories/lut-box", "camera-video-accessories-multiviews": "data/camera/video-accessories/multiviews", "camera-video-accessories-encoders": "data/camera/video-accessories/encoders", "camera-video-accessories-splitters": "data/camera/video-accessories/splitters", "camera-video-accessories-routers": "data/camera/video-accessories/routers", "camera-video-accessories-video-i-o": "data/camera/video-accessories/video-i-o", "camera-cables": "data/camera/cables", "camera-power": "data/camera/power", "camera-power-batteries": "data/camera/power/batteries", "camera-power-hot-swap-adapters": "data/camera/power/hot-swap-adapters", "camera-power-chargers": "data/camera/power/chargers", "camera-power-power-accessories": "data/camera/power/power-accessories", "camera-data": "data/camera/data", "camera-data-media-cards": "data/camera/data/media-cards", "camera-data-card-reader": "data/camera/data/card-reader", "camera-data-computers": "data/camera/data/computers", "camera-carts": "data/camera/carts", "camera-carts-carts-accessories": "data/camera/carts/carts-accessories", "camera-miscellaneous-accessories": "data/camera/miscellaneous-accessories"};
+
+      function slugify(value) {
+        return (value || "")
+          .toString()
+          .normalize("NFKD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .toLowerCase()
+          .trim()
+          .replace(/[^a-z0-9]+/g, "-")
+          .replace(/^-+|-+$/g, "");
+      }
+
+      CMS.registerEventListener({
+        name: "preSave",
+        handler: async function (_ref) {
+          var entry = _ref.entry;
+          var manufacturer = entry.getIn(["data", "manufacturer"]);
+          var model = entry.getIn(["data", "model"]);
+          var id = slugify((manufacturer || "") + " " + (model || ""));
+
+          if (!id) {
+            throw new Error("Cannot generate ID: enter a Manufacturer and Model first.");
+          }
+
+          var folder = COLLECTION_FOLDERS[entry.get("collection")];
+          var path = entry.get("path");
+          var currentFile = path ? path.slice(path.lastIndexOf("/") + 1) : null;
+
+          if (folder) {
+            try {
+              var res = await fetch(
+                "https://api.github.com/repos/joshuawinkler/filmequip-db/contents/" + folder + "?ref=main"
+              );
+              if (res.ok) {
+                var files = await res.json();
+                var collision = Array.isArray(files) && files.some(function (f) {
+                  return f.name === id + ".yaml" && f.name !== currentFile;
+                });
+                if (collision) {
+                  throw new Error(
+                    'ID "' + id + '" already exists in this category. ' +
+                    "Change the Manufacturer/Model so it's unique."
+                  );
+                }
+              }
+            } catch (err) {
+              if (err instanceof Error && /already exists/.test(err.message)) throw err;
+              console.warn("Could not check ID uniqueness, saving anyway:", err);
+            }
+          }
+
+          return entry.setIn(["data", "id"], id);
+        },
+      });
+    })();
+  </script>
 </body>
 </html>

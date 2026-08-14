@@ -23,7 +23,7 @@ collections:
   label: CAMERA
   folder: data/camera
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -31,8 +31,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -56,7 +57,7 @@ collections:
   label: CAMERA › Cameras
   folder: data/camera/cameras
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -64,8 +65,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -146,7 +148,7 @@ collections:
   label: CAMERA › Cameras › Digital Cameras
   folder: data/camera/cameras/digital-cameras
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -154,8 +156,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -425,7 +428,7 @@ collections:
   label: CAMERA › Cameras › Film Cameras
   folder: data/camera/cameras/film-cameras
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -433,8 +436,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -526,7 +530,7 @@ collections:
   label: CAMERA › Lenses
   folder: data/camera/lenses
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -534,8 +538,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -641,7 +646,7 @@ collections:
   label: CAMERA › Lenses › Spherical Primes
   folder: data/camera/lenses/spherical-primes
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -649,8 +654,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -709,7 +715,7 @@ collections:
   label: CAMERA › Lenses › Spherical Zooms
   folder: data/camera/lenses/spherical-zooms
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -717,8 +723,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -777,7 +784,7 @@ collections:
   label: CAMERA › Lenses › Anamorphic Primes
   folder: data/camera/lenses/anamorphic-primes
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -785,8 +792,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -845,7 +853,7 @@ collections:
   label: CAMERA › Lenses › Anamorphic Zooms
   folder: data/camera/lenses/anamorphic-zooms
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -853,8 +861,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -913,7 +922,7 @@ collections:
   label: CAMERA › Filters
   folder: data/camera/filters
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -921,8 +930,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -946,7 +956,7 @@ collections:
   label: CAMERA › Optical Accessories
   folder: data/camera/optical-accessories
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -954,8 +964,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -979,7 +990,7 @@ collections:
   label: CAMERA › Optical Accessories › Extenders
   folder: data/camera/optical-accessories/extenders
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -987,8 +998,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -1012,7 +1024,7 @@ collections:
   label: CAMERA › Optical Accessories › Mount Adapters
   folder: data/camera/optical-accessories/mount-adapters
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -1020,8 +1032,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -1045,7 +1058,7 @@ collections:
   label: CAMERA › Optical Accessories › Other Optical Adapters
   folder: data/camera/optical-accessories/other-optical-adapters
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -1053,8 +1066,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -1078,7 +1092,7 @@ collections:
   label: CAMERA › Matte Boxes
   folder: data/camera/matte-boxes
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -1086,8 +1100,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -1111,7 +1126,7 @@ collections:
   label: CAMERA › Matte Boxes › Accessories
   folder: data/camera/matte-boxes/accessories
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -1119,8 +1134,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -1144,7 +1160,7 @@ collections:
   label: CAMERA › Follow Focus
   folder: data/camera/follow-focus
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -1152,8 +1168,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -1177,7 +1194,7 @@ collections:
   label: CAMERA › Lens Control
   folder: data/camera/lens-control
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -1185,8 +1202,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -1210,7 +1228,7 @@ collections:
   label: CAMERA › Lens Control › Hand Units
   folder: data/camera/lens-control/hand-units
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -1218,8 +1236,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -1243,7 +1262,7 @@ collections:
   label: CAMERA › Lens Control › Motors
   folder: data/camera/lens-control/motors
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -1251,8 +1270,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -1276,7 +1296,7 @@ collections:
   label: CAMERA › Lens Control › Controllers
   folder: data/camera/lens-control/controllers
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -1284,8 +1304,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -1309,7 +1330,7 @@ collections:
   label: CAMERA › Lens Control › Lens Control Accessories
   folder: data/camera/lens-control/lens-control-accessories
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -1317,8 +1338,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -1342,7 +1364,7 @@ collections:
   label: CAMERA › Focus Assist
   folder: data/camera/focus-assist
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -1350,8 +1372,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -1375,7 +1398,7 @@ collections:
   label: CAMERA › Wireless Video
   folder: data/camera/wireless-video
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -1383,8 +1406,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -1408,7 +1432,7 @@ collections:
   label: CAMERA › Wireless Video › Transmitters
   folder: data/camera/wireless-video/transmitters
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -1416,8 +1440,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -1441,7 +1466,7 @@ collections:
   label: CAMERA › Wireless Video › Receivers
   folder: data/camera/wireless-video/receivers
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -1449,8 +1474,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -1474,7 +1500,7 @@ collections:
   label: CAMERA › Monitors
   folder: data/camera/monitors
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -1482,8 +1508,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -1518,7 +1545,7 @@ collections:
   label: CAMERA › Video Recorders
   folder: data/camera/video-recorders
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -1526,8 +1553,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -1551,7 +1579,7 @@ collections:
   label: CAMERA › Video Accessories
   folder: data/camera/video-accessories
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -1559,8 +1587,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -1584,7 +1613,7 @@ collections:
   label: CAMERA › Video Accessories › Converters
   folder: data/camera/video-accessories/converters
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -1592,8 +1621,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -1617,7 +1647,7 @@ collections:
   label: CAMERA › Video Accessories › LUT-Box
   folder: data/camera/video-accessories/lut-box
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -1625,8 +1655,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -1650,7 +1681,7 @@ collections:
   label: CAMERA › Video Accessories › Multiviews
   folder: data/camera/video-accessories/multiviews
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -1658,8 +1689,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -1683,7 +1715,7 @@ collections:
   label: CAMERA › Video Accessories › Encoders
   folder: data/camera/video-accessories/encoders
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -1691,8 +1723,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -1716,7 +1749,7 @@ collections:
   label: CAMERA › Video Accessories › Splitters
   folder: data/camera/video-accessories/splitters
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -1724,8 +1757,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -1749,7 +1783,7 @@ collections:
   label: CAMERA › Video Accessories › Routers
   folder: data/camera/video-accessories/routers
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -1757,8 +1791,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -1782,7 +1817,7 @@ collections:
   label: CAMERA › Video Accessories › Video I/O
   folder: data/camera/video-accessories/video-i-o
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -1790,8 +1825,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -1815,7 +1851,7 @@ collections:
   label: CAMERA › Cables
   folder: data/camera/cables
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -1823,8 +1859,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -1848,7 +1885,7 @@ collections:
   label: CAMERA › Power
   folder: data/camera/power
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -1856,8 +1893,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -1881,7 +1919,7 @@ collections:
   label: CAMERA › Power › Batteries
   folder: data/camera/power/batteries
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -1889,8 +1927,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -1914,7 +1953,7 @@ collections:
   label: CAMERA › Power › Hot-Swap Adapters
   folder: data/camera/power/hot-swap-adapters
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -1922,8 +1961,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -1947,7 +1987,7 @@ collections:
   label: CAMERA › Power › Chargers
   folder: data/camera/power/chargers
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -1955,8 +1995,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -1980,7 +2021,7 @@ collections:
   label: CAMERA › Power › Power Accessories
   folder: data/camera/power/power-accessories
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -1988,8 +2029,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -2013,7 +2055,7 @@ collections:
   label: CAMERA › Data
   folder: data/camera/data
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -2021,8 +2063,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -2046,7 +2089,7 @@ collections:
   label: CAMERA › Data › Media Cards
   folder: data/camera/data/media-cards
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -2054,8 +2097,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -2079,7 +2123,7 @@ collections:
   label: CAMERA › Data › Card Reader
   folder: data/camera/data/card-reader
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -2087,8 +2131,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -2112,7 +2157,7 @@ collections:
   label: CAMERA › Data › Computers
   folder: data/camera/data/computers
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -2120,8 +2165,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -2145,7 +2191,7 @@ collections:
   label: CAMERA › Carts
   folder: data/camera/carts
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -2153,8 +2199,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -2178,7 +2225,7 @@ collections:
   label: CAMERA › Carts › Carts Accessories
   folder: data/camera/carts/carts-accessories
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -2186,8 +2233,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -2211,7 +2259,7 @@ collections:
   label: CAMERA › Miscellaneous Accessories
   folder: data/camera/miscellaneous-accessories
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -2219,8 +2267,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string

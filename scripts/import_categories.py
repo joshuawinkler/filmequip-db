@@ -69,6 +69,72 @@ ADMIN_SITE_HTML = """<!doctype html>
 <body>
   <!-- Decap CMS loads itself and reads config.yml from the same folder -->
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <script>
+    // The `id` field is hidden in every collection's config (see config.yml) -
+    // it's derived here from Manufacturer + Model right before saving, instead
+    // of being typed by hand. Mirrors Decap's own slug algorithm so the
+    // generated id always matches the collection's `slug: '{{{{fields.manufacturer}}}}-{{{{fields.model}}}}'`
+    // filename. Also blocks the save if that id is already used by another
+    // entry in the same category folder, so the user gets prompted to tweak
+    // Manufacturer/Model instead of silently colliding with an existing entry.
+    (function () {{
+      var COLLECTION_FOLDERS = {folders_json};
+
+      function slugify(value) {{
+        return (value || "")
+          .toString()
+          .normalize("NFKD")
+          .replace(/[\\u0300-\\u036f]/g, "")
+          .toLowerCase()
+          .trim()
+          .replace(/[^a-z0-9]+/g, "-")
+          .replace(/^-+|-+$/g, "");
+      }}
+
+      CMS.registerEventListener({{
+        name: "preSave",
+        handler: async function (_ref) {{
+          var entry = _ref.entry;
+          var manufacturer = entry.getIn(["data", "manufacturer"]);
+          var model = entry.getIn(["data", "model"]);
+          var id = slugify((manufacturer || "") + " " + (model || ""));
+
+          if (!id) {{
+            throw new Error("Cannot generate ID: enter a Manufacturer and Model first.");
+          }}
+
+          var folder = COLLECTION_FOLDERS[entry.get("collection")];
+          var path = entry.get("path");
+          var currentFile = path ? path.slice(path.lastIndexOf("/") + 1) : null;
+
+          if (folder) {{
+            try {{
+              var res = await fetch(
+                "https://api.github.com/repos/{repo}/contents/" + folder + "?ref=main"
+              );
+              if (res.ok) {{
+                var files = await res.json();
+                var collision = Array.isArray(files) && files.some(function (f) {{
+                  return f.name === id + ".yaml" && f.name !== currentFile;
+                }});
+                if (collision) {{
+                  throw new Error(
+                    'ID "' + id + '" already exists in this category. ' +
+                    "Change the Manufacturer/Model so it's unique."
+                  );
+                }}
+              }}
+            }} catch (err) {{
+              if (err instanceof Error && /already exists/.test(err.message)) throw err;
+              console.warn("Could not check ID uniqueness, saving anyway:", err);
+            }}
+          }}
+
+          return entry.setIn(["data", "id"], id);
+        }},
+      }});
+    }})();
+  </script>
 </body>
 </html>
 """
@@ -220,8 +286,9 @@ def collection_for_node(
             own_fields.setdefault(f["key"], f)
 
     fields = [
-        {"label": "ID", "name": "id", "widget": "string",
-         "hint": "Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf"},
+        # Not user-editable: derived from Manufacturer + Model by the preSave
+        # listener in ADMIN_SITE_HTML, right before the entry is saved.
+        {"label": "ID", "name": "id", "widget": "hidden", "required": False, "default": ""},
         {"label": "Manufacturer", "name": "manufacturer", "widget": "string"},
         {"label": "Model", "name": "model", "widget": "string"},
     ]
@@ -244,7 +311,7 @@ def collection_for_node(
         "label": label,
         "folder": f"data/{folder.as_posix()}",
         "create": True,
-        "slug": "{{id}}",
+        "slug": "{{fields.manufacturer}}-{{fields.model}}",
         "identifier_field": "id",
         "extension": "yaml",
         "format": "yaml",
@@ -281,8 +348,11 @@ def write_admin_sites(
         with open(site_dir / "config.yml", "w", encoding="utf-8") as f:
             f.write(DECAP_HEADER)
             f.write(body)
+        folders_json = json.dumps({c["name"]: c["folder"] for c in collections})
         with open(site_dir / "index.html", "w", encoding="utf-8") as f:
-            f.write(ADMIN_SITE_HTML.format(title=root["name"]))
+            f.write(ADMIN_SITE_HTML.format(
+                title=root["name"], folders_json=folders_json, repo=GITHUB_REPO,
+            ))
 
         total_collections += len(collections)
         print(f"→ admin/{slug_by_id[root['id']]}/config.yml: {len(collections)} collections regenerated")

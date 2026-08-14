@@ -23,7 +23,7 @@ collections:
   label: GRIP
   folder: data/grip
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -31,8 +31,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -56,7 +57,7 @@ collections:
   label: GRIP › Heads
   folder: data/grip/heads
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -64,8 +65,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -89,7 +91,7 @@ collections:
   label: GRIP › Tripods
   folder: data/grip/tripods
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -97,8 +99,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -122,7 +125,7 @@ collections:
   label: GRIP › Dollys
   folder: data/grip/dollys
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -130,8 +133,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -155,7 +159,7 @@ collections:
   label: GRIP › Slider
   folder: data/grip/slider
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -163,8 +167,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -188,7 +193,7 @@ collections:
   label: GRIP › Jibs
   folder: data/grip/jibs
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -196,8 +201,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -221,7 +227,7 @@ collections:
   label: GRIP › Cranes
   folder: data/grip/cranes
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -229,8 +235,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -254,7 +261,7 @@ collections:
   label: GRIP › Gimbal
   folder: data/grip/gimbal
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -262,8 +269,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -287,7 +295,7 @@ collections:
   label: GRIP › Camera Support
   folder: data/grip/camera-support
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -295,8 +303,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -320,7 +329,7 @@ collections:
   label: GRIP › Rigging
   folder: data/grip/rigging
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -328,8 +337,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string

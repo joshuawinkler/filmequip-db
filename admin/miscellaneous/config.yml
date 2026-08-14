@@ -23,7 +23,7 @@ collections:
   label: MISCELLANEOUS
   folder: data/miscellaneous
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -31,8 +31,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -56,7 +57,7 @@ collections:
   label: MISCELLANEOUS › Transport & Cases
   folder: data/miscellaneous/transport-cases
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -64,8 +65,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -89,7 +91,7 @@ collections:
   label: MISCELLANEOUS › Transport & Cases › Carts
   folder: data/miscellaneous/transport-cases/carts
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -97,8 +99,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -122,7 +125,7 @@ collections:
   label: MISCELLANEOUS › Communication
   folder: data/miscellaneous/communication
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -130,8 +133,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -155,7 +159,7 @@ collections:
   label: MISCELLANEOUS › Communication › Intercoms
   folder: data/miscellaneous/communication/intercoms
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -163,8 +167,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -188,7 +193,7 @@ collections:
   label: MISCELLANEOUS › Communication › Radios
   folder: data/miscellaneous/communication/radios
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -196,8 +201,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -221,7 +227,7 @@ collections:
   label: MISCELLANEOUS › Vehicles
   folder: data/miscellaneous/vehicles
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -229,8 +235,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -254,7 +261,7 @@ collections:
   label: MISCELLANEOUS › Production Gear
   folder: data/miscellaneous/production-gear
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -262,8 +269,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
@@ -287,7 +295,7 @@ collections:
   label: MISCELLANEOUS › Consumables
   folder: data/miscellaneous/consumables
   create: true
-  slug: '{{id}}'
+  slug: '{{fields.manufacturer}}-{{fields.model}}'
   identifier_field: id
   extension: yaml
   format: yaml
@@ -295,8 +303,9 @@ collections:
   fields:
   - label: ID
     name: id
-    widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    widget: hidden
+    required: false
+    default: ''
   - label: Manufacturer
     name: manufacturer
     widget: string
