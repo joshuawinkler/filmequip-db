@@ -23,23 +23,35 @@ collections:
   label: LIGHTING
   folder: data/lighting
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -57,23 +69,35 @@ collections:
   label: LIGHTING › Lamps
   folder: data/lighting/lamps
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -91,23 +115,35 @@ collections:
   label: LIGHTING › Lamps › LED
   folder: data/lighting/lamps/led
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -125,23 +161,35 @@ collections:
   label: LIGHTING › Lamps › LED › Panels
   folder: data/lighting/lamps/led/panels
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -159,23 +207,35 @@ collections:
   label: LIGHTING › Lamps › LED › Compact
   folder: data/lighting/lamps/led/compact
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -193,23 +253,35 @@ collections:
   label: LIGHTING › Lamps › LED › Point-Source & COB
   folder: data/lighting/lamps/led/point-source-cob
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -227,23 +299,35 @@ collections:
   label: LIGHTING › Lamps › LED › PAR
   folder: data/lighting/lamps/led/par
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -261,23 +345,35 @@ collections:
   label: LIGHTING › Lamps › LED › Tubes
   folder: data/lighting/lamps/led/tubes
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -295,23 +391,35 @@ collections:
   label: LIGHTING › Lamps › HMI
   folder: data/lighting/lamps/hmi
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -329,23 +437,35 @@ collections:
   label: LIGHTING › Lamps › Tungsten
   folder: data/lighting/lamps/tungsten
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -363,23 +483,35 @@ collections:
   label: LIGHTING › Lamps › Fluorescent
   folder: data/lighting/lamps/fluorescent
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -397,23 +529,35 @@ collections:
   label: LIGHTING › Lamps › Moving Lights & Effects
   folder: data/lighting/lamps/moving-lights-effects
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -431,23 +575,35 @@ collections:
   label: LIGHTING › Lamps › Underwater Lighting
   folder: data/lighting/lamps/underwater-lighting
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -465,23 +621,35 @@ collections:
   label: LIGHTING › Lamps › Outdoor Systems
   folder: data/lighting/lamps/outdoor-systems
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -499,23 +667,35 @@ collections:
   label: LIGHTING › Lamps › Balloons
   folder: data/lighting/lamps/balloons
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -533,23 +713,35 @@ collections:
   label: LIGHTING › Lamp Accessories
   folder: data/lighting/lamp-accessories
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -567,23 +759,35 @@ collections:
   label: LIGHTING › Lamp Accessories › Modifiers
   folder: data/lighting/lamp-accessories/modifiers
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -601,23 +805,35 @@ collections:
   label: LIGHTING › Stands
   folder: data/lighting/stands
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -635,23 +851,35 @@ collections:
   label: LIGHTING › Stands › Booms
   folder: data/lighting/stands/booms
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -669,23 +897,35 @@ collections:
   label: LIGHTING › Stands › Mini Stands
   folder: data/lighting/stands/mini-stands
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -703,23 +943,35 @@ collections:
   label: LIGHTING › Stands › C-Stands
   folder: data/lighting/stands/c-stands
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -737,23 +989,35 @@ collections:
   label: LIGHTING › Stands › Lightweight Stands
   folder: data/lighting/stands/lightweight-stands
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -771,23 +1035,35 @@ collections:
   label: LIGHTING › Stands › Combo Stands
   folder: data/lighting/stands/combo-stands
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -805,23 +1081,35 @@ collections:
   label: LIGHTING › Stands › Overhead & Roller Stands
   folder: data/lighting/stands/overhead-roller-stands
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -839,23 +1127,35 @@ collections:
   label: LIGHTING › Stands › Wind-Up Stands
   folder: data/lighting/stands/wind-up-stands
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -873,23 +1173,35 @@ collections:
   label: LIGHTING › Stands › Heavy Duty Stands
   folder: data/lighting/stands/heavy-duty-stands
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -907,23 +1219,35 @@ collections:
   label: LIGHTING › Stands › Accessories
   folder: data/lighting/stands/accessories
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -941,23 +1265,35 @@ collections:
   label: LIGHTING › Lighting Grip
   folder: data/lighting/lighting-grip
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -975,23 +1311,35 @@ collections:
   label: LIGHTING › Lighting Grip › Grip Heads
   folder: data/lighting/lighting-grip/grip-heads
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -1009,23 +1357,35 @@ collections:
   label: LIGHTING › Lighting Grip › Arms
   folder: data/lighting/lighting-grip/arms
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -1043,23 +1403,35 @@ collections:
   label: LIGHTING › Lighting Grip › Clamps & Grips
   folder: data/lighting/lighting-grip/clamps-grips
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -1077,23 +1449,35 @@ collections:
   label: LIGHTING › Lighting Grip › Clips & Magnets
   folder: data/lighting/lighting-grip/clips-magnets
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -1111,23 +1495,35 @@ collections:
   label: LIGHTING › Lighting Grip › Brackets & Plates
   folder: data/lighting/lighting-grip/brackets-plates
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -1145,23 +1541,35 @@ collections:
   label: LIGHTING › Lighting Grip › Holders
   folder: data/lighting/lighting-grip/holders
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -1179,23 +1587,35 @@ collections:
   label: LIGHTING › Lighting Grip › Hangers
   folder: data/lighting/lighting-grip/hangers
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -1213,23 +1633,35 @@ collections:
   label: LIGHTING › Lighting Grip › Stand Extensions & Accessories
   folder: data/lighting/lighting-grip/stand-extensions-accessories
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -1247,23 +1679,35 @@ collections:
   label: LIGHTING › Lighting Grip › Spigots, Pins & Adapters
   folder: data/lighting/lighting-grip/spigots-pins-adapters
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -1281,23 +1725,35 @@ collections:
   label: LIGHTING › Lighting Grip › Support Systems
   folder: data/lighting/lighting-grip/support-systems
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -1315,23 +1771,35 @@ collections:
   label: LIGHTING › Lighting Grip › Suction Mounts
   folder: data/lighting/lighting-grip/suction-mounts
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -1349,23 +1817,35 @@ collections:
   label: LIGHTING › Lighting Grip › Truss & Scaffolding
   folder: data/lighting/lighting-grip/truss-scaffolding
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -1383,23 +1863,35 @@ collections:
   label: LIGHTING › Lighting Grip › Apple Boxes
   folder: data/lighting/lighting-grip/apple-boxes
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -1417,23 +1909,35 @@ collections:
   label: LIGHTING › Lighting Grip › Safety
   folder: data/lighting/lighting-grip/safety
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -1451,23 +1955,35 @@ collections:
   label: LIGHTING › Lighting Grip › Kits & Racks
   folder: data/lighting/lighting-grip/kits-racks
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -1485,23 +2001,35 @@ collections:
   label: LIGHTING › Frames & Textiles
   folder: data/lighting/frames-textiles
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -1519,23 +2047,35 @@ collections:
   label: LIGHTING › Frames & Textiles › Gel Frame
   folder: data/lighting/frames-textiles/gel-frame
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -1553,23 +2093,35 @@ collections:
   label: LIGHTING › Frames & Textiles › Lightweight Frame Kits
   folder: data/lighting/frames-textiles/lightweight-frame-kits
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -1587,23 +2139,35 @@ collections:
   label: LIGHTING › Frames & Textiles › Modular Frames
   folder: data/lighting/frames-textiles/modular-frames
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -1621,23 +2185,35 @@ collections:
   label: LIGHTING › Frames & Textiles › Fold-Away Frames
   folder: data/lighting/frames-textiles/fold-away-frames
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -1655,23 +2231,35 @@ collections:
   label: LIGHTING › Frames & Textiles › Scaffolding Tube Frames
   folder: data/lighting/frames-textiles/scaffolding-tube-frames
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -1689,23 +2277,35 @@ collections:
   label: LIGHTING › Frames & Textiles › Inflatable Frames
   folder: data/lighting/frames-textiles/inflatable-frames
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -1723,23 +2323,35 @@ collections:
   label: LIGHTING › Frames & Textiles › Textiles
   folder: data/lighting/frames-textiles/textiles
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -1757,23 +2369,35 @@ collections:
   label: LIGHTING › Frames & Textiles › Overheads & Butterfly Grids
   folder: data/lighting/frames-textiles/overheads-butterfly-grids
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -1791,23 +2415,35 @@ collections:
   label: LIGHTING › Frames & Textiles › Ulcers & Patterns
   folder: data/lighting/frames-textiles/ulcers-patterns
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -1825,23 +2461,35 @@ collections:
   label: LIGHTING › Flags & Nets
   folder: data/lighting/flags-nets
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -1859,23 +2507,35 @@ collections:
   label: LIGHTING › Flags & Nets › Kits
   folder: data/lighting/flags-nets/kits
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -1893,23 +2553,35 @@ collections:
   label: LIGHTING › Flags & Nets › Flags
   folder: data/lighting/flags-nets/flags
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -1927,23 +2599,35 @@ collections:
   label: LIGHTING › Flags & Nets › Floppies
   folder: data/lighting/flags-nets/floppies
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -1961,23 +2645,35 @@ collections:
   label: LIGHTING › Flags & Nets › Wag Flags
   folder: data/lighting/flags-nets/wag-flags
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -1995,23 +2691,35 @@ collections:
   label: LIGHTING › Flags & Nets › Meat Axe Flags
   folder: data/lighting/flags-nets/meat-axe-flags
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -2029,23 +2737,35 @@ collections:
   label: LIGHTING › Flags & Nets › Cutters
   folder: data/lighting/flags-nets/cutters
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -2063,23 +2783,35 @@ collections:
   label: LIGHTING › Flags & Nets › Ultrabounce
   folder: data/lighting/flags-nets/ultrabounce
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -2097,23 +2829,35 @@ collections:
   label: LIGHTING › Flags & Nets › Nets
   folder: data/lighting/flags-nets/nets
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -2131,23 +2875,35 @@ collections:
   label: LIGHTING › Flags & Nets › Silk
   folder: data/lighting/flags-nets/silk
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -2165,23 +2921,35 @@ collections:
   label: LIGHTING › Control
   folder: data/lighting/control
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -2199,23 +2967,35 @@ collections:
   label: LIGHTING › Control › Consoles
   folder: data/lighting/control/consoles
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -2233,23 +3013,35 @@ collections:
   label: LIGHTING › Control › PC
   folder: data/lighting/control/pc
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -2267,23 +3059,35 @@ collections:
   label: LIGHTING › Control › Fixed Installation
   folder: data/lighting/control/fixed-installation
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -2301,23 +3105,35 @@ collections:
   label: LIGHTING › Control › Wireless
   folder: data/lighting/control/wireless
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -2335,23 +3151,35 @@ collections:
   label: LIGHTING › Control › DMX
   folder: data/lighting/control/dmx
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -2369,23 +3197,35 @@ collections:
   label: LIGHTING › Control › Data Distribution
   folder: data/lighting/control/data-distribution
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -2403,23 +3243,35 @@ collections:
   label: LIGHTING › Control › Dimmer Units
   folder: data/lighting/control/dimmer-units
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -2437,23 +3289,35 @@ collections:
   label: LIGHTING › Control › In-Line Dimmers
   folder: data/lighting/control/in-line-dimmers
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -2471,23 +3335,35 @@ collections:
   label: LIGHTING › Control › LED Drivers
   folder: data/lighting/control/led-drivers
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -2505,23 +3381,35 @@ collections:
   label: LIGHTING › Control › Dimmer Shutters
   folder: data/lighting/control/dimmer-shutters
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -2539,23 +3427,35 @@ collections:
   label: LIGHTING › Control › Motorised Stirrups
   folder: data/lighting/control/motorised-stirrups
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -2573,23 +3473,35 @@ collections:
   label: LIGHTING › Control › Accessories
   folder: data/lighting/control/accessories
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -2607,23 +3519,35 @@ collections:
   label: LIGHTING › Mirrors & Reflectors
   folder: data/lighting/mirrors-reflectors
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -2641,23 +3565,35 @@ collections:
   label: LIGHTING › Mirrors & Reflectors › Cine Reflectors
   folder: data/lighting/mirrors-reflectors/cine-reflectors
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -2675,23 +3611,35 @@ collections:
   label: LIGHTING › Mirrors & Reflectors › Mirrors
   folder: data/lighting/mirrors-reflectors/mirrors
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -2709,23 +3657,35 @@ collections:
   label: LIGHTING › Mirrors & Reflectors › Mobile Reflectors & Diffusers
   folder: data/lighting/mirrors-reflectors/mobile-reflectors-diffusers
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -2743,23 +3703,35 @@ collections:
   label: LIGHTING › Effects
   folder: data/lighting/effects
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -2777,23 +3749,35 @@ collections:
   label: LIGHTING › Effects › Smoke & Haze
   folder: data/lighting/effects/smoke-haze
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -2811,23 +3795,35 @@ collections:
   label: LIGHTING › Effects › Wind
   folder: data/lighting/effects/wind
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -2845,23 +3841,35 @@ collections:
   label: LIGHTING › Power
   folder: data/lighting/power
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -2879,23 +3887,35 @@ collections:
   label: LIGHTING › Power › Single-Phase
   folder: data/lighting/power/single-phase
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -2913,23 +3933,35 @@ collections:
   label: LIGHTING › Power › Three-Phase
   folder: data/lighting/power/three-phase
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -2947,23 +3979,35 @@ collections:
   label: LIGHTING › Power › Earthing
   folder: data/lighting/power/earthing
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -2981,23 +4025,35 @@ collections:
   label: LIGHTING › Power › Batteries & Chargers
   folder: data/lighting/power/batteries-chargers
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -3015,23 +4071,35 @@ collections:
   label: LIGHTING › Power › Batteries & Chargers › Portable
   folder: data/lighting/power/batteries-chargers/portable
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -3049,23 +4117,35 @@ collections:
   label: LIGHTING › Power › Batteries & Chargers › Adapters & Accessories
   folder: data/lighting/power/batteries-chargers/adapters-accessories
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -3083,23 +4163,35 @@ collections:
   label: LIGHTING › Light & Color Meters
   folder: data/lighting/light-color-meters
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -3117,23 +4209,35 @@ collections:
   label: LIGHTING › Safety
   folder: data/lighting/safety
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -3151,23 +4255,35 @@ collections:
   label: LIGHTING › Safety › Cable Ramp
   folder: data/lighting/safety/cable-ramp
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -3185,23 +4301,35 @@ collections:
   label: LIGHTING › Safety › Rubber Matting
   folder: data/lighting/safety/rubber-matting
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text

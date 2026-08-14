@@ -1,6 +1,6 @@
 id: sony-fx3
+name: FX3
 manufacturer: Sony
-model: FX3
 lens_mounts:
 - Sony E
 max_resolution: 4K

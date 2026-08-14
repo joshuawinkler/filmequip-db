@@ -23,23 +23,35 @@ collections:
   label: GRIP
   folder: data/grip
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -57,23 +69,35 @@ collections:
   label: GRIP › Heads
   folder: data/grip/heads
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -91,23 +115,35 @@ collections:
   label: GRIP › Tripods
   folder: data/grip/tripods
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -125,23 +161,35 @@ collections:
   label: GRIP › Dollys
   folder: data/grip/dollys
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -159,23 +207,35 @@ collections:
   label: GRIP › Slider
   folder: data/grip/slider
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -193,23 +253,35 @@ collections:
   label: GRIP › Jibs
   folder: data/grip/jibs
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -227,23 +299,35 @@ collections:
   label: GRIP › Cranes
   folder: data/grip/cranes
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -261,23 +345,35 @@ collections:
   label: GRIP › Gimbal
   folder: data/grip/gimbal
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -295,23 +391,35 @@ collections:
   label: GRIP › Camera Support
   folder: data/grip/camera-support
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -329,23 +437,35 @@ collections:
   label: GRIP › Rigging
   folder: data/grip/rigging
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text

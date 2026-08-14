@@ -15,7 +15,9 @@ and fill in whatever data you know. A maintainer will turn it into a pull reques
    entry for a digital camera goes in
    `data/camera/cameras/digital-cameras/<id>.yaml` — there is no `category`
    field in the file, the folder location *is* the category
-   - `<id>` = `manufacturer-model-slug`, lowercase letters, numbers, hyphens only
+   - `<id>` = `name-slug`, prefixed with the manufacturer when known
+     (e.g. `arri-alexa-mini-lf`, or `generic-7-inch-monitor` for generic
+     items), lowercase letters, numbers, hyphens only
    - The filename must exactly match the `id` in the document
    - Extra fields may be available for that category, defined in
      `data/schemas/fields/<category_id>.json` and inherited from any parent

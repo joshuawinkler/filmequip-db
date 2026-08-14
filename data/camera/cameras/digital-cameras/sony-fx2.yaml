@@ -1,6 +1,6 @@
 id: sony-fx2
+name: FX2
 manufacturer: Sony
-model: FX2
 lens_mounts:
 - Sony E
 sensor_coverage: Full Frame

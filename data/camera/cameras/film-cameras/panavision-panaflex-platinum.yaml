@@ -1,6 +1,6 @@
 id: panavision-panaflex-platinum
+name: Panaflex Platinum
 manufacturer: Panavision
-model: Panaflex Platinum
 lens_mounts:
 - Panavision PV
 noise_level_db: sync-sound

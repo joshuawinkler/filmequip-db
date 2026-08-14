@@ -1,6 +1,6 @@
 id: zeiss-aatma
+name: Aatma
 manufacturer: Zeiss
-model: Aatma
 lens_mounts:
 - Arri LPL
 - Arri PL

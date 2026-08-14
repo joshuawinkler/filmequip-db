@@ -1,79 +1,19 @@
 <!doctype html>
-<html lang="en">
+<html>
 <head>
   <meta charset="utf-8" />
   <meta name="robots" content="noindex" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Filmequip DB – Admin</title>
-  <style>
-    :root {
-      --bg: #0f1115;
-      --panel: #171a21;
-      --panel-2: #1e222b;
-      --border: #2a2f3a;
-      --text: #e7e9ee;
-      --text-dim: #9aa1b0;
-      --accent: #5b8cff;
-      --radius: 8px;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, sans-serif;
-      font-size: 13px;
-      line-height: 1.5;
-    }
-    header {
-      padding: 14px 20px;
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    header h1 { font-size: 15px; margin: 0; font-weight: 600; }
-
-    main { max-width: 640px; margin: 0 auto; padding: 40px 20px; }
-    main > p { color: var(--text-dim); font-size: 13px; margin-bottom: 18px; }
-
-    .panel {
-      background: var(--panel);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 8px;
-    }
-    .panel a {
-      display: block;
-      padding: 12px 14px;
-      border-radius: 6px;
-      color: var(--text);
-      text-decoration: none;
-      font-size: 13px;
-      font-weight: 500;
-    }
-    .panel a:hover { background: var(--panel-2); color: var(--accent); }
-    .panel a + a { border-top: 1px solid var(--border); border-radius: 0; }
-    .panel a:first-child { border-top-left-radius: 6px; border-top-right-radius: 6px; }
-    .panel a:last-child { border-bottom-left-radius: 6px; border-bottom-right-radius: 6px; }
-  </style>
 </head>
 <body>
-
-<header>
-  <h1>Filmequip DB — Admin</h1>
-</header>
-
-<main>
+  <h1>Filmequip DB – Admin</h1>
   <p>Each top-level category has its own Decap CMS instance:</p>
-  <div class="panel">
-    <a href="camera/">Camera</a>
-    <a href="grip/">Grip</a>
-    <a href="lighting/">Lighting</a>
-    <a href="sound/">Sound</a>
-    <a href="miscellaneous/">Miscellaneous</a>
-  </div>
-</main>
-
+  <ul>
+    <li><a href="camera/">Camera</a></li>
+    <li><a href="grip/">Grip</a></li>
+    <li><a href="lighting/">Lighting</a></li>
+    <li><a href="sound/">Sound</a></li>
+    <li><a href="miscellaneous/">Miscellaneous</a></li>
+  </ul>
 </body>
 </html>

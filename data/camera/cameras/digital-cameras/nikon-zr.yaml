@@ -1,6 +1,6 @@
 id: nikon-zr
+name: ZR
 manufacturer: Nikon
-model: ZR
 lens_mounts:
 - Nikon Z
 sensor_size: 35.9x23.9mm

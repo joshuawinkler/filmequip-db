@@ -1,6 +1,6 @@
 id: arri-amira
+name: Amira
 manufacturer: ARRI
-model: Amira
 lens_mounts:
 - Arri LPL
 - Arri PL

@@ -43,8 +43,8 @@ Example fetch in Swift:
 struct Camera: Codable {
     let id: String
     let category: String
-    let manufacturer: String
-    let model: String
+    let name: String
+    let manufacturer: String?
     // ... more fields depending on schema
 }
 

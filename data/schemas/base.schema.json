@@ -4,15 +4,24 @@
   "title": "Equipment entry (base fields, common to every category)",
   "description": "Category is not a field in the file - it's implied by which folder under data/<root>/... the file lives in, mirroring data/categories.json.",
   "type": "object",
-  "required": ["id", "manufacturer", "model"],
+  "required": ["id", "name"],
   "properties": {
     "id": {
       "type": "string",
-      "description": "Unique, immutable ID. Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf",
+      "description": "Unique, immutable ID. Format: name-slug, prefixed with manufacturer when known, e.g. arri-alexa-mini-lf or generic-7-inch-monitor",
       "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
     },
+    "name": { "type": "string" },
     "manufacturer": { "type": "string" },
-    "model": { "type": "string" },
+    "generic": {
+      "type": "boolean",
+      "description": "True for items with no specific manufacturer/model, e.g. \"7-inch Monitor\""
+    },
+    "search_aliases": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Alternate search terms, e.g. A35, Alexa35"
+    },
     "notes": { "type": "string" },
     "image_url": {
       "type": "string",

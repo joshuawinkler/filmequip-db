@@ -1,6 +1,6 @@
 id: sony-fx30
+name: FX30
 manufacturer: Sony
-model: FX30
 lens_mounts:
 - Sony E
 sensor_coverage: Super 35

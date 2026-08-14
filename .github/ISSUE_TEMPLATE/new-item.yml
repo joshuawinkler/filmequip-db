@@ -3,17 +3,26 @@ description: Suggest a device to be added to the database
 labels: ["new-item"]
 body:
   - type: input
-    id: manufacturer
+    id: name
     attributes:
-      label: Manufacturer
+      label: Name
+      description: e.g. "Alexa Mini LF", or "7-inch Monitor" for a generic item
     validations:
       required: true
   - type: input
-    id: model
+    id: manufacturer
     attributes:
-      label: Model
+      label: Manufacturer
+      description: Leave blank for generic items with no specific manufacturer/model
     validations:
-      required: true
+      required: false
+  - type: input
+    id: search_aliases
+    attributes:
+      label: Search aliases
+      description: Alternate search terms, comma-separated, e.g. "A35, Alexa35"
+    validations:
+      required: false
   - type: dropdown
     id: category_root
     attributes:

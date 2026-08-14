@@ -10,12 +10,12 @@
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
   <script>
     // The `id` field is hidden in every collection's config (see config.yml) -
-    // it's derived here from Manufacturer + Model right before saving, instead
-    // of being typed by hand. Mirrors Decap's own slug algorithm so the
-    // generated id always matches the collection's `slug: '{{fields.manufacturer}}-{{fields.model}}'`
+    // it's derived here from Name (+ Manufacturer, or "generic" when none is
+    // given) right before saving, instead of being typed by hand. Matches the
+    // collection's `slug: '{{id}}'` so the generated id is always the
     // filename. Also blocks the save if that id is already used by another
     // entry in the same category folder, so the user gets prompted to tweak
-    // Manufacturer/Model instead of silently colliding with an existing entry.
+    // Name/Manufacturer instead of silently colliding with an existing entry.
     (function () {
       var COLLECTION_FOLDERS = {"sound": "data/sound", "sound-audio-recorders": "data/sound/audio-recorders", "sound-audio-recorders-accessories": "data/sound/audio-recorders/accessories", "sound-power": "data/sound/power", "sound-power-batteries": "data/sound/power/batteries", "sound-power-chargers": "data/sound/power/chargers", "sound-power-power-supplies": "data/sound/power/power-supplies", "sound-boom-poles": "data/sound/boom-poles", "sound-boom-poles-boom-pole-accessories": "data/sound/boom-poles/boom-pole-accessories", "sound-cables-adaptors": "data/sound/cables-adaptors", "sound-headphones-monitors": "data/sound/headphones-monitors", "sound-headphones-monitors-headphones": "data/sound/headphones-monitors/headphones", "sound-headphones-monitors-speakers": "data/sound/headphones-monitors/speakers", "sound-microphones": "data/sound/microphones", "sound-microphones-lavalier": "data/sound/microphones/lavalier", "sound-microphones-condenser-shotgun": "data/sound/microphones/condenser-shotgun", "sound-microphones-dynamic": "data/sound/microphones/dynamic", "sound-microphones-modular": "data/sound/microphones/modular", "sound-microphones-handhelds": "data/sound/microphones/handhelds", "sound-microphones-hydrophone": "data/sound/microphones/hydrophone", "sound-microphones-stereo-m-s": "data/sound/microphones/stereo-m-s", "sound-microphones-surround-vr": "data/sound/microphones/surround-vr", "sound-microphones-mic-accessories": "data/sound/microphones/mic-accessories", "sound-consumables": "data/sound/consumables", "sound-consumables-tape": "data/sound/consumables/tape", "sound-communication": "data/sound/communication", "sound-communication-intercom": "data/sound/communication/intercom", "sound-communication-walkie-talkie": "data/sound/communication/walkie-talkie", "sound-mounting-grip": "data/sound/mounting-grip", "sound-mounting-grip-mic-stands": "data/sound/mounting-grip/mic-stands", "sound-mounting-grip-mic-holder": "data/sound/mounting-grip/mic-holder", "sound-mounting-grip-boom-holder": "data/sound/mounting-grip/boom-holder", "sound-mixers-controllers-interfaces": "data/sound/mixers-controllers-interfaces", "sound-mixers-controllers-interfaces-mixers": "data/sound/mixers-controllers-interfaces/mixers", "sound-mixers-controllers-interfaces-controllers": "data/sound/mixers-controllers-interfaces/controllers", "sound-mixers-controllers-interfaces-interfaces": "data/sound/mixers-controllers-interfaces/interfaces", "sound-wind-protection": "data/sound/wind-protection", "sound-wireless-systems-rf": "data/sound/wireless-systems-rf", "sound-shock-mounts-suspensions": "data/sound/shock-mounts-suspensions", "sound-slates-timecode": "data/sound/slates-timecode", "sound-slates-timecode-timecode-devices": "data/sound/slates-timecode/timecode-devices", "sound-slates-timecode-slates-displays": "data/sound/slates-timecode/slates-displays", "sound-slates-timecode-timecode-cables": "data/sound/slates-timecode/timecode-cables", "sound-slates-timecode-timecode-accessories": "data/sound/slates-timecode/timecode-accessories", "sound-carts": "data/sound/carts", "sound-lav-accessories": "data/sound/lav-accessories"};
 
@@ -34,12 +34,13 @@
         name: "preSave",
         handler: async function (_ref) {
           var entry = _ref.entry;
+          var name = entry.getIn(["data", "name"]);
           var manufacturer = entry.getIn(["data", "manufacturer"]);
-          var model = entry.getIn(["data", "model"]);
-          var id = slugify((manufacturer || "") + " " + (model || ""));
+          var prefix = manufacturer ? manufacturer : "generic";
+          var id = slugify(prefix + " " + (name || ""));
 
           if (!id) {
-            throw new Error("Cannot generate ID: enter a Manufacturer and Model first.");
+            throw new Error("Cannot generate ID: enter a Name first.");
           }
 
           var folder = COLLECTION_FOLDERS[entry.get("collection")];
@@ -59,7 +60,7 @@
                 if (collision) {
                   throw new Error(
                     'ID "' + id + '" already exists in this category. ' +
-                    "Change the Manufacturer/Model so it's unique."
+                    "Change the Name/Manufacturer so it's unique."
                   );
                 }
               }

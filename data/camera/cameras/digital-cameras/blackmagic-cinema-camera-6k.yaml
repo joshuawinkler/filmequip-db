@@ -1,6 +1,6 @@
 id: blackmagic-cinema-camera-6k
+name: Cinema Camera 6K
 manufacturer: Blackmagic
-model: Cinema Camera 6K
 lens_mounts:
 - Leica L
 sensor_size: 36x24mm

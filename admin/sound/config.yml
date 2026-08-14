@@ -23,23 +23,35 @@ collections:
   label: SOUND
   folder: data/sound
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -57,23 +69,35 @@ collections:
   label: SOUND › Audio Recorders
   folder: data/sound/audio-recorders
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -91,23 +115,35 @@ collections:
   label: SOUND › Audio Recorders › Accessories
   folder: data/sound/audio-recorders/accessories
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -125,23 +161,35 @@ collections:
   label: SOUND › Power
   folder: data/sound/power
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -159,23 +207,35 @@ collections:
   label: SOUND › Power › Batteries
   folder: data/sound/power/batteries
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -193,23 +253,35 @@ collections:
   label: SOUND › Power › Chargers
   folder: data/sound/power/chargers
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -227,23 +299,35 @@ collections:
   label: SOUND › Power › Power Supplies
   folder: data/sound/power/power-supplies
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -261,23 +345,35 @@ collections:
   label: SOUND › Boom Poles
   folder: data/sound/boom-poles
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -295,23 +391,35 @@ collections:
   label: SOUND › Boom Poles › Boom Pole Accessories
   folder: data/sound/boom-poles/boom-pole-accessories
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -329,23 +437,35 @@ collections:
   label: SOUND › Cables & Adaptors
   folder: data/sound/cables-adaptors
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -363,23 +483,35 @@ collections:
   label: SOUND › Headphones & Monitors
   folder: data/sound/headphones-monitors
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -397,23 +529,35 @@ collections:
   label: SOUND › Headphones & Monitors › Headphones
   folder: data/sound/headphones-monitors/headphones
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -431,23 +575,35 @@ collections:
   label: SOUND › Headphones & Monitors › Speakers
   folder: data/sound/headphones-monitors/speakers
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -465,23 +621,35 @@ collections:
   label: SOUND › Microphones
   folder: data/sound/microphones
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -499,23 +667,35 @@ collections:
   label: SOUND › Microphones › Lavalier
   folder: data/sound/microphones/lavalier
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -533,23 +713,35 @@ collections:
   label: SOUND › Microphones › Condenser & Shotgun
   folder: data/sound/microphones/condenser-shotgun
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -567,23 +759,35 @@ collections:
   label: SOUND › Microphones › Dynamic
   folder: data/sound/microphones/dynamic
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -601,23 +805,35 @@ collections:
   label: SOUND › Microphones › Modular
   folder: data/sound/microphones/modular
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -635,23 +851,35 @@ collections:
   label: SOUND › Microphones › Handhelds
   folder: data/sound/microphones/handhelds
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -669,23 +897,35 @@ collections:
   label: SOUND › Microphones › Hydrophone
   folder: data/sound/microphones/hydrophone
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -703,23 +943,35 @@ collections:
   label: SOUND › Microphones › Stereo & M/S
   folder: data/sound/microphones/stereo-m-s
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -737,23 +989,35 @@ collections:
   label: SOUND › Microphones › Surround & VR
   folder: data/sound/microphones/surround-vr
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -771,23 +1035,35 @@ collections:
   label: SOUND › Microphones › Mic Accessories
   folder: data/sound/microphones/mic-accessories
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -805,23 +1081,35 @@ collections:
   label: SOUND › Consumables
   folder: data/sound/consumables
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -839,23 +1127,35 @@ collections:
   label: SOUND › Consumables › Tape
   folder: data/sound/consumables/tape
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -873,23 +1173,35 @@ collections:
   label: SOUND › Communication
   folder: data/sound/communication
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -907,23 +1219,35 @@ collections:
   label: SOUND › Communication › Intercom
   folder: data/sound/communication/intercom
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -941,23 +1265,35 @@ collections:
   label: SOUND › Communication › Walkie Talkie
   folder: data/sound/communication/walkie-talkie
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -975,23 +1311,35 @@ collections:
   label: SOUND › Mounting & Grip
   folder: data/sound/mounting-grip
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -1009,23 +1357,35 @@ collections:
   label: SOUND › Mounting & Grip › Mic Stands
   folder: data/sound/mounting-grip/mic-stands
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -1043,23 +1403,35 @@ collections:
   label: SOUND › Mounting & Grip › Mic Holder
   folder: data/sound/mounting-grip/mic-holder
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -1077,23 +1449,35 @@ collections:
   label: SOUND › Mounting & Grip › Boom Holder
   folder: data/sound/mounting-grip/boom-holder
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -1111,23 +1495,35 @@ collections:
   label: SOUND › Mixers, Controllers & Interfaces
   folder: data/sound/mixers-controllers-interfaces
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -1145,23 +1541,35 @@ collections:
   label: SOUND › Mixers, Controllers & Interfaces › Mixers
   folder: data/sound/mixers-controllers-interfaces/mixers
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -1179,23 +1587,35 @@ collections:
   label: SOUND › Mixers, Controllers & Interfaces › Controllers
   folder: data/sound/mixers-controllers-interfaces/controllers
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -1213,23 +1633,35 @@ collections:
   label: SOUND › Mixers, Controllers & Interfaces › Interfaces
   folder: data/sound/mixers-controllers-interfaces/interfaces
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -1247,23 +1679,35 @@ collections:
   label: SOUND › Wind Protection
   folder: data/sound/wind-protection
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -1281,23 +1725,35 @@ collections:
   label: SOUND › Wireless Systems & RF
   folder: data/sound/wireless-systems-rf
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -1315,23 +1771,35 @@ collections:
   label: SOUND › Shock Mounts & Suspensions
   folder: data/sound/shock-mounts-suspensions
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -1349,23 +1817,35 @@ collections:
   label: SOUND › Slates & Timecode
   folder: data/sound/slates-timecode
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -1383,23 +1863,35 @@ collections:
   label: SOUND › Slates & Timecode › Timecode Devices
   folder: data/sound/slates-timecode/timecode-devices
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -1417,23 +1909,35 @@ collections:
   label: SOUND › Slates & Timecode › Slates & Displays
   folder: data/sound/slates-timecode/slates-displays
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -1451,23 +1955,35 @@ collections:
   label: SOUND › Slates & Timecode › Timecode Cables
   folder: data/sound/slates-timecode/timecode-cables
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -1485,23 +2001,35 @@ collections:
   label: SOUND › Slates & Timecode › Timecode Accessories
   folder: data/sound/slates-timecode/timecode-accessories
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -1519,23 +2047,35 @@ collections:
   label: SOUND › Carts
   folder: data/sound/carts
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -1553,23 +2093,35 @@ collections:
   label: SOUND › Lav Accessories
   folder: data/sound/lav-accessories
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text

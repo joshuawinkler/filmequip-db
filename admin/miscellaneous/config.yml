@@ -23,23 +23,35 @@ collections:
   label: MISCELLANEOUS
   folder: data/miscellaneous
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -57,23 +69,35 @@ collections:
   label: MISCELLANEOUS › Transport & Cases
   folder: data/miscellaneous/transport-cases
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -91,23 +115,35 @@ collections:
   label: MISCELLANEOUS › Transport & Cases › Carts
   folder: data/miscellaneous/transport-cases/carts
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -125,23 +161,35 @@ collections:
   label: MISCELLANEOUS › Communication
   folder: data/miscellaneous/communication
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -159,23 +207,35 @@ collections:
   label: MISCELLANEOUS › Communication › Intercoms
   folder: data/miscellaneous/communication/intercoms
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -193,23 +253,35 @@ collections:
   label: MISCELLANEOUS › Communication › Radios
   folder: data/miscellaneous/communication/radios
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -227,23 +299,35 @@ collections:
   label: MISCELLANEOUS › Vehicles
   folder: data/miscellaneous/vehicles
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -261,23 +345,35 @@ collections:
   label: MISCELLANEOUS › Production Gear
   folder: data/miscellaneous/production-gear
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -295,23 +391,35 @@ collections:
   label: MISCELLANEOUS › Consumables
   folder: data/miscellaneous/consumables
   create: true
-  slug: '{{fields.manufacturer}}-{{fields.model}}'
+  slug: '{{id}}'
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: hidden
     required: false
     default: ''
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text

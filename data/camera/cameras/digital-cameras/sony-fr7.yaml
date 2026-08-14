@@ -1,6 +1,6 @@
 id: sony-fr7
+name: FR7
 manufacturer: Sony
-model: FR7
 lens_mounts:
 - Sony E
 sensor_coverage: Full Frame

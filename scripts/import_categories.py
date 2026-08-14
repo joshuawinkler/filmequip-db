@@ -71,12 +71,12 @@ ADMIN_SITE_HTML = """<!doctype html>
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
   <script>
     // The `id` field is hidden in every collection's config (see config.yml) -
-    // it's derived here from Manufacturer + Model right before saving, instead
-    // of being typed by hand. Mirrors Decap's own slug algorithm so the
-    // generated id always matches the collection's `slug: '{{{{fields.manufacturer}}}}-{{{{fields.model}}}}'`
+    // it's derived here from Name (+ Manufacturer, or "generic" when none is
+    // given) right before saving, instead of being typed by hand. Matches the
+    // collection's `slug: '{{{{id}}}}'` so the generated id is always the
     // filename. Also blocks the save if that id is already used by another
     // entry in the same category folder, so the user gets prompted to tweak
-    // Manufacturer/Model instead of silently colliding with an existing entry.
+    // Name/Manufacturer instead of silently colliding with an existing entry.
     (function () {{
       var COLLECTION_FOLDERS = {folders_json};
 
@@ -95,12 +95,13 @@ ADMIN_SITE_HTML = """<!doctype html>
         name: "preSave",
         handler: async function (_ref) {{
           var entry = _ref.entry;
+          var name = entry.getIn(["data", "name"]);
           var manufacturer = entry.getIn(["data", "manufacturer"]);
-          var model = entry.getIn(["data", "model"]);
-          var id = slugify((manufacturer || "") + " " + (model || ""));
+          var prefix = manufacturer ? manufacturer : "generic";
+          var id = slugify(prefix + " " + (name || ""));
 
           if (!id) {{
-            throw new Error("Cannot generate ID: enter a Manufacturer and Model first.");
+            throw new Error("Cannot generate ID: enter a Name first.");
           }}
 
           var folder = COLLECTION_FOLDERS[entry.get("collection")];
@@ -120,7 +121,7 @@ ADMIN_SITE_HTML = """<!doctype html>
                 if (collision) {{
                   throw new Error(
                     'ID "' + id + '" already exists in this category. ' +
-                    "Change the Manufacturer/Model so it's unique."
+                    "Change the Name/Manufacturer so it's unique."
                   );
                 }}
               }}
@@ -286,11 +287,15 @@ def collection_for_node(
             own_fields.setdefault(f["key"], f)
 
     fields = [
-        # Not user-editable: derived from Manufacturer + Model by the preSave
+        # Not user-editable: derived from Name (+ Manufacturer) by the preSave
         # listener in ADMIN_SITE_HTML, right before the entry is saved.
         {"label": "ID", "name": "id", "widget": "hidden", "required": False, "default": ""},
-        {"label": "Manufacturer", "name": "manufacturer", "widget": "string"},
-        {"label": "Model", "name": "model", "widget": "string"},
+        {"label": "Name", "name": "name", "widget": "string"},
+        {"label": "Manufacturer", "name": "manufacturer", "widget": "string", "required": False},
+        {"label": "Generic Item", "name": "generic", "widget": "boolean", "required": False,
+         "default": False, "hint": 'No specific manufacturer/model, e.g. "7-inch Monitor"'},
+        {"label": "Search Aliases", "name": "search_aliases", "widget": "list", "required": False,
+         "hint": "Alternate search terms, e.g. A35, Alexa35"},
     ]
     for f in sorted(own_fields.values(), key=lambda f: f["sort_order"]):
         fields.append(field_to_decap_widget(f))
@@ -311,11 +316,11 @@ def collection_for_node(
         "label": label,
         "folder": f"data/{folder.as_posix()}",
         "create": True,
-        "slug": "{{fields.manufacturer}}-{{fields.model}}",
+        "slug": "{{id}}",
         "identifier_field": "id",
         "extension": "yaml",
         "format": "yaml",
-        "summary": "{{manufacturer}} {{model}}",
+        "summary": "{{name}}",
         "fields": fields,
     }
 

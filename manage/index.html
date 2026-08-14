@@ -699,11 +699,13 @@ function collectionForNode(id, cats, schemas) {
   chain.forEach(cid => (schemas[cid]?.fields || []).forEach(f => { if (!own.has(f.key)) own.set(f.key, f); }));
 
   const fields = [
-    // Not user-editable: derived from Manufacturer + Model by the preSave
+    // Not user-editable: derived from Name (+ Manufacturer) by the preSave
     // listener in buildAdminSiteHtml, right before the entry is saved.
     { label: "ID", name: "id", widget: "hidden", required: false, default: "" },
-    { label: "Manufacturer", name: "manufacturer", widget: "string" },
-    { label: "Model", name: "model", widget: "string" },
+    { label: "Name", name: "name", widget: "string" },
+    { label: "Manufacturer", name: "manufacturer", widget: "string", required: false },
+    { label: "Generic Item", name: "generic", widget: "boolean", required: false, default: false, hint: 'No specific manufacturer/model, e.g. "7-inch Monitor"' },
+    { label: "Search Aliases", name: "search_aliases", widget: "list", required: false, hint: "Alternate search terms, e.g. A35, Alexa35" },
     ...[...own.values()].sort((a, b) => a.sort_order - b.sort_order).map(fieldToDecapWidget),
     { label: "Notes", name: "notes", widget: "text", required: false },
     { label: "Image URL", name: "image_url", widget: "string", required: false, hint: "Only freely licensed sources, e.g. Wikimedia Commons" },
@@ -716,8 +718,8 @@ function collectionForNode(id, cats, schemas) {
   const folder = chain.map(cid => cats.find(c => c.id === cid).slug).join("/");
   return {
     name, label: labelParts.join(" › "), folder: `data/${folder}`,
-    create: true, slug: "{{fields.manufacturer}}-{{fields.model}}", identifier_field: "id",
-    extension: "yaml", format: "yaml", summary: "{{manufacturer}} {{model}}", fields,
+    create: true, slug: "{{id}}", identifier_field: "id",
+    extension: "yaml", format: "yaml", summary: "{{name}}", fields,
   };
 }
 
@@ -777,12 +779,12 @@ function buildAdminSiteHtml(rootName, collections) {
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"><\/script>
   <script>
     // The \`id\` field is hidden in every collection's config (see config.yml) -
-    // it's derived here from Manufacturer + Model right before saving, instead
-    // of being typed by hand. Mirrors Decap's own slug algorithm so the
-    // generated id always matches the collection's \`slug: '{{fields.manufacturer}}-{{fields.model}}'\`
+    // it's derived here from Name (+ Manufacturer, or "generic" when none is
+    // given) right before saving, instead of being typed by hand. Matches the
+    // collection's \`slug: '{{id}}'\` so the generated id is always the
     // filename. Also blocks the save if that id is already used by another
     // entry in the same category folder, so the user gets prompted to tweak
-    // Manufacturer/Model instead of silently colliding with an existing entry.
+    // Name/Manufacturer instead of silently colliding with an existing entry.
     (function () {
       var COLLECTION_FOLDERS = ${foldersJson};
 
@@ -801,12 +803,13 @@ function buildAdminSiteHtml(rootName, collections) {
         name: "preSave",
         handler: async function (_ref) {
           var entry = _ref.entry;
+          var name = entry.getIn(["data", "name"]);
           var manufacturer = entry.getIn(["data", "manufacturer"]);
-          var model = entry.getIn(["data", "model"]);
-          var id = slugify((manufacturer || "") + " " + (model || ""));
+          var prefix = manufacturer ? manufacturer : "generic";
+          var id = slugify(prefix + " " + (name || ""));
 
           if (!id) {
-            throw new Error("Cannot generate ID: enter a Manufacturer and Model first.");
+            throw new Error("Cannot generate ID: enter a Name first.");
           }
 
           var folder = COLLECTION_FOLDERS[entry.get("collection")];
@@ -826,7 +829,7 @@ function buildAdminSiteHtml(rootName, collections) {
                 if (collision) {
                   throw new Error(
                     'ID "' + id + '" already exists in this category. ' +
-                    "Change the Manufacturer/Model so it's unique."
+                    "Change the Name/Manufacturer so it's unique."
                   );
                 }
               }

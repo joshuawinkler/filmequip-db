@@ -1,6 +1,6 @@
 id: blackmagic-pyxis-6k
+name: Pyxis 6K
 manufacturer: Blackmagic
-model: Pyxis 6K
 lens_mounts:
 - Arri PL
 - Canon EF

@@ -10,12 +10,12 @@
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
   <script>
     // The `id` field is hidden in every collection's config (see config.yml) -
-    // it's derived here from Manufacturer + Model right before saving, instead
-    // of being typed by hand. Mirrors Decap's own slug algorithm so the
-    // generated id always matches the collection's `slug: '{{fields.manufacturer}}-{{fields.model}}'`
+    // it's derived here from Name (+ Manufacturer, or "generic" when none is
+    // given) right before saving, instead of being typed by hand. Matches the
+    // collection's `slug: '{{id}}'` so the generated id is always the
     // filename. Also blocks the save if that id is already used by another
     // entry in the same category folder, so the user gets prompted to tweak
-    // Manufacturer/Model instead of silently colliding with an existing entry.
+    // Name/Manufacturer instead of silently colliding with an existing entry.
     (function () {
       var COLLECTION_FOLDERS = {"miscellaneous": "data/miscellaneous", "miscellaneous-transport-cases": "data/miscellaneous/transport-cases", "miscellaneous-transport-cases-carts": "data/miscellaneous/transport-cases/carts", "miscellaneous-communication": "data/miscellaneous/communication", "miscellaneous-communication-intercoms": "data/miscellaneous/communication/intercoms", "miscellaneous-communication-radios": "data/miscellaneous/communication/radios", "miscellaneous-vehicles": "data/miscellaneous/vehicles", "miscellaneous-production-gear": "data/miscellaneous/production-gear", "miscellaneous-consumables": "data/miscellaneous/consumables"};
 
@@ -34,12 +34,13 @@
         name: "preSave",
         handler: async function (_ref) {
           var entry = _ref.entry;
+          var name = entry.getIn(["data", "name"]);
           var manufacturer = entry.getIn(["data", "manufacturer"]);
-          var model = entry.getIn(["data", "model"]);
-          var id = slugify((manufacturer || "") + " " + (model || ""));
+          var prefix = manufacturer ? manufacturer : "generic";
+          var id = slugify(prefix + " " + (name || ""));
 
           if (!id) {
-            throw new Error("Cannot generate ID: enter a Manufacturer and Model first.");
+            throw new Error("Cannot generate ID: enter a Name first.");
           }
 
           var folder = COLLECTION_FOLDERS[entry.get("collection")];
@@ -59,7 +60,7 @@
                 if (collision) {
                   throw new Error(
                     'ID "' + id + '" already exists in this category. ' +
-                    "Change the Manufacturer/Model so it's unique."
+                    "Change the Name/Manufacturer so it's unique."
                   );
                 }
               }
