@@ -221,9 +221,14 @@ def collection_for_node(
 
     fields = [
         {"label": "ID", "name": "id", "widget": "string",
-         "hint": "Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf"},
-        {"label": "Manufacturer", "name": "manufacturer", "widget": "string"},
-        {"label": "Model", "name": "model", "widget": "string"},
+         "hint": "Format: name-slug, prefixed with manufacturer when known, "
+                 "e.g. arri-alexa-mini-lf or generic-7-inch-monitor"},
+        {"label": "Name", "name": "name", "widget": "string"},
+        {"label": "Manufacturer", "name": "manufacturer", "widget": "string", "required": False},
+        {"label": "Generic Item", "name": "generic", "widget": "boolean", "required": False,
+         "default": False, "hint": 'No specific manufacturer/model, e.g. "7-inch Monitor"'},
+        {"label": "Search Aliases", "name": "search_aliases", "widget": "list", "required": False,
+         "hint": "Alternate search terms, e.g. A35, Alexa35"},
     ]
     for f in sorted(own_fields.values(), key=lambda f: f["sort_order"]):
         fields.append(field_to_decap_widget(f))
@@ -248,7 +253,7 @@ def collection_for_node(
         "identifier_field": "id",
         "extension": "yaml",
         "format": "yaml",
-        "summary": "{{manufacturer}} {{model}}",
+        "summary": "{{name}}",
         "fields": fields,
     }
 

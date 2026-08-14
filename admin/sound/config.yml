@@ -27,18 +27,30 @@ collections:
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    hint: 'Format: name-slug, prefixed with manufacturer when known, e.g. arri-alexa-mini-lf or generic-7-inch-monitor'
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -60,18 +72,30 @@ collections:
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    hint: 'Format: name-slug, prefixed with manufacturer when known, e.g. arri-alexa-mini-lf or generic-7-inch-monitor'
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -93,18 +117,30 @@ collections:
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    hint: 'Format: name-slug, prefixed with manufacturer when known, e.g. arri-alexa-mini-lf or generic-7-inch-monitor'
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -126,18 +162,30 @@ collections:
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    hint: 'Format: name-slug, prefixed with manufacturer when known, e.g. arri-alexa-mini-lf or generic-7-inch-monitor'
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -159,18 +207,30 @@ collections:
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    hint: 'Format: name-slug, prefixed with manufacturer when known, e.g. arri-alexa-mini-lf or generic-7-inch-monitor'
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -192,18 +252,30 @@ collections:
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    hint: 'Format: name-slug, prefixed with manufacturer when known, e.g. arri-alexa-mini-lf or generic-7-inch-monitor'
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -225,18 +297,30 @@ collections:
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    hint: 'Format: name-slug, prefixed with manufacturer when known, e.g. arri-alexa-mini-lf or generic-7-inch-monitor'
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -258,18 +342,30 @@ collections:
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    hint: 'Format: name-slug, prefixed with manufacturer when known, e.g. arri-alexa-mini-lf or generic-7-inch-monitor'
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -291,18 +387,30 @@ collections:
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    hint: 'Format: name-slug, prefixed with manufacturer when known, e.g. arri-alexa-mini-lf or generic-7-inch-monitor'
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -324,18 +432,30 @@ collections:
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    hint: 'Format: name-slug, prefixed with manufacturer when known, e.g. arri-alexa-mini-lf or generic-7-inch-monitor'
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -357,18 +477,30 @@ collections:
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    hint: 'Format: name-slug, prefixed with manufacturer when known, e.g. arri-alexa-mini-lf or generic-7-inch-monitor'
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -390,18 +522,30 @@ collections:
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    hint: 'Format: name-slug, prefixed with manufacturer when known, e.g. arri-alexa-mini-lf or generic-7-inch-monitor'
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -423,18 +567,30 @@ collections:
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    hint: 'Format: name-slug, prefixed with manufacturer when known, e.g. arri-alexa-mini-lf or generic-7-inch-monitor'
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -456,18 +612,30 @@ collections:
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    hint: 'Format: name-slug, prefixed with manufacturer when known, e.g. arri-alexa-mini-lf or generic-7-inch-monitor'
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -489,18 +657,30 @@ collections:
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    hint: 'Format: name-slug, prefixed with manufacturer when known, e.g. arri-alexa-mini-lf or generic-7-inch-monitor'
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -522,18 +702,30 @@ collections:
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    hint: 'Format: name-slug, prefixed with manufacturer when known, e.g. arri-alexa-mini-lf or generic-7-inch-monitor'
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -555,18 +747,30 @@ collections:
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    hint: 'Format: name-slug, prefixed with manufacturer when known, e.g. arri-alexa-mini-lf or generic-7-inch-monitor'
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -588,18 +792,30 @@ collections:
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    hint: 'Format: name-slug, prefixed with manufacturer when known, e.g. arri-alexa-mini-lf or generic-7-inch-monitor'
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -621,18 +837,30 @@ collections:
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    hint: 'Format: name-slug, prefixed with manufacturer when known, e.g. arri-alexa-mini-lf or generic-7-inch-monitor'
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -654,18 +882,30 @@ collections:
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    hint: 'Format: name-slug, prefixed with manufacturer when known, e.g. arri-alexa-mini-lf or generic-7-inch-monitor'
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -687,18 +927,30 @@ collections:
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    hint: 'Format: name-slug, prefixed with manufacturer when known, e.g. arri-alexa-mini-lf or generic-7-inch-monitor'
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -720,18 +972,30 @@ collections:
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    hint: 'Format: name-slug, prefixed with manufacturer when known, e.g. arri-alexa-mini-lf or generic-7-inch-monitor'
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -753,18 +1017,30 @@ collections:
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    hint: 'Format: name-slug, prefixed with manufacturer when known, e.g. arri-alexa-mini-lf or generic-7-inch-monitor'
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -786,18 +1062,30 @@ collections:
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    hint: 'Format: name-slug, prefixed with manufacturer when known, e.g. arri-alexa-mini-lf or generic-7-inch-monitor'
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -819,18 +1107,30 @@ collections:
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    hint: 'Format: name-slug, prefixed with manufacturer when known, e.g. arri-alexa-mini-lf or generic-7-inch-monitor'
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -852,18 +1152,30 @@ collections:
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    hint: 'Format: name-slug, prefixed with manufacturer when known, e.g. arri-alexa-mini-lf or generic-7-inch-monitor'
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -885,18 +1197,30 @@ collections:
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    hint: 'Format: name-slug, prefixed with manufacturer when known, e.g. arri-alexa-mini-lf or generic-7-inch-monitor'
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -918,18 +1242,30 @@ collections:
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    hint: 'Format: name-slug, prefixed with manufacturer when known, e.g. arri-alexa-mini-lf or generic-7-inch-monitor'
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -951,18 +1287,30 @@ collections:
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    hint: 'Format: name-slug, prefixed with manufacturer when known, e.g. arri-alexa-mini-lf or generic-7-inch-monitor'
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -984,18 +1332,30 @@ collections:
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    hint: 'Format: name-slug, prefixed with manufacturer when known, e.g. arri-alexa-mini-lf or generic-7-inch-monitor'
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -1017,18 +1377,30 @@ collections:
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    hint: 'Format: name-slug, prefixed with manufacturer when known, e.g. arri-alexa-mini-lf or generic-7-inch-monitor'
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -1050,18 +1422,30 @@ collections:
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    hint: 'Format: name-slug, prefixed with manufacturer when known, e.g. arri-alexa-mini-lf or generic-7-inch-monitor'
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -1083,18 +1467,30 @@ collections:
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    hint: 'Format: name-slug, prefixed with manufacturer when known, e.g. arri-alexa-mini-lf or generic-7-inch-monitor'
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -1116,18 +1512,30 @@ collections:
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    hint: 'Format: name-slug, prefixed with manufacturer when known, e.g. arri-alexa-mini-lf or generic-7-inch-monitor'
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -1149,18 +1557,30 @@ collections:
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    hint: 'Format: name-slug, prefixed with manufacturer when known, e.g. arri-alexa-mini-lf or generic-7-inch-monitor'
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -1182,18 +1602,30 @@ collections:
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    hint: 'Format: name-slug, prefixed with manufacturer when known, e.g. arri-alexa-mini-lf or generic-7-inch-monitor'
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -1215,18 +1647,30 @@ collections:
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    hint: 'Format: name-slug, prefixed with manufacturer when known, e.g. arri-alexa-mini-lf or generic-7-inch-monitor'
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -1248,18 +1692,30 @@ collections:
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    hint: 'Format: name-slug, prefixed with manufacturer when known, e.g. arri-alexa-mini-lf or generic-7-inch-monitor'
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -1281,18 +1737,30 @@ collections:
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    hint: 'Format: name-slug, prefixed with manufacturer when known, e.g. arri-alexa-mini-lf or generic-7-inch-monitor'
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -1314,18 +1782,30 @@ collections:
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    hint: 'Format: name-slug, prefixed with manufacturer when known, e.g. arri-alexa-mini-lf or generic-7-inch-monitor'
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -1347,18 +1827,30 @@ collections:
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    hint: 'Format: name-slug, prefixed with manufacturer when known, e.g. arri-alexa-mini-lf or generic-7-inch-monitor'
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -1380,18 +1872,30 @@ collections:
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    hint: 'Format: name-slug, prefixed with manufacturer when known, e.g. arri-alexa-mini-lf or generic-7-inch-monitor'
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -1413,18 +1917,30 @@ collections:
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    hint: 'Format: name-slug, prefixed with manufacturer when known, e.g. arri-alexa-mini-lf or generic-7-inch-monitor'
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -1446,18 +1962,30 @@ collections:
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    hint: 'Format: name-slug, prefixed with manufacturer when known, e.g. arri-alexa-mini-lf or generic-7-inch-monitor'
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -1479,18 +2007,30 @@ collections:
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    hint: 'Format: name-slug, prefixed with manufacturer when known, e.g. arri-alexa-mini-lf or generic-7-inch-monitor'
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text
@@ -1512,18 +2052,30 @@ collections:
   identifier_field: id
   extension: yaml
   format: yaml
-  summary: '{{manufacturer}} {{model}}'
+  summary: '{{name}}'
   fields:
   - label: ID
     name: id
     widget: string
-    hint: 'Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf'
+    hint: 'Format: name-slug, prefixed with manufacturer when known, e.g. arri-alexa-mini-lf or generic-7-inch-monitor'
+  - label: Name
+    name: name
+    widget: string
   - label: Manufacturer
     name: manufacturer
     widget: string
-  - label: Model
-    name: model
-    widget: string
+    required: false
+  - label: Generic Item
+    name: generic
+    widget: boolean
+    required: false
+    default: false
+    hint: No specific manufacturer/model, e.g. "7-inch Monitor"
+  - label: Search Aliases
+    name: search_aliases
+    widget: list
+    required: false
+    hint: Alternate search terms, e.g. A35, Alexa35
   - label: Notes
     name: notes
     widget: text

@@ -699,9 +699,11 @@ function collectionForNode(id, cats, schemas) {
   chain.forEach(cid => (schemas[cid]?.fields || []).forEach(f => { if (!own.has(f.key)) own.set(f.key, f); }));
 
   const fields = [
-    { label: "ID", name: "id", widget: "string", hint: "Format: manufacturer-model-slug, e.g. arri-alexa-mini-lf" },
-    { label: "Manufacturer", name: "manufacturer", widget: "string" },
-    { label: "Model", name: "model", widget: "string" },
+    { label: "ID", name: "id", widget: "string", hint: "Format: name-slug, prefixed with manufacturer when known, e.g. arri-alexa-mini-lf or generic-7-inch-monitor" },
+    { label: "Name", name: "name", widget: "string" },
+    { label: "Manufacturer", name: "manufacturer", widget: "string", required: false },
+    { label: "Generic Item", name: "generic", widget: "boolean", required: false, default: false, hint: 'No specific manufacturer/model, e.g. "7-inch Monitor"' },
+    { label: "Search Aliases", name: "search_aliases", widget: "list", required: false, hint: "Alternate search terms, e.g. A35, Alexa35" },
     ...[...own.values()].sort((a, b) => a.sort_order - b.sort_order).map(fieldToDecapWidget),
     { label: "Notes", name: "notes", widget: "text", required: false },
     { label: "Image URL", name: "image_url", widget: "string", required: false, hint: "Only freely licensed sources, e.g. Wikimedia Commons" },
@@ -715,7 +717,7 @@ function collectionForNode(id, cats, schemas) {
   return {
     name, label: labelParts.join(" › "), folder: `data/${folder}`,
     create: true, slug: "{{id}}", identifier_field: "id",
-    extension: "yaml", format: "yaml", summary: "{{manufacturer}} {{model}}", fields,
+    extension: "yaml", format: "yaml", summary: "{{name}}", fields,
   };
 }
 
