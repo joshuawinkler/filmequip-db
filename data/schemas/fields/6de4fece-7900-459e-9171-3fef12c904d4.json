@@ -1,0 +1,14 @@
+{
+  "category_id": "6de4fece-7900-459e-9171-3fef12c904d4",
+  "category_name": "Boom Poles",
+  "fields": [
+    {
+      "key": "segments",
+      "label": "Segments",
+      "type": "number",
+      "sort_order": 0,
+      "filterable": true,
+      "variant": false
+    }
+  ]
+}
