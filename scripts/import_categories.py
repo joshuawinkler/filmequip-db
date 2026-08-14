@@ -59,33 +59,130 @@ media_folder: "" # no image upload — images are only linked via image_url (see
 collections:
 """
 
+# Same dark theme/tokens as manage/index.html, so the admin shell and the
+# structure manager read as one product. Decap's auto-init script mounts into
+# #nc-root if present instead of taking over <body> - the header sits above
+# it as a real, styled nav bar. #nc-root is stretched via flexbox to fill
+# exactly the viewport height left over below the header (Decap's own UI
+# assumes it owns the full viewport and won't otherwise account for that).
+ADMIN_CSS_VARS = """    --bg: #0f1115;
+    --panel: #171a21;
+    --border: #2a2f3a;
+    --text: #e7e9ee;
+    --text-dim: #9aa1b0;
+    --accent: #5b8cff;"""
+
 ADMIN_SITE_HTML = """<!doctype html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="robots" content="noindex" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Filmequip DB – Admin – {title}</title>
+  <style>
+    :root {{
+{css_vars}
+    }}
+    html, body {{ margin: 0; height: 100%; }}
+    body {{ display: flex; flex-direction: column; min-height: 100vh; }}
+    header {{
+      flex: 0 0 auto;
+      padding: 14px 20px;
+      background: var(--panel);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 6px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, sans-serif;
+    }}
+    header h1 {{ font-size: 15px; margin: 0; font-weight: 600; color: var(--text); }}
+    header nav a {{
+      color: var(--text-dim);
+      text-decoration: none;
+      font-size: 12px;
+      margin-left: 12px;
+    }}
+    header nav a:hover {{ color: var(--text); }}
+    header nav a.current {{ color: var(--accent); font-weight: 600; }}
+    #nc-root {{ flex: 1 1 auto; min-height: 0; display: flex; }}
+    #nc-root > * {{ flex: 1 1 auto; min-height: 0; }}
+  </style>
 </head>
 <body>
-  <!-- Decap CMS loads itself and reads config.yml from the same folder -->
+  <header>
+    <h1>{title}</h1>
+    <nav>
+      <a href="../">All categories</a>
+{nav_links}
+      <a href="../../manage/">Structure manager</a>
+    </nav>
+  </header>
+  <div id="nc-root"></div>
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 </body>
 </html>
 """
 
 ADMIN_INDEX_HTML = """<!doctype html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="robots" content="noindex" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Filmequip DB – Admin</title>
+  <style>
+    :root {{
+{css_vars}
+      --radius: 8px;
+    }}
+    * {{ box-sizing: border-box; }}
+    body {{
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, sans-serif;
+      font-size: 13px;
+      line-height: 1.5;
+    }}
+    header {{
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }}
+    header h1 {{ font-size: 15px; margin: 0; font-weight: 600; }}
+    header nav a {{ color: var(--text-dim); text-decoration: none; font-size: 12px; }}
+    header nav a:hover {{ color: var(--text); }}
+    main {{ max-width: 640px; margin: 0 auto; padding: 28px; }}
+    .card {{
+      display: block;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      margin-bottom: 14px;
+      color: var(--text);
+      text-decoration: none;
+    }}
+    .card:hover {{ border-color: var(--accent); }}
+    .card h2 {{ font-size: 14px; margin: 0; }}
+    .card .desc {{ color: var(--text-dim); font-size: 12px; margin-top: 4px; }}
+  </style>
 </head>
 <body>
-  <h1>Filmequip DB – Admin</h1>
-  <p>Each top-level category has its own Decap CMS instance:</p>
-  <ul>
-{links}
-  </ul>
+
+<header>
+  <h1>Filmequip DB — Admin</h1>
+  <nav><a href="../manage/">Structure manager</a></nav>
+</header>
+
+<main>
+{cards}
+</main>
+
 </body>
 </html>
 """
@@ -281,17 +378,25 @@ def write_admin_sites(
         with open(site_dir / "config.yml", "w", encoding="utf-8") as f:
             f.write(DECAP_HEADER)
             f.write(body)
+        nav_links = "\n".join(
+            f'      <a href="../{slug_by_id[r["id"]]}/" class="{"current" if r["id"] == root["id"] else ""}">{r["name"]}</a>'
+            for r in roots
+        )
         with open(site_dir / "index.html", "w", encoding="utf-8") as f:
-            f.write(ADMIN_SITE_HTML.format(title=root["name"]))
+            f.write(ADMIN_SITE_HTML.format(title=root["name"], css_vars=ADMIN_CSS_VARS, nav_links=nav_links))
 
         total_collections += len(collections)
         print(f"→ admin/{slug_by_id[root['id']]}/config.yml: {len(collections)} collections regenerated")
 
-    links = "\n".join(
-        f'    <li><a href="{slug_by_id[r["id"]]}/">{r["name"]}</a></li>' for r in roots
+    cards = "\n".join(
+        f'  <a class="card" href="{slug_by_id[r["id"]]}/">\n'
+        f'    <h2>{r["name"]}</h2>\n'
+        f'    <div class="desc">data/{slug_by_id[r["id"]]}/</div>\n'
+        f'  </a>'
+        for r in roots
     )
     with open(ADMIN_DIR / "index.html", "w", encoding="utf-8") as f:
-        f.write(ADMIN_INDEX_HTML.format(links=links))
+        f.write(ADMIN_INDEX_HTML.format(css_vars=ADMIN_CSS_VARS, cards=cards))
 
     print(f"→ admin/index.html: landing page linking {len(roots)} sites")
     print(f"✅ {total_collections} total collections across {len(roots)} sites")
