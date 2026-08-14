@@ -1,4 +1,7 @@
 # Adjust the usernames to your maintainers.
-/data/cameras/  @joshuawinkler
-/data/lighting/ @joshuawinkler
-/data/schemas/  @joshuawinkler
+/data/camera/       @joshuawinkler
+/data/lighting/     @joshuawinkler
+/data/grip/         @joshuawinkler
+/data/sound/        @joshuawinkler
+/data/miscellaneous/ @joshuawinkler
+/data/schemas/      @joshuawinkler
