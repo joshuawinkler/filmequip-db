@@ -32,10 +32,9 @@ DATA_DIR = ROOT / "data"
 FIELDS_DIR = DATA_DIR / "schemas" / "fields"
 ADMIN_DIR = ROOT / "admin"
 
-# Fork/redeploy elsewhere: change these and re-run the import script.
+# Fork/redeploy elsewhere: change these two and re-run the import script.
 GITHUB_REPO = "joshuawinkler/filmequip-db"
 OAUTH_PROXY_BASE_URL = "https://decap-proxy.joshuawinkler.workers.dev"
-SITE_URL = "https://joshuawinkler.github.io/filmequip-db"
 
 DECAP_HEADER = f"""# Decap CMS configuration
 # Docs: https://decapcms.org/docs/configuration-options/
@@ -57,12 +56,6 @@ publish_mode: editorial_workflow
 
 media_folder: "" # no image upload — images are only linked via image_url (see CONTRIBUTING.md)
 
-# Adds a link to the top toolbar back to the structure manager (Decap has no
-# supported way to add a custom-labeled nav tab - this is the one real,
-# stable link it does support; its label is always the bare URL, not
-# renamed to "Categories").
-display_url: {SITE_URL}/manage/
-
 collections:
 """
 
@@ -70,13 +63,6 @@ collections:
 # almost the entire page once it loads (it's a light theme, not ours to
 # restyle), so all a themed background buys here is matching color instead
 # of a flash of white before Decap mounts.
-#
-# Decap mounts into #nc-root when that div exists, instead of creating its
-# own (unstretched) root appended to <body>. Without forcing #nc-root to
-# fill the viewport, Decap's own container is only as tall as its content
-# (e.g. a short "No Entries" list), exposing the dark body background below
-# it as a visible void - stretch it via flexbox so it always fills exactly
-# 100vh regardless of content height.
 ADMIN_CSS_VARS = """    --bg: #0f1115;
     --text: #e7e9ee;"""
 
@@ -90,14 +76,10 @@ ADMIN_SITE_HTML = """<!doctype html>
     :root {{
 {css_vars}
     }}
-    html, body {{ margin: 0; height: 100%; background: var(--bg); color: var(--text); }}
-    body {{ display: flex; }}
-    #nc-root {{ flex: 1 1 auto; min-height: 0; display: flex; }}
-    #nc-root > * {{ flex: 1 1 auto; min-height: 0; }}
+    html, body {{ margin: 0; background: var(--bg); color: var(--text); }}
   </style>
 </head>
 <body>
-  <div id="nc-root"></div>
   <!-- Decap CMS loads itself and reads config.yml from the same folder -->
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 </body>
