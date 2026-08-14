@@ -63,6 +63,13 @@ collections:
 # almost the entire page once it loads (it's a light theme, not ours to
 # restyle), so all a themed background buys here is matching color instead
 # of a flash of white before Decap mounts.
+#
+# Decap mounts into #nc-root when that div exists, instead of creating its
+# own (unstretched) root appended to <body>. Without forcing #nc-root to
+# fill the viewport, Decap's own container is only as tall as its content
+# (e.g. a short "No Entries" list), exposing the dark body background below
+# it as a visible void - stretch it via flexbox so it always fills exactly
+# 100vh regardless of content height.
 ADMIN_CSS_VARS = """    --bg: #0f1115;
     --text: #e7e9ee;"""
 
@@ -76,10 +83,14 @@ ADMIN_SITE_HTML = """<!doctype html>
     :root {{
 {css_vars}
     }}
-    html, body {{ margin: 0; background: var(--bg); color: var(--text); }}
+    html, body {{ margin: 0; height: 100%; background: var(--bg); color: var(--text); }}
+    body {{ display: flex; }}
+    #nc-root {{ flex: 1 1 auto; min-height: 0; display: flex; }}
+    #nc-root > * {{ flex: 1 1 auto; min-height: 0; }}
   </style>
 </head>
 <body>
+  <div id="nc-root"></div>
   <!-- Decap CMS loads itself and reads config.yml from the same folder -->
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 </body>
